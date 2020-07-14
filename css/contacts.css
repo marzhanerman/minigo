@@ -1,0 +1,1006 @@
+.communication-popup.popup input[type="text"],
+.communication-popup.popup textarea,
+.communication-popup.popup .select {
+display: inline-block;
+width: 100%;
+box-sizing: border-box;
+border: 1px solid #d5d5d5;
+border-radius: 4px;
+height: auto;
+font-family: system, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe WP', Roboto, Ubuntu, Oxygen, Cantarell, 'Fira Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Droid Sans', Tahoma, 'Microsoft Sans Serif', sans-serif;
+font-size: 1.14285714rem;
+line-height: 1.71428571rem;
+font-weight: normal;
+color: #000000;
+padding: 7px 12px;
+}
+.communication-popup.popup input[type="text"]::-moz-placeholder,
+.communication-popup.popup textarea::-moz-placeholder,
+.communication-popup.popup .select::-moz-placeholder {
+color: #cccccc;
+text-transform: none;
+}
+.communication-popup.popup input[type="text"]::-webkit-input-placeholder,
+.communication-popup.popup textarea::-webkit-input-placeholder,
+.communication-popup.popup .select::-webkit-input-placeholder {
+color: #cccccc;
+text-transform: none;
+}
+.communication-popup.popup input[type="text"]:-ms-input-placeholder,
+.communication-popup.popup textarea:-ms-input-placeholder,
+.communication-popup.popup .select:-ms-input-placeholder {
+color: #cccccc;
+text-transform: none !important;
+}
+.communication-popup.popup input[type="text"]::-ms-input-placeholder,
+.communication-popup.popup textarea::-ms-input-placeholder,
+.communication-popup.popup .select::-ms-input-placeholder {
+color: #cccccc;
+text-transform: none;
+}
+.communication-popup.popup input[type="text"]::placeholder,
+.communication-popup.popup textarea::placeholder,
+.communication-popup.popup .select::placeholder {
+color: #cccccc;
+text-transform: none;
+}
+.create-message .form-control.divItem > div > b {
+color: #8b8b8b;
+font-style: normal;
+font-size: 13px !important;
+/*перебивка скриптового стиля */
+position: absolute;
+left: 0;
+bottom: -40px;
+}
+.communication-popup.popup textarea + .field-validation-error {
+margin: 0;
+position: relative;
+}
+.create-message textarea + .field-validation-error {
+position: absolute;
+margin: 0;
+left: 0;
+bottom: -23px;
+}
+.create-message .button-panel {
+text-align: right;
+padding-top: 7px;
+}
+.communication-popup .footnote {
+width: auto;
+display: block;
+text-align: right;
+color: #919191;
+}
+.communication-popup.jqmPopWindow {
+border-radius: 4px;
+box-shadow: 0 9px 35px 0 rgba(0, 0, 0, 0.3);
+font-family: arial, freesans, sans-serif;
+padding: 36px 46px;
+}
+.communication-popup.jqmPopWindow .titlebar {
+height: auto;
+margin: 0 0 15px;
+text-align: left;
+}
+.communication-popup.jqmPopWindow .titlebar .title {
+font-family: system, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe WP', Roboto, Ubuntu, Oxygen, Cantarell, 'Fira Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Droid Sans', Tahoma, 'Microsoft Sans Serif', sans-serif;
+color: #000000;
+font-weight: normal;
+font-size: 2.14285714rem;
+line-height: 2.85714286rem;
+font-weight: bold;
+}
+.communication-popup.jqmPopWindow .button-panel {
+margin: 20px 0 0;
+}
+.communication-popup.jqmPopWindow .button-panel .button {
+font-family: system, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe WP', Roboto, Ubuntu, Oxygen, Cantarell, 'Fira Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Droid Sans', Tahoma, 'Microsoft Sans Serif', sans-serif;
+line-height: 1.1;
+font-weight: normal;
+text-decoration: none;
+text-transform: none;
+box-sizing: border-box;
+border-radius: 4px;
+text-align: center;
+cursor: pointer;
+display: inline-block;
+position: relative;
+letter-spacing: 0;
+color: #ffffff;
+background: #646464;
+border: 1px solid #646464;
+font-size: 1.14285714rem;
+padding: 10px 21px 11px;
+height: auto;
+}
+.communication-popup.jqmPopWindow .button-panel .button:first-letter {
+text-transform: uppercase;
+}
+.communication-popup.jqmPopWindow .button-panel .button.disabled,
+.communication-popup.jqmPopWindow .button-panel .button:disabled {
+cursor: default;
+}
+.communication-popup.jqmPopWindow .button-panel .button.disabled,
+.communication-popup.jqmPopWindow .button-panel .button:disabled,
+.communication-popup.jqmPopWindow .button-panel .button.disabled:hover,
+.communication-popup.jqmPopWindow .button-panel .button:disabled:hover {
+color: #a7a7a7;
+background: #f2f2f2;
+border: 1px solid #f2f2f2;
+}
+.communication-popup.jqmPopWindow .button-panel .button.disabled:active,
+.communication-popup.jqmPopWindow .button-panel .button:disabled:active {
+transform: none;
+}
+.communication-popup.jqmPopWindow .button-panel .button.progress,
+.communication-popup.jqmPopWindow .button-panel .button.disabled.progress,
+.communication-popup.jqmPopWindow .button-panel .button.progress:active {
+color: transparent;
+-webkit-touch-callout: none;
+/* iOS Safari */
+-webkit-user-select: none;
+/* Safari */
+-khtml-user-select: none;
+/* Konqueror HTML */
+-moz-user-select: none;
+/* Firefox */
+-ms-user-select: none;
+/* Internet Explorer/Edge */
+user-select: none;
+/* Non-prefixed version, currently
+supported by Chrome and Opera */
+}
+@keyframes mySpin {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+}
+.communication-popup.jqmPopWindow .button-panel .button.progress:after,
+.communication-popup.jqmPopWindow .button-panel .button.disabled.progress:after,
+.communication-popup.jqmPopWindow .button-panel .button.progress:active:after {
+content: '';
+display: inline-block;
+background: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M16%208A7.999%207.999%200%201%201%200%208h2.002a5.998%205.998%200%201%200%2011.996%200H16z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E") 0 0 no-repeat;
+width: 16px;
+height: 16px;
+animation: mySpin 0.9s linear 0s infinite;
+position: absolute;
+right: calc(50% - 8px);
+top: calc(50% - 8px);
+}
+.communication-popup.jqmPopWindow .button-panel .button:hover {
+background: #717171;
+border-color: #717171;
+}
+.communication-popup.jqmPopWindow .button-panel .button:active {
+color: #cccccc;
+background: #575757;
+border-color: #575757;
+}
+.communication-popup.jqmPopWindow .button-panel .cancel {
+display: none;
+}
+.communication-popup.jqmPopWindow .btn-base {
+margin-left: 20px;
+}
+.communication-popup.jqmPopWindow .count-letters {
+font-size: 0.78571429rem;
+margin-top: 5px;
+text-align: right;
+color: #8b8b8b;
+}
+.communication-details-popup.popup .button-panel {
+background: #f8f5fb;
+padding: 30px 45px;
+margin: 27px -45px -45px;
+}
+.communication-details-popup .button-panel button {
+color: #fff;
+font-size: 12px;
+height: 38px;
+letter-spacing: 2px;
+padding: 2px 31px 0;
+text-transform: uppercase;
+}
+.communication-details-popup .button-panel button.in-active {
+background: #d5c1e3;
+cursor: default;
+}
+.communication-details-popup .button-panel .cancel {
+color: #272727;
+font-size: 11px;
+letter-spacing: 2px;
+margin-left: 12px;
+position: relative;
+text-decoration: none;
+text-transform: uppercase;
+top: 3px;
+}
+.communication-popup .footnote {
+background: none;
+float: right;
+font-size: 13px;
+font-style: italic;
+color: #a1a1a1;
+margin: 7px -7px 0 0;
+padding: 0 0 0 10px;
+position: relative;
+text-align: left;
+width: 128px;
+line-height: 14px;
+}
+.communication-popup .footnote span {
+margin-left: -7px;
+float: left;
+}
+.jqmPopWindow.communication-popup label {
+color: #6d6d6d;
+display: inline-block;
+margin-bottom: 4px;
+font-weight: normal;
+font-size: 13px;
+}
+.communication-popup textarea {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+width: 100%;
+max-width: 100%;
+min-width: 100%;
+height: 125px;
+min-height: 125px;
+max-height: 125px;
+margin: 0;
+padding: 4px;
+overflow: auto;
+/* убирает скроллбар в IE, когда не нужен */
+font: 13px 'arial', 'nimbus sans l', sans-serif;
+resize: none;
+}
+.communication-popup .divItem {
+width: auto;
+margin: 0 0 20px;
+padding-top: 4px;
+}
+.jqmPopWindow.communication-popup .note,
+.jqmPopWindow.communication-popup .footnote .note {
+font-family: system, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe WP', Roboto, Ubuntu, Oxygen, Cantarell, 'Fira Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Droid Sans', Tahoma, 'Microsoft Sans Serif', sans-serif;
+color: #FF579D;
+font-weight: normal;
+font-size: 14px;
+line-height: 1.42857143rem;
+color: #CB11AB;
+float: none;
+}
+.communication-popup .input-file-wrapper {
+float: left;
+position: relative;
+overflow: hidden;
+}
+.communication-popup .input-file-wrapper input[type="file"] {
+position: absolute;
+top: -5px;
+right: -5px;
+font-size: 300px;
+cursor: pointer;
+opacity: 0;
+filter: alpha(opacity=0);
+}
+.communication-popup .input-file-wrapper .fake-input-file {
+background: #fff;
+border: 1px solid;
+color: #b280d5;
+box-shadow: none;
+}
+.jqmPopWindow.communication-popup {
+width: 490px;
+box-sizing: border-box;
+padding: 30px 40px;
+font-family: arial, sans-serif;
+}
+.jqmPopWindow.communication-popup .popup-container {
+width: 100%;
+overflow: visible;
+}
+.jqmPopWindow.communication-popup .popup-container .chosen-container {
+padding: 0;
+width: 100% !important;
+}
+.jqmPopWindow.communication-popup .popup-container .form-control + .form-control {
+margin-top: 15px;
+}
+.jqmPopWindow.communication-popup .close {
+background: url("/i/ornament.png?12") -241px -152px;
+display: block;
+height: 15px;
+position: absolute;
+right: 17px;
+top: 17px;
+width: 15px;
+z-index: 1;
+}
+.jqmPopWindow.communication-popup .popup-title {
+color: #272727;
+font-size: 18px;
+letter-spacing: 1.5px;
+margin: 0;
+text-transform: uppercase;
+word-spacing: 2px;
+}
+.jqmPopWindow.communication-popup .i-close {
+width: 29px;
+height: 29px;
+margin: 0;
+background-color: transparent;
+background-position: -227px -441px;
+border: 0;
+}
+.jqmPopWindow.communication-popup .divItem {
+line-height: 16px;
+}
+.communication-popup .chosen-container .chosen-drop {
+margin-top: -1px;
+border: 1px solid #bfbfbf;
+box-shadow: none;
+}
+.jqmPopWindow.communication-popup .chosen-container .chosen-single {
+padding: 10px 0 10px 2px;
+height: 40px;
+border: 1px solid #bfbfbf;
+box-shadow: none;
+box-sizing: border-box;
+background: #fff;
+border-radius: 0;
+overflow: visible;
+}
+.jqmPopWindow.communication-popup .in-active .chosen-container .chosen-single {
+background: #ececec;
+cursor: default;
+}
+.communication-popup .chosen-container .chosen-search input[type="text"] {
+background: #fff;
+}
+.communication-popup .chosen-container .chosen-results {
+margin: 0;
+padding: 0;
+}
+.communication-popup .chosen-container-active .chosen-single {
+box-shadow: none;
+}
+.communication-popup .chosen-container-active.chosen-with-drop .chosen-single,
+.create-message .chosen-container-active.chosen-with-drop .chosen-single {
+border: 1px solid #bfbfbf;
+background-image: none;
+box-shadow: none;
+}
+.communication-popup .chosen-container .chosen-single SPAN {
+margin-right: 28px;
+/* icon width + margin */
+margin-left: 11px;
+font-family: system, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe WP', Roboto, Ubuntu, Oxygen, Cantarell, 'Fira Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Droid Sans', Tahoma, 'Microsoft Sans Serif', sans-serif;
+color: #000000;
+font-weight: normal;
+font-size: 1.07142857rem;
+line-height: 1.42857143rem;
+}
+.communication-popup .in-active .chosen-container .chosen-single SPAN {
+color: #a8a8a8;
+}
+.communication-popup .chosen-container .chosen-single DIV,
+.communication-popup .chosen-container-active.chosen-with-drop .chosen-single DIV {
+width: 13px;
+height: 7px;
+top: 17px;
+right: 10px;
+background: url("/i/ornament.png?12") -11px -244px;
+}
+.communication-popup .chosen-container .chosen-single B {
+display: none;
+}
+.communication-popup .chosen-container .chosen-results .active-result {
+border: 0;
+}
+.communication-popup .chosen-container .chosen-results .highlighted {
+background: #f3effe;
+color: #000;
+}
+.communication-popup .chosen-container .chosen-single B {
+border-width: 8px;
+margin: 11px 0 0 6px;
+}
+.communication-popup .faq-link {
+float: right;
+display: inline-block;
+font-size: 12px;
+color: #824cac;
+margin-top: 4px;
+border-bottom: 1px solid;
+text-decoration: none;
+}
+.communication-popup .faq-link:hover {
+border-bottom-color: transparent;
+}
+.communication-popup .validation-summary-errors,
+.communication-popup .field-validation-error {
+color: #CB11AB;
+display: block;
+font-weight: normal;
+max-width: 400px;
+position: relative;
+margin-top: 5px;
+}
+.communication-popup.popup .input-validation-error,
+.communication-popup.popup input.input-validation-error,
+.communication-popup.popup select.input-validation-error + div > a.chosen-single {
+border: 1px solid #CB11AB;
+position: relative;
+}
+.communication-popup.popup select.input-validation-error + div > a.chosen-single:before,
+.communication-popup.popup .input-validation-error + span:before {
+background: url("/i/ornament.png?12") -229px -530px;
+content: '';
+height: 16px;
+margin-right: 7px;
+position: absolute;
+top: 7px;
+right: -32px;
+width: 16px;
+display: none;
+}
+.communication-popup.popup textarea.input-validation-error + span:before {
+top: -138px;
+}
+.communication-popup.popup input.input-validation-error + span:before {
+top: -26px;
+}
+.communication-popup .agreement a {
+font-size: 16px;
+color: #824cac;
+text-decoration: none;
+border-bottom: 1px solid;
+}
+.communication-details-popup .info {
+padding: 15px 0 16px;
+}
+.communication-details-popup .info .string {
+max-width: 290px;
+font-size: 13px;
+color: #272727;
+margin-bottom: 11px;
+}
+.communication-details-popup .info .string .name {
+width: auto;
+display: inline-block;
+color: #767676;
+}
+.communication-details-popup .you-message,
+.communication-details-popup .our-message,
+.communication-details-popup .was-score {
+color: #272727;
+font-size: 18px;
+letter-spacing: 0.5px;
+margin-top: 27px;
+}
+.communication-details-popup .our-message {
+margin-top: 32px;
+}
+.communication-details-popup .line {
+background: #ededed;
+height: 1px;
+margin: 0 -45px;
+}
+.communication-details-popup .question,
+.communication-details-popup .answer {
+background: #f6f6f6;
+font-size: 13px;
+color: #272727;
+line-height: 18px;
+padding: 14px 22px 15px 20px;
+margin: 14px 0 -5px 0;
+-ms-word-wrap: break-word;
+word-wrap: break-word;
+position: relative;
+}
+.communication-details-popup .answer {
+background: #f7f8ff;
+margin: 14px 0 0;
+}
+.communication-details-popup .answer p {
+margin: 0;
+}
+.communication-details-popup .answer .wb {
+font-size: 16px;
+margin-bottom: 10px;
+}
+.communication-details-popup .answer .employee {
+margin-bottom: 10px;
+margin-left: 12px;
+}
+.communications-feedback .line {
+margin: 30px -45px 27px;
+}
+.communications-feedback .wasgood,
+.communications-feedback .wasbad {
+display: inline-block;
+margin: 19px 17px 0 0;
+font: bold 12px arial, sans-serif;
+color: transparent;
+cursor: pointer;
+text-align: center;
+}
+.communications-feedback.disabled .wasgood label,
+.communications-feedback.disabled .wasbad label {
+cursor: default;
+}
+.communications-feedback .wasgood label,
+.communications-feedback .wasbad label {
+background: #f6f6f6;
+width: 64px;
+height: 64px;
+display: inline-block;
+cursor: pointer;
+position: relative;
+}
+.communications-feedback .wasgood label:before,
+.communications-feedback .wasbad label:before {
+background: url("/i/ornament.png?12") no-repeat -35px -669px;
+content: '';
+display: block;
+height: 33px;
+left: 15px;
+position: absolute;
+top: 16px;
+width: 34px;
+}
+.communications-feedback .wasbad label:before {
+background-position: -107px -669px;
+}
+.communications-feedback .wasbad label:hover,
+.communications-feedback .wasbad.active label,
+.communications-feedback.disabled .wasbad.active label:hover {
+background: #fdf0f0;
+}
+.communications-feedback .wasbad.active label:before,
+.communications-feedback .wasbad label:hover:before,
+.communications-feedback.disabled .wasbad.active label:hover:before {
+background-position: -71px -669px;
+}
+.communications-feedback .wasgood label:hover,
+.communications-feedback .wasgood.active label,
+.communications-feedback.disabled .wasgood.active label:hover {
+background: #f1f8ec;
+}
+.communications-feedback .wasgood.active label:before,
+.communications-feedback .wasgood label:hover:before,
+.communications-feedback.disabled .wasgood.active label:hover:before {
+background-position: 0 -669px;
+}
+.communications-feedback.disabled .wasgood label:hover:before {
+background-position: -35px -669px;
+}
+.communications-feedback.disabled .wasbad label:hover:before {
+background-position: -107px -669px;
+}
+.communications-feedback.disabled .wasgood label:hover,
+.communications-feedback.disabled .wasbad label:hover {
+background: #f6f6f6;
+}
+.communication-details-popup .feedback-answer {
+background: none;
+color: #272727;
+font-size: 13px;
+line-height: 18px;
+padding: 14px 14px 13px 0;
+margin-top: 7px;
+position: relative;
+}
+.communication-details-popup .feedback-answer:before {
+display: none;
+}
+.communications-feedback .text {
+font-size: 18px;
+color: #272727;
+}
+.communication-details-popup .explanation {
+color: #ef6f6f;
+font-size: 13px;
+line-height: 18px;
+margin: 21px 0 15px;
+width: auto;
+}
+.communication-details-popup .feedback-text textarea {
+border-radius: 0;
+border: 1px solid #bfbfbf;
+height: 164px;
+margin: 0;
+outline: none;
+padding: 9px 10px;
+width: 360px;
+}
+.feedback-text .msg {
+width: 115px;
+font: 12px arial, sans-serif;
+color: #484848;
+position: absolute;
+top: 22px;
+left: 359px;
+}
+.feedback-text .field-validation-error {
+max-width: 335px;
+font-weight: normal;
+color: #ef6f6f;
+}
+.communication-popup.jqmPopWindow .btn-orange {
+font-family: system, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe WP', Roboto, Ubuntu, Oxygen, Cantarell, 'Fira Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Droid Sans', Tahoma, 'Microsoft Sans Serif', sans-serif;
+line-height: 1.1;
+font-weight: bold;
+text-decoration: none;
+text-transform: uppercase;
+box-sizing: border-box;
+border-radius: 4px;
+text-align: center;
+cursor: pointer;
+display: inline-block;
+position: relative;
+letter-spacing: 0;
+color: #ffffff;
+background: #CB11AB;
+border: 2px solid #CB11AB;
+font-size: 14px;
+padding: 12px 25px 13px;
+}
+.communication-popup.jqmPopWindow .btn-orange.disabled,
+.communication-popup.jqmPopWindow .btn-orange.disabled:hover,
+.communication-popup.jqmPopWindow .btn-orange:disabled,
+.communication-popup.jqmPopWindow .btn-orange:disabled:hover {
+cursor: default;
+color: #d7d7d7;
+background: #ffffff;
+border: 2px solid #d5d5d5;
+opacity: 0.9;
+}
+.communication-popup.jqmPopWindow .btn-orange.disabled:active,
+.communication-popup.jqmPopWindow .btn-orange.disabled:hover:active,
+.communication-popup.jqmPopWindow .btn-orange:disabled:active,
+.communication-popup.jqmPopWindow .btn-orange:disabled:hover:active {
+transform: none;
+}
+.communication-popup.jqmPopWindow .btn-orange.progress,
+.communication-popup.jqmPopWindow .btn-orange.disabled.progress,
+.communication-popup.jqmPopWindow .btn-orange.progress:active {
+color: transparent;
+-webkit-touch-callout: none;
+/* iOS Safari */
+-webkit-user-select: none;
+/* Safari */
+-khtml-user-select: none;
+/* Konqueror HTML */
+-moz-user-select: none;
+/* Firefox */
+-ms-user-select: none;
+/* Internet Explorer/Edge */
+user-select: none;
+/* Non-prefixed version, currently
+supported by Chrome and Opera */
+}
+@keyframes mySpin {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+}
+.communication-popup.jqmPopWindow .btn-orange.progress:after,
+.communication-popup.jqmPopWindow .btn-orange.disabled.progress:after,
+.communication-popup.jqmPopWindow .btn-orange.progress:active:after {
+content: '';
+display: inline-block;
+width: 20px;
+height: 20px;
+animation: mySpin 0.9s linear 0s infinite;
+position: absolute;
+right: calc(50% - 10px);
+top: calc(50% - 10px);
+}
+.communication-popup.jqmPopWindow .btn-orange.progress:after,
+.communication-popup.jqmPopWindow .btn-orange.disabled.progress:after,
+.communication-popup.jqmPopWindow .btn-orange.progress:active:after {
+background: url("data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M20%2010a10%2010%200%200%201-20%200h2.502a7.498%207.498%200%200%200%2014.995%200H20z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E") 0 0 no-repeat;
+}
+.communication-popup.jqmPopWindow .btn-orange:hover {
+background: #e313bf;
+border-color: #e313bf;
+}
+.communication-popup.jqmPopWindow .btn-orange:active {
+color: #ffffff;
+background: #b30f97;
+border-color: #b30f97;
+}
+/*--Старые стили для попапа создания обращения*/
+.page-wrap .c-link-out {
+font-family: system, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe WP', Roboto, Ubuntu, Oxygen, Cantarell, 'Fira Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', 'Droid Sans', Tahoma, 'Microsoft Sans Serif', sans-serif;
+color: #000000;
+font-weight: normal;
+font-size: 16px;
+line-height: 22px;
+color: #CB11AB;
+font-weight: 600;
+text-decoration: none;
+cursor: pointer;
+}
+.page-contacts .contacts-list {
+font-size: 0;
+line-height: 1;
+}
+.page-contacts .contacts-list-item {
+width: 100%;
+display: inline-block;
+vertical-align: top;
+margin:  20px 0px;
+min-height: 305px;
+padding: 28px 32px 32px;
+box-sizing: border-box;
+position: relative;
+border-radius: 16px;
+box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
+}
+@media screen and (max-width: 1245px) {
+.page-contacts .contacts-list-item.bottom-row {
+min-height: 262px;
+}
+}
+.page-contacts .contacts-list-item-lg {
+}
+.page-contacts .contacts-list-item .title {
+margin-bottom: 12px;
+}
+.page-contacts .contacts-list-item .link {
+position: absolute;
+bottom: 32px;
+left: 32px;
+}
+@media screen and (max-width: 1245px) {
+.page-contacts .contacts-list-item .c-h2.title {
+font-size: 20px;
+line-height: 28px;
+}
+}
+.page-contacts .contacts-list-social {
+background-color: #BE3690;
+background: linear-gradient(89.65deg, #E56B31 2.39%, #BE3690 99.79%);
+}
+.page-contacts .contacts-list-social .title,
+.page-contacts .contacts-list-social .text {
+color: #ffffff;
+}
+.page-contacts .contacts-list-social .icon {
+display: block;
+width: 182px;
+height: 217px;
+position: absolute;
+top: 45px;
+right: 75px;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAADZCAMAAAC6jDq5AAACo1BMVEUAAAAhMDwiLzskNkUiLzsrPlAhLzsiLzsrPlAhLjoiLzsjMDwjMTkoQFAsPlCetbstPVGfr7bn6+ssPlAiLjkpOlKetbosPVBAVm4sPlCetLvl6usiLjvf3+nm6ussPU8hLzyetbzm6urm6+wiLzorPVDm6euetreetLqftbrf5+tAWGghLzssPlArPVEqQFBAV25AVWvm6eqetbpAVm7l6uxAUHAsPVCdtLswNzswODshLzpAV20wODpAVm3k5ulAVWqetLslNUMjMT4lNUTm6uswODswOTpAV20iMDyftLuetLqdtLhAV20wNznn7OxAV2yRnKQnOEcwODuftbrm6uwgMDuctbowQFAhKTra4ePAztGetLsrPU8wOTtAVm28x8tAVm9AV23n5+85TWIvPEaywsies7metLmJnqTm6+vm6evZ4OKftbqdtbpXY2yes7pAVm0wODrG0da9y88rPVCMo6ietrzi5ekwOT3CztJAVXDm7+8iLzvm6ussPlCetLrFzNEpOEVAV24wODujt70nNkUmNUMlM0AjMDwoOEgrPE4jMT3i5uje4+UkMj48UmjU3d8qOkvCz9IsPEopOUgtPk3Z3+G/y884TWExQlM+VWs2SVzL1tmwwsYvQFCYrrXR2NszRli5yMynusAuOkGsvsO8xsu2xcmnu8BKYHUvOT7O1NfHztNLYnfJ0NWSqLBVan7U294tO0bH0tWvv8RvhZRoe41hdofb4eOos7yUoKuKlqFGXXMxP0vDy9CousCGnad0i5lXboE6T2S/yMy0wse2vsSPpKppf5Dj5+nV296dqrN7kJ50hpRxgopRaH1gcnpEVWKlub6MoqyCmKKBkJhYboFqdX5baXdQYGtFUVtaZ3FTXWensryeqrM4SFjHxLTQAAAAfXRSTlMAIN8Q79+An19gv0AwIO9/PxC/j28f37/vz7+fjxDff1BAP++vn38g758gIM9vTzDff29gz48Qr0/v39+/YF8wMO/v79/Pv6+fkI+PcG9vX0Df359vX18wIB/v78/Pz6+Xj48g7+/f38+/r6+vr6+vkI9/cHBwb19QUD8wHxSO19YAAA8bSURBVHgB1Je9b+JAEMXt9Qcf4BUSIISERArogJQp0oU0aSmiNPkz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);
+background-repeat: no-repeat;
+background-size: contain;
+}
+@media screen and (max-width: 1245px) {
+.page-contacts .contacts-list-social .icon {
+width: 125px;
+height: 149px;
+top: 35px;
+right: 50px;
+}
+}
+.page-contacts .contacts-list-social .social {
+font-size: 0;
+line-height: 1;
+}
+.page-contacts .contacts-list-social .social-item {
+display: inline-block;
+vertical-align: middle;
+width: 40px;
+height: 40px;
+background-repeat: no-repeat;
+background-size: contain;
+opacity: 0.7;
+transition: opacity 0.3s ease;
+}
+.page-contacts .contacts-list-social .social-item:hover {
+opacity: 0.9;
+}
+.page-contacts .contacts-list-social .social-item ~ .social-item {
+margin-left: 10px;
+}
+.page-contacts .contacts-list-social .social-item.social-mg {
+background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDIwQzAgOC41MSA4LjczMiAwIDIwIDBzMjAgOC41MDkgMjAgMjAtOC43MzIgMjAtMjAgMjBDOS4xMjUgNDAgMCAzMS41MTIgMCAyMHptMTYuNDctMi43NzRsLTMuMzggNC45OWMtLjMyNy40NzguMzA4IDEuMDE5Ljc5Mi42NzZsMy42MzMtMi41NjZhLjcyNy43MjcgMCAwMS44MzEtLjAwMmwyLjY5IDEuODc3Yy44MDUuNTYyIDEuOTU4LjM2NCAyLjQ5Ni0uNDNsMy4zNzgtNC45ODdjLjMyNy0uNDc4LS4zMDgtMS4wMTktLjc5Mi0uNjc2bC0zLjYzIDIuNTY0YS43MjYuNzI2IDAgMDEtLjgzMi4wMDJsLTIuNjg5LTEuODc3Yy0uODA2LS41NjItMS45NTktLjM2NC0yLjQ5Ni40Mjl6TTkgMTkuNjdDOSAxMy41NCAxMy44MDMgOSAyMCA5czExIDQuNTQgMTEgMTAuNjdjMCA2LjEzMS00LjgwMyAxMC42Ny0xMSAxMC42Ny0xLjExMyAwLTIuMTgyLS4xNDUtMy4xODUtLjQyMmEuODc4Ljg3OCAwIDAwLS41ODYuMDQ0bC0yLjE4My45NjNhLjg4MS44ODEgMCAwMS0xLjIzNS0uNzhsLS4wNi0xLjk1NmEuODg2Ljg4NiAwIDAwLS4yOTYtLjYyNkMxMC4zMTUgMjUuNjQ4IDkgMjIuODc3IDkgMTkuNjd6IiBmaWxsPSIjZmZmIi8+PC9zdmc+);
+}
+.page-contacts .contacts-list-social .social-item.social-vb {
+background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00MCAyMGMwIDExLjA0Ni04Ljk1NCAyMC0yMCAyMFMwIDMxLjA0NiAwIDIwIDguOTU0IDAgMjAgMHMyMCA4Ljk1NCAyMCAyMHptLTE2LjMxLS44NGMuMDg0LjA4LjE5NC4xMjYuMzEuMTI4bC4wMjQtLjAxNmEuNDM4LjQzOCAwIDAwLjQyNC0uNDY0Yy0uMDk2LTEuOTg0LTEuMTY4LTMuMDk2LTMuMTA0LTMuMmEuNDQ4LjQ0OCAwIDEwLS4wNDguODk2YzEuNDU2LjA4OCAyLjE4NC44MzIgMi4yNTYgMi4zNTJhLjQ1Ni40NTYgMCAwMC4xMzkuMzA0em0yLjgwOS44OGEuNDM4LjQzOCAwIDAxLS4xNzEuMDMyaC0uMDRhLjQ1Ni40NTYgMCAwMS0uNDQtLjQ1NiA1LjE2IDUuMTYgMCAwMC0xLjMzNi0zLjggNS42IDUuNiAwIDAwLTMuOTItMS43MDQuNDQ4LjQ0OCAwIDAxLS4yNi0uNzg1LjQ1Ni40NTYgMCAwMS4zMjQtLjExMSA2LjUyOCA2LjUyOCAwIDAxNC41MiAxLjk5MiA2LjEzIDYuMTMgMCAwMTEuNiA0LjQyNC40NC40NCAwIDAxLS4yNzcuNDA5em0yLjUwNi44MjRhLjQ1Ni40NTYgMCAwMS0uMzE3LjEzNmwtLjAwOC0uMDE2YS40NTYuNDU2IDAgMDEtLjQ1Ni0uNDQ4IDguNTYgOC41NiAwIDAwLTIuNC02LjQgOC4zMjkgOC4zMjkgMCAwMC01Ljk2LTIuMzUyLjQ1Ni40NTYgMCAwMTAtLjkwNCA5LjI1NiA5LjI1NiAwIDAxNi41ODQgMi42MTYgOS41NTQgOS41NTQgMCAwMTIuNjg4IDcuMDQ4YzAgLjEyLS4wNDcuMjM0LS4xMy4zMnptLTEzLjQyMS0xLjg1NnMxLjI0IDQuNjcyIDUuODU2IDUuODQ4di0uMDMyYTEuMjA4IDEuMjA4IDAgMDAuOTY4LS4zNjhsLjY2NC0uOGExLjQ1NiAxLjQ1NiAwIDAxMS44NDgtLjI1NmMuNDI0LjI0OCAxLjE0NC42OTYgMS42NDggMS4wNDguNTA0LjM1MiAxLjU0NCAxLjIyNCAxLjU0NCAxLjIyNGExLjI2NCAxLjI2NCAwIDAxLjI2NCAxLjY1NkE2LjkzNyA2LjkzNyAwIDAxMjcgMjkuMDI0YTIuNzUyIDIuNzUyIDAgMDEtMS40LjY3Mi44MDUuODA1IDAgMDEtLjIwOCAwYy0uMjAxIDAtLjQwMS0uMDMyLS41OTItLjA5NmExOS45IDE5LjkgMCAwMS0zLjk0NC0xLjc0NCAyMi42MjcgMjIuNjI3IDAgMDEtMy4yLTIuMTQ0IDEzLjg5NyAxMy44OTcgMCAwMS0xLjQ1Ni0xLjI4OGwtLjA0OC0uMDQ4LS4wNTYtLjA0OC0uMDQ4LS4wNDgtLjA0OC0uMDU2Yy0uNDUtLjQ3Ny0uODctLjk4My0xLjI1Ni0xLjUxMmEyMi43MzkgMjIuNzM5IDAgMDEtMi4xNDQtMy4yIDIwLjQzMiAyMC40MzIgMCAwMS0xLjc3Ni0zLjg1NiAxLjY2MyAxLjY2MyAwIDAxLS4wODgtLjU5Mi44NDIuODQyIDAgMDEwLS4yMDggMi43MzYgMi43MzYgMCAwMS42OC0xLjQgNi45MzYgNi45MzYgMCAwMTEuNjk2LTEuMzg0IDEuMjcyIDEuMjcyIDAgMDExLjY1Ni4yNjRjLjAwOC4wMDguODY0IDEuMDMyIDEuMjMyIDEuNTM2LjM2NC41MzEuNyAxLjA4MiAxLjAwOCAxLjY0OGExLjQ0OCAxLjQ0OCAwIDAxLS4yNTYgMS44NDhsLS44LjY2NGExLjIzMyAxLjIzMyAwIDAwLS4zNjguOTc2eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==);
+}
+.page-contacts .contacts-list-social .social-item.social-vk {
+background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00MCAyMGMwIDExLjA0Ni04Ljk1NCAyMC0yMCAyMFMwIDMxLjA0NiAwIDIwIDguOTU0IDAgMjAgMHMyMCA4Ljk1NCAyMCAyMHptLTExLjMyLTUuNjg4Yy42MTYgMCAuNzY4LjMzNi42MTYuOC0uMjMyIDEuMjMyLTIuODU2IDQuODg4LTIuODQ4IDQuODY0YS42NDIuNjQyIDAgMDAwIC45MjhjLjA5My4xMjMuMjc2LjI5Ni40OS41LjMxNi4zLjcwMi42NjkuOTc0IDEuMDM2YTcuNDk1IDcuNDk1IDAgMDExLjc3NiAyLjQ3MmMuMjMyLjYxNi0uMDguOTItLjY5Ni45MmgtMi4wOGMtLjU0IDAtLjgxNC0uMzA0LTEuNDM3LS45OTEtLjI2NC0uMjkyLS41OTEtLjY1My0xLjAyNy0xLjA4OS0xLjIzMi0xLjIzMi0xLjY5Ni0xLjM4NC0yLjA4LTEuMzg0LS4zODQgMC0uNTM2LjA3Mi0uNTM2LjY5NnYxLjkyYzAgLjU0NC0uMjMyLjg0OC0xLjU0NC44NDgtMi4yNCAwLTQuNjMyLTEuMzg0LTYuNC0zLjg0OC0yLjYyNC0zLjcwNC0zLjMxMi02LjQ3Mi0zLjMxMi03LjAxNiAwLS4zMDQuMDcyLS42MTYuNjg4LS42MTZoMi4wOGMuNTQ0IDAgLjY5Ni4yMzIuOTI4Ljg0OCAxIDIuOTg0IDIuNzc2IDUuNiAzLjQ2NCA1LjYuMjMyIDAgLjM4NC0uMTA0LjM4NC0uOHYtMy4xNzZjLS4wMy0uOTA1LS4zNDctMS4yODEtLjU4NS0xLjU2My0uMTQ3LS4xNzQtLjI2My0uMzEyLS4yNjMtLjUxN2EuNTIuNTIgMCAwMS41NDQtLjQ2NGgzLjMxMmMuNDY0IDAgLjYxNi4yNjQuNjE2Ljh2NC4xNmMwIC40NjQuMTUyLjYxNi4zMTIuNjE2LjMwNCAwIC41MzYtLjE1MiAxLS42MTZhMTcuNDc3IDE3LjQ3NyAwIDAwMi42MTYtNC4zMTIuOTUzLjk1MyAwIDAxLjkyOC0uNjE2aDIuMDh6IiBmaWxsPSIjZmZmIi8+PC9zdmc+);
+}
+.page-contacts .contacts-list-social .social-item.social-tg {
+background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMCA0MGMxMS4wNDYgMCAyMC04Ljk1NCAyMC0yMFMzMS4wNDYgMCAyMCAwIDAgOC45NTQgMCAyMHM4Ljk1NCAyMCAyMCAyMHptOS40NDEtMjQuNDE2bC4wOC0uNTI3LjA4OS0uNzFjLjA5Ny0uNzY4LjE5NS0xLjUzNy4yMy0yLjMxMi4wMTktLjQ0LS4yNDUtLjg1OS0uNy0uOTcyLS40NTMtLjExNC0uOTAzLS4wNi0xLjM0NC4wNTctLjYwNS4xNi0xLjE4NS4zOTQtMS43NjUuNjI3LS4yNy4xMS0uNTQuMjE4LS44MTQuMzItLjQxNC4xNTMtLjgyNC4zMTktMS4yMzQuNDg0LS4xODMuMDc0LS4zNjcuMTQ4LS41NS4yMmwtLjcwMS4yODVhNDU2LjYxMSA0NTYuNjExIDAgMDAtMy41MzkgMS40NDhsLTEuMTc3LjQ4NGMtLjA0Mi4wMTctLjA4Ni4wMzItLjEzLjA0N2wtLjA1Ny4wMi0uOTc0LjQxNC0yLjkyIDEuMjQzYy0uMzQ4LjE0OS0uNjk1LjMtMS4wNDIuNDUybC0uNDk4LjIxN2MtLjA2LjAzLS4xMjIuMDU0LS4xODUuMDhhMy4yMDQgMy4yMDQgMCAwMC0uMTYuMDY2Yy0uMjgzLjEzLS41NjguMjU3LS44NTMuMzgzLS4zMTguMTQtLjYzNi4yOC0uOTUxLjQyNy0uODQ0LjM5NC0xLjY4NC43OTctMi41MDYgMS4yMzZsLS4wMjUuMDEzYy0uMjA4LjExLS40MTcuMjIyLS41NzYuNDA0LS4xODcuMjE0LS4xODYuNDEyLjAwNS42MjMuMTA5LjEyLjIzOS4yMTcuMzgzLjI4OSAxLjQ0OS43MTcgMi45NTQgMS4yNyA0LjU1OCAxLjUxYTMuMjggMy4yOCAwIDAwMi4yNTItLjQ1N2wuMzcxLS4yMjVjLjYzNC0uMzg3IDEuMjY5LS43NzMgMS44OS0xLjE4MWEyMjAuNDggMjIwLjQ4IDAgMDAxLjY0OC0xLjA5NWwuNTgzLS40MTFjLjQzMS0uMzA0Ljg2My0uNjA4IDEuMjk2LS45MS4yNjYtLjE4NS41MzItLjM3My43OTctLjU2LjY0LS40NTQgMS4yOC0uOTA4IDEuOTQ0LTEuMzI4LjI0OC0uMTU4LjUwMS0uMzA4Ljc4NS0uMzk2bC4wMDYtLjAwMmMuMTA1LS4wMzIuMjE5LS4wNjguMzEuMDE2LjA4NS4wNzguMDYuMTguMDM2LjI3OGwtLjAwOC4wMzZhLjczOC43MzggMCAwMS0uMTg2LjM0NmMtMS4wNjYgMS4xNS0yLjIyNSAyLjItMy4zODUgMy4yNTNsLS40ODEuNDM3Yy0uMDA4LjAwNy0uMDE4LjAxMi0uMDI5LjAxN2wtLjAxNC4wMDgtLjU5Mi41NThjLS40OS40Ni0uOTguOTIxLTEuNDcyIDEuMzc4LS4zMjEuMjk4LS42MDEuNjIzLS43NzQgMS4wMy0uMjkzLjY4OC0uMTQ3IDEuMTg4LjQ2NSAxLjYxM2wxLjI5Ni45LjU3NS40LjAxNS4wMDZjLjAxMS4wMDQuMDIyLjAwOC4wMzEuMDE0bDEuMzUzLjkxNGMxLjI1MS44NDQgMi41MDIgMS42ODggMy43NSAyLjUzOC42My40MjkgMS4zNzEuNDUyIDIuMDEyLjAzNi40NS0uMjkzLjcwNC0uNzEyLjgwNS0xLjIzMmwuMDY5LS40MjVjLjA1Ny0uMzU1LjExNC0uNzExLjE3NC0xLjA2NmwuOTkzLTUuODgzYy4wMTItLjA3Ni4wMjgtLjE1MS4wNDQtLjIyNmwuMDItLjEuMDE0LS4xMWE4LjExIDguMTEgMCAwMS4wMzUtLjI1MWwuMTIyLS43NjhjLjE1LS45MzcuMy0xLjg3NS40MzItMi44MTUuMDU1LS4zODkuMTE0LS43NzcuMTc0LTEuMTY1eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==);
+}
+.page-contacts .contacts-list-social .popular-questions {
+position: absolute;
+left: 32px;
+bottom: 34px;
+display: inline-block;
+vertical-align: top;
+font-weight: bold;
+font-size: 16px;
+line-height: 20px;
+text-transform: uppercase;
+padding: 13px 18px 11px 18px;
+color: #FFFFFF;
+border: 2px solid #FFFFFF;
+box-sizing: border-box;
+border-radius: 8px;
+}
+.page-contacts .contacts-list-social .popular-questions:hover {
+border-color: #CB11AB;
+background-color: #CB11AB;
+}
+.page-contacts .contacts-list-address .address-item {
+width: 100%;
+max-width: 440px;
+}
+.page-contacts .contacts-list-address .address-item-value {
+display: block;
+color: #000000;
+margin-top: 8px;
+}
+.page-contacts .contacts-list-address .address-item ~ .address-item {
+margin-top: 20px;
+}
+.page-wrap {
+    margin-top: 23px;
+}
+.page-wrap .c-text-base {
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+.page-wrap .c-text-base.bold {
+    font-weight: 700;
+}
+.page-wrap .c-text-base.gray {
+    color: #8b8b8b;
+}
+.page-wrap .c-text-md {
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+.page-wrap .c-text-md.bold {
+    font-weight: 700;
+}
+.page-wrap .c-text-md.gray {
+    color: #8b8b8b;
+}
+.page-wrap .c-text-sm {
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+.page-wrap .c-text-sm.bold {
+    font-weight: 700;
+}
+.page-wrap .c-text-sm.gray {
+    color: #8b8b8b;
+}
+.page-wrap .c-text-xsm-v1 {
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+}
+.page-wrap .c-h1 {
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.page-wrap .c-h2 {
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0 0 20px;
+}
+.page-wrap .c-h2_1 {
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0;
+}
+.page-wrap .c-h3 {
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0 0 20px;
+}
+.page-wrap .c-h3.bold {
+    font-weight: 700;
+}
+.page-wrap .c-h3.gray {
+    color: #8b8b8b;
+}
+.page-wrap .c-link-in {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    border-bottom: 1px dashed #8b8b8b;
+}
+.page-wrap .c-link-in-txt1 {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #cb11ab;
+}
+.page-wrap .c-link-in-txt1:hover {
+    border-bottom: 1px dashed;
+    color: #cb11ab;
+}
+.page-wrap .c-link-out-txt1 {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #cb11ab;
+}
+.page-wrap .c-link-out-txt1:hover {
+    border-bottom: 1px solid;
+    color: #cb11ab;
+}
+.page-wrap .c-link-out2 {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: system, -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe WP", Roboto, Ubuntu, Oxygen, Cantarell, "Fira Sans", "Helvetica Neue", Helvetica, "Lucida Grande", "Droid Sans", Tahoma, "Microsoft Sans Serif", sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    border-bottom: 1px solid #000;
+}
+.page-wrap .c-link-out2:hover {
+    border-bottom: 1px solid;
+}
+.page-wrap .c-link-out2:hover {
+    border-color: transparent;
+}

@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="ru" translate="no">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=7; IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!--[if ie]><![endif]--> 
+      <title>
+         Minigo.kz – Интернет-магазин аксессуаров и косметики
+      </title>
+      <meta name="description" content="Аксессуары и сумки, косметика и электроника. Информация о доставке и оплате.">
+      <meta name="keywords" content="">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link href="./css/basket_v3.min.css" rel="stylesheet" type="text/css">
+      <link href="./css/main-page_v1.min.css" rel="stylesheet" type="text/css">
+      <link rel="icon" href="./img/favicon.ico" type="image/vnd.microsoft.icon">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+      <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+      <style id="mz-css" type="text/css"></style>
+      <link type="text/css" href="./css/fonts/sf_ui_display/stylesheet.css">
+      <link rel="stylesheet" type="text/css" href="./css/lazy-load-slick.css">
+      <link rel="stylesheet" type="text/css" href="./plugins/tooltipster/css/tooltipster.bundle.css">
+      <link rel="stylesheet" type="text/css" href="./plugins/fancybox/jquery.fancybox.css">
+      <link rel="stylesheet" href="./plugins/tinyscrollbar/tinyscrollbar.css" type="text/css" media="screen"/>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>    
+      <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script src="https://api-maps.yandex.ru/2.1/?apikey=63c4aeb5-d61c-49fd-bd94-8469ad1771e2&lang=ru_RU" type="text/javascript"></script>
+      <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script type="text/javascript" src="./plugins/tinyscrollbar/jquery.tinyscrollbar.js"></script>
+      <script>
+         /** init **/
+         var map; // определяем необходимые переменные
+         var collection;
+         var x=58.518;
+         var y=31.258;
+         var coord;
+         var items = [
+                  {
+                      id: 1,
+                      center: [51.09434489,71.440139288],
+                      address: "г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), проспект Улы Дала, д. 25",
+                      info: "Ежедневно 10:00-17:00",
+                  },
+                  {
+                      id: 2,
+                      center: [51.171579794,71.38804338],
+                      address: "г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), улица 187, д. 16/3",
+                      info: "Ежедневно 10:00-17:00"
+                  },
+                  {
+                      id: 3,
+                      center: [51.190094,71.410103],
+                      address: "г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), улица Илияса Есенберлина, д. 18",
+                      info: "Ежедневно 10:00-17:00",
+                  },
+                  {
+                      id: 4,
+                      center: [51.1831779,71.4094997],
+                      address: "г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), проспект Женис, д. 52",
+                      info: "Ежедневно 10:00-17:00"
+                  },
+                  {
+                      id: 5,
+                      center: [51.148371,71.477636],
+                      address: "г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), улица Куйши Дина, д. 23",
+                      info: "Ежедневно 10:00-17:00"
+                  },
+                  {
+                      id: 6,
+                      center: [51.168382034,71.416114559],
+                      address: "г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), улица Желтоксан, д. 12",
+                      info: "Ежедневно 10:00-17:00"
+                  },
+                  {
+                      id: 7,
+                      center: [51.114322,71.421829],
+                      address: "г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), улица Акмешит, д. 9/1",
+                      info: "Ежедневно 10:00-17:00"
+                  }
+              ];
+         function mapInit(){
+            if(!map){
+            map = new ymaps.Map("addressMap", {
+           center: [51.169392, 71.449074],
+           zoom: 10
+           },
+           {
+           searchControlProvider: 'yandex#search'
+           });
+            }
+         }
+         
+         function init() { // эта функция включает генерацию карты, нужно запустить ПОСЛЕ того, как загрузится апи карт
+             mapInit();
+         }
+         function createMenu (item, collection, menu) {
+            $className = '';
+            if(item['address'] == $.trim($('.address').first().text()))
+                $className = "active"
+          var menuItem = $('<li class="'+$className+'"><label><input type="radio" name="Item.AddressId" value="'+item['id']+'" data-coord="'+item['center']+'">'
+           + item['address']
+           + '</label>   <span class="links">   </span></li>');
+          // Создаем метку.
+          var placemark = new ymaps.Placemark(item['center'], { 
+           balloonContent: '<div class="form-baloon"><p class="map-sect">Адрес: <span>'
+           + item['address']
+           +'</span></p><p class="map-sect">Режим работы: <span>'
+           + item['info']
+           +'</span></p><div class="button-panel"><button type="submit" class="j-btn-select-poo added_point-pickup">Выбрать</button><input type="hidden" value="'+item['id']+'" name="Item.AddressId"></div><div class="j-b-imgview"><a href="//images.wbstatic.net/PickupOffice/Img17378_Photo0.jpg" data-fancybox="'
+             +item['id']+'"><img  src="//images.wbstatic.net/PickupOffice/Img17378_previewPhoto0.jpg"></a><a href="//images.wbstatic.net/PickupOffice/Img17378_Photo1.jpg" data-fancybox="'
+             +item['id']+'"><img  src="//images.wbstatic.net/PickupOffice/Img17378_previewPhoto1.jpg"></a><a href="//images.wbstatic.net/PickupOffice/Img17378_Photo2.jpg" data-fancybox="'
+             +item['id']+'"><img  src="//images.wbstatic.net/PickupOffice/Img17378_previewPhoto2.jpg"></a></div></div>'
+           },
+           {iconColor: '#ed2690'});
+         
+          // Добавляем метку в коллекцию.
+          collection.add(placemark);
+          // Добавляем пункт в подменю.
+          menuItem
+          .appendTo(menu)
+              // При клике по пункту подменю открываем/закрываем баллун у метки.
+          .bind('click', function () {
+              menu.find('li').removeClass('active');
+              $(this).addClass('active');
+              $(this).find('input').val(item['id']);
+              if (!placemark.balloon.isOpen()) {
+                  placemark.balloon.open();
+              } else {
+                  placemark.balloon.close();
+              }
+              return false;
+          });
+          placemark.events.add('click', function () {
+             menu.find('li').removeClass('active');
+             menuItem.addClass('active');
+             menuItem.find('input').val(item['id']);
+             //$scrollbar.update(menu.offset().top);
+          });
+         }
+         ymaps.ready(init);
+      </script>
+      <style type="text/css">
+         body.offcanvas-active{
+         overflow:hidden;
+         }
+         .navbar{
+         padding: .5rem 0rem;
+         }
+         .banner-item img{
+         border-radius: 16px;
+         }
+         .offcanvas-header{ display:none; }
+         .screen-overlay {
+         width:0%;
+         height: 100%;
+         z-index: 30;
+         position: fixed;
+         top: 0;
+         left: 0;
+         opacity:0;
+         visibility:hidden;
+         background-color: rgba(34, 34, 34, 0.6);
+         transition:opacity .2s linear, visibility .1s, width 1s ease-in;
+         }
+         .screen-overlay.show {
+         transition:opacity .5s ease, width 0s;
+         opacity:1;
+         width:100%;
+         visibility:visible;
+         }
+         @media all and (max-width:992px) { 
+         .offcanvas-header{ display:block; }
+         .mobile-offcanvas{
+         visibility: hidden;
+         transform:translateX(-100%);
+         border-radius:0; 
+         display:block;
+         position: fixed;
+         top: 0; left:0;
+         height: 100%;
+         z-index: 1200;
+         width:80%;
+         overflow-y: scroll;
+         overflow-x: hidden;
+         transition: visibility .2s ease-in-out, transform .2s ease-in-out;
+         padding: .5rem 1rem;
+         background-color: #fff;
+         }
+         .mobile-offcanvas.show{
+         visibility: visible;
+         transform: translateX(0);
+         }
+         .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link,
+         .navbar-dark .navbar-nav .nav-link{
+         color: #000;
+         }
+         .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{
+         color: var(--primary-color);
+         }
+         #toggle_navbar_main{
+         background-image: url("./img/menu-icon.png");
+         background-color: transparent;
+         border: none;
+         width: 40px;
+         height: 40px;
+         background-size: contain;
+         }
+         #toggle_navbar_main:focus{
+         border: 2px solid #fff !important;
+         outline:none;
+         border-radius: 5px;
+         }
+         .btn-close{
+         background-image: url("./img/close.png");
+         background-color: transparent;
+         border: none;
+         width: 30px;
+         height: 30px;
+         background-size: contain;
+         background-repeat:no-repeat;
+         background-position: right;
+         }
+         .header-v1 .header-content{
+         margin: 30px 0 10px !important;
+         }
+         }
+         @media all and (min-width: 992px){
+         .navbar-expand-lg .navbar-nav{
+         justify-content: space-between;
+         width: 100%;
+         }
+         /*
+         .navbar-expand-lg.navbar{
+         padding: 30px 0rem 0 0;
+         }*/
+         .navbar-expand-lg .navbar-nav .nav-link {
+         padding-right: 0rem;
+         padding-left: 0rem; 
+         font-weight: bold;
+         }
+         .navbar-dark .navbar-nav .nav-link {
+         color: #fff;
+         }
+         }
+         .tooltipster-theme{
+         display:none;
+         }
+      </style>
+   </head>
+   <body >
+      <div class="header-v1  j-header  header-with-burger">
+         <div class="header-bg j-parallax-back-layer">
+            <div class="header-wrapper lang-ru">
+               <ul class="header-top">
+                  <li class="faq item j-header-tooltip-control">
+                     <a class="faq-btn" href="#">Алматы</a>
+                     <div class="faq-list j-header-tooltip-content" tabindex="-1">
+                        <ul>
+                           <li><a href="#" target="_blank">Нур-Султан</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="item item-delivery"><a href="#">Условия доставки</a></li>
+               </ul>
+               <div class="header-content">
+                  <a class="header-logo" href="#">
+                  <img src="./img/minigo_logo.png" alt="Minigo">
+                  </a>
+                  <div class="wildSrch enable-img">
+                     <input id="tbSrch" type="text" class="sq c-text-md-v1" maxlength="300" data-catalog-ufu-url="" data-nm-id="" autocomplete="off" placeholder="Поиск">
+                     <span id="btnSrchClear" class="resSrch c-cross-14"></span>
+                     <span id="btnSrch" class="find c-loupe-18"></span>
+                     <div class="icon-photo j-search-img-container">
+                        <div class="inner-photo j-search-img-btn">
+                           <span class="c-photo-18-v1"></span>
+                           <div class="pseudo-tooltip">
+                              Поиск по фото
+                           </div>
+                        </div>
+                        <form class="i-tooltip-img-upload j-search-img-upload-form" id="imgSearch" action="#" method="post" enctype="multipart/form-data">
+                           <div class="inner-fileUploader c-btn-main-v1 j-fileUploader-btn">
+                              Выберите файл
+                              <label class="fileUploader-label">
+                              <input id="fileUploader" type="file" accept="image/*" name="photo">
+                              </label>
+                           </div>
+                           <div class="inner-text c-text-sm-v1">
+                              <div class="inner-content j-message">
+                                 <p><span>Максимальный размер:</span> 8 МБ.</p>
+                                 <p><span>Поддерживаемые форматы:</span> JPG, JPEG, PNG, BMP,&nbsp;GIF.</p>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                     <div id="AutocompleteContainter_9a107" style="position: absolute; z-index: 9999; top: 111.5px; left: 358px;">
+                        <div class="autocomplete-w1 i-autocomplete-w1">
+                           <div class="autocomplete i-autocomplete" id="Autocomplete_9a107" style="display: none; width: auto; max-height: 650px;"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="header-user-menu j-b-header-menu">
+                     <div id="basketContent" class="header-basket">
+                        <script type="jsv#1_"></script>
+                        <div id="head-pick-point-address" class="head-address user-menu-item j-b-header-menu-item tooltipstered">
+                           <a href="#" class="user-menu-icon">Адреса</a>
+                        </div>
+                        <script type="jsv#2_"></script>
+                        <div class="user-menu-item"><a href="#" class="offline open user-menu-login j-main-login">Войти<span class="user-menu-icon"></span></a></div>
+                        <script type="jsv/2_"></script>
+                        <div class="user-menu-item cart-informer" style="position: relative;">
+                           <a href="#" class="my-basket">
+                              Корзина
+                              <span class="user-menu-icon">
+                                 <span class="quantity">2</span>
+                                 <script type="jsv#1^"></script><script type="jsv/1^"></script>
+                              </span>
+                           </a>
+                           <div class="cart-content-wrapper"></div>
+                        </div>
+                        <script type="jsv/1_"></script>
+                     </div>
+                  </div>
+               </div>
+               <!-- ========================= SECTION CONTENT ========================= -->
+               <div class="main-menu">
+                  <button id="toggle_navbar_main" data-trigger="#navbar_main" class="d-lg-none" type="button"> </button>
+                  <nav id="navbar_main" class="mobile-offcanvas navbar navbar-expand-lg navbar-dark">
+                     <div class="offcanvas-header">
+                        <button class="btn btn-close float-right"></button>
+                        <h5 class="py-2 text-white">Main navbar</h5>
+                     </div>
+                     <ul class="navbar-nav">
+                        <li class="nav-item active"> <a class="nav-link" href="#"> Новинки </a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#"> SALE % </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Аксессуары и сумки </a></li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Косметика  </a>
+                           <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+                              <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+                           </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Электроника </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Life Style </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Все для макияжа </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Парфюмерия </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Уход за кожей & Очищение </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Канцелярия & Подарки </a></li>
+                     </ul>
+                  </nav>
+               </div>
+               <!-- container //  -->
+            </div>
+         </div>
+      </div>
+      <div id="body-layout" class="main-content j-parallax-main-layer ">
+         <div class="left-bg">
+            <div class="lk-menu-top i-lk-menu-top">
+               <div class="j-lk-menu-top">
+                  <div class="level-main">
+                     <div class="lk-menu-top-wrap">
+                        <ul class="lk-menu-top-content d-flex justify-content-between">
+                           <li class="lk-menu-item lk-main-page j-menu-title ">
+                              <a class="lk-menu-item-title" href="https://lk.wildberries.kz/">Главная</a>
+                           </li>
+                           <li class="lk-menu-item item-goods active" data-attr="1">
+                              <a class="lk-menu-item-title" href="https://lk.wildberries.kz/basket">Товары</a>
+                           </li>
+                           <li class="lk-menu-item item-orders" data-attr="2">
+                              <a class="lk-menu-item-title" href="https://lk.wildberries.kz/myorders/delivery">Покупки</a>
+                           </li>
+                           <li class="lk-menu-item item-feedback" data-attr="3">
+                              <a class="lk-menu-item-title" href="https://lk.wildberries.kz/communications">Обратная связь</a>
+                           </li>
+                           <li class="lk-menu-item item-social" data-attr="4">
+                              <a class="lk-menu-item-title" href="https://lk.wildberries.kz/discussion/feedback">Социальные</a>
+                           </li>
+                           <li class="lk-menu-item item-finance" data-attr="6">
+                              <a class="lk-menu-item-title" href="https://lk.wildberries.kz/mywallet/purchases">Финансы</a>
+                           </li>
+                           <li class="lk-menu-item item-profile" data-attr="5">
+                              <a class="lk-menu-item-title" href="https://lk.wildberries.kz/details">Профиль</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="level-sub lk-menu-top-wrap">
+                     <ul class="lk-submenu active" data-attr="1">
+                        <li data-id="1" class="separate active"><a class="root" href="https://lk.wildberries.kz/basket">Корзина</a></li>
+                        <li data-id="3"><a href="https://lk.wildberries.kz/poned" class="root">Отложенные товары</a></li>
+                        <li data-id="11"><a href="https://lk.wildberries.kz/waitinglist" class="root">Лист Ожидания</a></li>
+                        <li data-id="19"><a class="root" href="https://lk.wildberries.kz/favoritebrands">Любимые бренды</a></li>
+                     </ul>
+                     <ul class="lk-submenu" data-attr="2">
+                        <li data-id="6"><a class="root" href="https://lk.wildberries.kz/myorders/delivery" data-alternate-href="https://lk.wildberries.kz/myorders">Покупки</a></li>
+                        <li data-id="8"><a class="root" href="https://lk.wildberries.kz/myrefunds">Возвраты</a></li>
+                        <li data-id="10"><a class="root" href="https://lk.wildberries.kz/refund">Оформление возврата</a></li>
+                        <li data-id="28"><a class="root" href="https://lk.wildberries.kz/receipts/get?count=10">Электронные чеки</a></li>
+                     </ul>
+                     <ul class="lk-submenu" data-attr="3">
+                        <li data-id="16"><a class="root" href="https://lk.wildberries.kz/communications">Обращения</a></li>
+                        <li data-id="15"><a class="root" href="https://lk.wildberries.kz/discussions/questions">Вопросы к товару</a></li>
+                        <li data-id="26"><a class="root" href="https://lk.wildberries.kz/claims">Проверка товара</a></li>
+                     </ul>
+                     <ul class="lk-submenu" data-attr="4">
+                        <li data-id="15"><a class="root" href="https://lk.wildberries.kz/discussion/feedback">Отзывы</a></li>
+                        <li data-id="20"><a class="root" href="https://lk.wildberries.kz/mylooks">Образы</a></li>
+                     </ul>
+                     <ul class="lk-submenu" data-attr="5">
+                        <li data-id="13"><a class="root" href="https://lk.wildberries.kz/details">Личные данные</a></li>
+                        <li data-id="27"><a class="root" href="https://lk.wildberries.kz/mysafety">Безопасность</a></li>
+                        <li data-id="12"><a class="root" href="https://lk.wildberries.kz/mydiscount">Скидка<span class="personal-discount"><span class="j-s-personal-discount">20</span>%</span></a></li>
+                        <li data-id="14" class="social-events"><a class="root" href="https://lk.wildberries.kz/newsfeed/events">Уведомления<span class="count-teaser">5</span></a></li>
+                        <li data-id=""><a class="root" href="https://lk.wildberries.kz/mysubscribes">Подписки</a></li>
+                        <li data-id="23" class="teaser"><a class="root" href="https://lk.wildberries.kz/newsfeed">Новости</a></li>
+                     </ul>
+                     <ul class="lk-submenu" data-attr="6">
+                        <li data-id="32" class="separate"><a class="root" href="https://lk.wildberries.kz/mywallet/purchases">История покупок</a></li>
+                        <li data-id="31" class="separate"><a class="root" href="https://lk.wildberries.kz/mywallet/history">История операций</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="trunkOld">
+               <div class="i-same-part-kt i-small-kt" id="popup">
+                  <div class="titlebar">
+                     <a href="https://lk.wildberries.kz/#" class="close"><i class="i-close j-close"></i></a>
+                  </div>
+                  <div id="cardContent"></div>
+               </div>
+               <div class="lk j-b-lk-basket cart-page new-cart kz">
+                  <div class="lk-content">
+                     <div class="order-details">
+                        <form action="https://lk.wildberries.kz/basket/saveorderbyregistereduser" class="j-prevent-double-click basket-form" id="basketForm" method="post" novalidate="novalidate">
+                           <div class="lk-basket">
+                              <div class="lk-basket-left">
+                                 <div id="basket-list" class="j-b-basket-list" data-link="{include tmpl=&#39;basketListTmpl&#39;}">
+                                    <script type="jsv#2_"></script>
+                                    <script type="jsv#4^"></script><script type="jsv#3_"></script>
+                                    <div class="lk-basket-title">
+                                       <h2 class="title c-h1">Заказ</h2>
+                                       <script type="jsv#1^"></script><script type="jsv#4_"></script>
+                                       <div class="btn-choose" data-link="{on ~toggleIncludeMode}" data-jsv="#57^/57^">
+                                          Выбрать товары для заказа
+                                       </div>
+                                       <script type="jsv/4_"></script><script type="jsv/1^"></script>
+                                    </div>
+                                    <div class="b-choose d-none">
+                                       <div class="b-choose-goods">
+                                          <label class="c-checkbox-withText"><input type="checkbox" data-link="{:allIncluded():}" class="item-checkbox"><span class="item-checkbox-decor"></span><span class="item-checkbox-text">Выбрать все</span></label>
+                                          <div class="count-goods">
+                                             <script type="jsv#1304^"></script>Выбрано<script type="jsv/1304^"></script> <script type="jsv#1305^"></script>0<script type="jsv/1305^"></script> <script type="jsv#1306^"></script>товаров<script type="jsv/1306^"></script>
+                                          </div>
+                                       </div>
+                                       <div class="deselect" data-link="{on ~toggleIncludeMode}" data-jsv="#1308^/1308^"><span class="deselect-cross"></span><span class="text">Отменить выбор товара</span></div>
+                                    </div>
+                                    <div class="basket-list">
+                                       <script type="jsv#56^"></script><script type="jsv#5_"></script><script type="jsv#6_"></script>
+                                       <div class="list j-b-list-title" id="listAccordion">
+                                          <div class="list-title" id="listHeading" data-toggle="collapse" data-target="#collapseList" aria-expanded="true" aria-controls="collapseList">
+                                             <script type="jsv#8^"></script><script type="jsv#7_"></script>
+                                             <div class="text">
+                                                <script type="jsv#5^"></script><script type="jsv#8_"></script>
+                                                <script type="jsv#9_"></script>
+                                                <span class="text-status">Поступление 11-13 июля </span>
+                                                <script type="jsv/9_"></script>
+                                                <script type="jsv/8_"></script><script type="jsv/5^"></script>
+                                                <span class="text-more">
+                                                   <script type="jsv#6^"></script>2<script type="jsv/6^"></script> <script type="jsv#7^"></script>товара<script type="jsv/7^"></script> на сумму <span data-link="{formatMoneyAnim sum}" data-jsv="#61^/61^">31 010&nbsp;тг.</span>
+                                                </span>
+                                             </div>
+                                             <script type="jsv/7_"></script><script type="jsv/8^"></script>
+                                             <div class="icon"></div>
+                                          </div>
+                                          <div class="list-content j-b-list-content collapse show" id="collapseList" aria-labelledby="listHeading" data-parent="#listAccordion">
+                                             <script type="jsv#9^"></script><script type="jsv/9^"></script>
+                                             <div class="j-b-basket-list-part list-items">
+                                                <script type="jsv#55^"></script><script type="jsv#10_"></script>
+                                                <script type="jsv#54^"></script><script type="jsv#11_"></script><script type="jsv#12_"></script>
+                                                <div class="list-item j-b-basket-item" data-link="class{merge: (onStock == 1 &amp;&amp; (partQuantity || quantity)&gt;maxQuantity) toggle=&#39;j-limit-exceeded&#39;}class{merge: removed toggle=&#39;removed&#39;}">
+                                                   <label class="c-checkbox-base d-none"><input type="checkbox" data-link="{: !~root.noneIncludedInOrder &amp;&amp; includeInOrder}{on ~toggleIncludeInOrder}" class="item-checkbox" data-jsv="#1316^/1316^"><span class="item-checkbox-decor"></span></label>
+                                                   <div class="list-item-wrap">
+                                                      <div class="good">
+                                                         <a href="https://www.wildberries.kz/catalog/8424489/detail.aspx?size=28561802" class="good-img j-product-popup" title="Аппарат для ультразвуковой чистки лица">
+                                                            <div class="overlay"></div>
+                                                            <img src="./img/korzina_files/8424489.jpg" alt="Аппарат для ультразвуковой чистки лица">
+                                                         </a>
+                                                         <div class="good-info">
+                                                            <a href="https://www.wildberries.kz/catalog/8424489/detail.aspx?size=28561802" class="good-title j-product-popup"><span class="good-name">Аппарат для ультразвуковой чистки лица, </span><span class="good-brand">SS&amp;Y Group</span></a>
+                                                            <script type="jsv#11^"></script><script type="jsv/11^"></script>
+                                                            <script type="jsv#15^"></script><script type="jsv#13_"></script>
+                                                            <script type="jsv#12^"></script><script type="jsv/12^"></script>
+                                                            <script type="jsv#14_"></script>
+                                                            <div class="color">
+                                                               <script type="jsv#15_"></script>
+                                                               <span class="color-item">Цвет: белый</span>
+                                                               <script type="jsv/15_"></script>
+                                                            </div>
+                                                            <script type="jsv/14_"></script>
+                                                            <script type="jsv#13^"></script><script type="jsv/13^"></script>
+                                                            <script type="jsv#14^"></script><script type="jsv/14^"></script>
+                                                            <script type="jsv/13_"></script><script type="jsv/15^"></script>
+                                                            <script type="jsv#16^"></script><script type="jsv/16^"></script>
+                                                         </div>
+                                                      </div>
+                                                      <div class="count">
+                                                         <script type="jsv#19^"></script><script type="jsv#16_"></script>
+                                                         <div class="input-number">
+                                                            <button type="button" class="minus disabled" data-link="class{merge: quantity &lt;= minQuantity toggle=&#39;disabled&#39;}"></button>
+                                                            <input type="text" data-link="quantity" value="1" autocomplete="off" maxlength="2" class="in_tb numeric ignore">
+                                                            <button type="button" class="plus" data-link="class{merge: quantity == maxQuantity toggle=&#39;disabled&#39;}"></button>
+                                                         </div>
+                                                         <div class="left-count">
+                                                            <script type="jsv#18^"></script><script type="jsv#17_"></script>
+                                                            <span data-link="class{merge: !showLimit toggle=&#39;hide&#39;}" class="hide">
+                                                               Доступно: <script type="jsv#17^"></script><script type="jsv#18_"></script>много<script type="jsv/18_"></script><script type="jsv/17^"></script>
+                                                            </span>
+                                                            <script type="jsv/17_"></script><script type="jsv/18^"></script>
+                                                         </div>
+                                                         <script type="jsv/16_"></script><script type="jsv/19^"></script>
+                                                      </div>
+                                                      <div class="price">
+                                                         <script type="jsv#34^"></script><script type="jsv#19_"></script>
+                                                         <div class="price-new final" data-link="{formatMoneyAnim priceSumWithCouponAndDiscount}" data-jsv="#68^/68^">15 020&nbsp;тг.</div>
+                                                         <script type="jsv#32^"></script><script type="jsv#20_"></script>
+                                                         <div class="price-old final j-need-tooltip" data-pos="bottom-right" data-theme="i-discount-tooltip" data-content="j-b-tooltip-discount-content" data-link="{formatMoneyAnim priceSum}" data-jsv="#69^/69^">25 820&nbsp;тг.</div>
+                                                         <div class="j-b-tooltip-discount-content hide">
+                                                            <div class="list">
+                                                               <script type="jsv#22^"></script><script type="jsv#21_"></script>
+                                                               <div class="list-item">
+                                                                  <span class="list-item-title">
+                                                                     Скидка <script type="jsv#20^"></script>40<script type="jsv/20^"></script>%
+                                                                  </span>
+                                                                  <span class="list-item-discount">
+                                                                     -<script type="jsv#21^"></script>10 330&nbsp;тг.<script type="jsv/21^"></script>
+                                                                  </span>
+                                                               </div>
+                                                               <script type="jsv/21_"></script><script type="jsv/22^"></script>
+                                                               <script type="jsv#29^"></script><script type="jsv#22_"></script>
+                                                               <div class="list-item">
+                                                                  <span class="list-item-title">
+                                                                     <script type="jsv#25^"></script><script type="jsv#23_"></script>
+                                                                     <script type="jsv#24^"></script><script type="jsv#24_"></script>
+                                                                     <span class="text-base-magenta">
+                                                                        <script type="jsv#23^"></script>Промокод<script type="jsv/23^"></script>
+                                                                     </span>
+                                                                     <script type="jsv/24_"></script><script type="jsv/24^"></script>
+                                                                     <script type="jsv/23_"></script><script type="jsv/25^"></script>
+                                                                     <script type="jsv#27^"></script><script type="jsv#25_"></script><script type="jsv#26^"></script>3<script type="jsv/26^"></script>%<script type="jsv/25_"></script><script type="jsv/27^"></script>
+                                                                  </span>
+                                                                  <span class="list-item-discount">
+                                                                     -<script type="jsv#28^"></script>470&nbsp;тг.<script type="jsv/28^"></script>
+                                                                  </span>
+                                                               </div>
+                                                               <script type="jsv/22_"></script><script type="jsv/29^"></script>
+                                                               <script type="jsv#30^"></script><script type="jsv/30^"></script>
+                                                               <script type="jsv#31^"></script><script type="jsv/31^"></script>
+                                                            </div>
+                                                         </div>
+                                                         <script type="jsv/20_"></script><script type="jsv/32^"></script>
+                                                         <div class="list-item-btns">
+                                                            <script type="jsv#33^"></script><script type="jsv#26_"></script>
+                                                            <div class="btn-postpone j-basket-item-postpone"><span>Отложить</span></div>
+                                                            <script type="jsv/26_"></script><script type="jsv/33^"></script>
+                                                            <div class="btn-del j-basket-item-del"><span>Удалить</span></div>
+                                                         </div>
+                                                         <script type="jsv/19_"></script><script type="jsv/34^"></script>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <script type="jsv/12_"></script><script type="jsv#27_"></script>
+                                                <div class="list-item j-b-basket-item" data-link="class{merge: (onStock == 1 &amp;&amp; (partQuantity || quantity)&gt;maxQuantity) toggle=&#39;j-limit-exceeded&#39;}class{merge: removed toggle=&#39;removed&#39;}">
+                                                   <label class="c-checkbox-base d-none"><input type="checkbox" data-link="{: !~root.noneIncludedInOrder &amp;&amp; includeInOrder}{on ~toggleIncludeInOrder}" class="item-checkbox" data-jsv="#1316^/1316^"><span class="item-checkbox-decor"></span></label>
+                                                   <div class="list-item-wrap">
+                                                      <div class="good">
+                                                         <a href="https://www.wildberries.kz/catalog/9922752/detail.aspx?size=32540642" class="good-img j-product-popup" title="Джинсы - MOM">
+                                                            <div class="overlay"></div>
+                                                            <img src="./img/korzina_files/9922752.jpg" alt="Джинсы - MOM">
+                                                         </a>
+                                                         <div class="good-info">
+                                                            <a href="https://www.wildberries.kz/catalog/9922752/detail.aspx?size=32540642" class="good-title j-product-popup"><span class="good-name">Джинсы - MOM, </span><span class="good-brand">Mango</span></a>
+                                                            <script type="jsv#36^"></script><script type="jsv/36^"></script>
+                                                            <script type="jsv#40^"></script><script type="jsv#28_"></script>
+                                                            <script type="jsv#37^"></script><script type="jsv/37^"></script>
+                                                            <script type="jsv#29_"></script>
+                                                            <div class="color">
+                                                               <script type="jsv#30_"></script>
+                                                               <span class="color-item">Цвет: темно-синий</span>
+                                                               <script type="jsv/30_"></script>
+                                                            </div>
+                                                            <script type="jsv/29_"></script>
+                                                            <script type="jsv#31_"></script>
+                                                            <div class="size">
+                                                               <span class="size-item">Размер: 38</span>
+                                                            </div>
+                                                            <script type="jsv/31_"></script>
+                                                            <script type="jsv#38^"></script><script type="jsv/38^"></script>
+                                                            <script type="jsv#39^"></script><script type="jsv/39^"></script>
+                                                            <script type="jsv/28_"></script><script type="jsv/40^"></script>
+                                                            <script type="jsv#41^"></script><script type="jsv/41^"></script>
+                                                         </div>
+                                                      </div>
+                                                      <div class="count">
+                                                         <script type="jsv#44^"></script><script type="jsv#32_"></script>
+                                                         <div class="input-number">
+                                                            <button type="button" class="minus disabled" data-link="class{merge: quantity &lt;= minQuantity toggle=&#39;disabled&#39;}"></button>
+                                                            <input type="text" data-link="quantity" value="1" autocomplete="off" maxlength="2" class="in_tb numeric ignore">
+                                                            <button type="button" class="plus" data-link="class{merge: quantity == maxQuantity toggle=&#39;disabled&#39;}"></button>
+                                                         </div>
+                                                         <div class="left-count">
+                                                            <script type="jsv#43^"></script><script type="jsv#33_"></script>
+                                                            <span data-link="class{merge: !showLimit toggle=&#39;hide&#39;}" class="hide">
+                                                               Доступно: <script type="jsv#42^"></script><script type="jsv#34_"></script>много<script type="jsv/34_"></script><script type="jsv/42^"></script>
+                                                            </span>
+                                                            <script type="jsv/33_"></script><script type="jsv/43^"></script>
+                                                         </div>
+                                                         <script type="jsv/32_"></script><script type="jsv/44^"></script>
+                                                      </div>
+                                                      <div class="price">
+                                                         <script type="jsv#53^"></script><script type="jsv#35_"></script>
+                                                         <div class="price-new final" data-link="{formatMoneyAnim priceSumWithCouponAndDiscount}" data-jsv="#76^/76^">15 990&nbsp;тг.</div>
+                                                         <script type="jsv#51^"></script><script type="jsv#36_"></script>
+                                                         <div class="price-old final j-need-tooltip" data-pos="bottom-right" data-theme="i-discount-tooltip" data-content="j-b-tooltip-discount-content" data-link="{formatMoneyAnim priceSum}" data-jsv="#77^/77^">19 990&nbsp;тг.</div>
+                                                         <div class="j-b-tooltip-discount-content hide">
+                                                            <div class="list">
+                                                               <script type="jsv#45^"></script><script type="jsv/45^"></script>
+                                                               <script type="jsv#46^"></script><script type="jsv/46^"></script>
+                                                               <script type="jsv#49^"></script><script type="jsv#37_"></script>
+                                                               <div class="list-item">
+                                                                  <span class="list-item-title">
+                                                                     Скидка покупателя <script type="jsv#47^"></script>20<script type="jsv/47^"></script>%
+                                                                  </span>
+                                                                  <span class="list-item-discount">
+                                                                     -<script type="jsv#48^"></script>4 000&nbsp;тг.<script type="jsv/48^"></script>
+                                                                  </span>
+                                                               </div>
+                                                               <script type="jsv/37_"></script><script type="jsv/49^"></script>
+                                                               <script type="jsv#50^"></script><script type="jsv/50^"></script>
+                                                            </div>
+                                                         </div>
+                                                         <script type="jsv/36_"></script><script type="jsv/51^"></script>
+                                                         <div class="list-item-btns">
+                                                            <script type="jsv#52^"></script><script type="jsv#38_"></script>
+                                                            <div class="btn-postpone j-basket-item-postpone"><span>Отложить</span></div>
+                                                            <script type="jsv/38_"></script><script type="jsv/52^"></script>
+                                                            <div class="btn-del j-basket-item-del"><span>Удалить</span></div>
+                                                         </div>
+                                                         <script type="jsv/35_"></script><script type="jsv/53^"></script>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <script type="jsv/27_"></script><script type="jsv/11_"></script><script type="jsv/54^"></script>
+                                                <script type="jsv/10_"></script><script type="jsv/55^"></script>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <script type="jsv/6_"></script><script type="jsv/5_"></script><script type="jsv/56^"></script>
+                                    </div>
+                                    <script type="jsv/2_"></script>
+                                 </div>
+                                 <div class="paid-refund hide" data-link="class{merge:!(~root.deliveryPoint &amp;&amp; ~root.deliveryPoint^fittingPrice &gt; 0) toggle=&#39;hide&#39; }">
+                                    <div class="paid-refund-title">
+                                       <span class="important-icon"></span>
+                                       <span class="paid-refund-title-text">Стоимость доставки возвращенного товара — <span class="c-link-in3 j-need-tooltip" data-tooltip-position="bottom-left" data-tooltip-maxwidth="295" data-tooltip-theme="i-tooltip-paid-reject" title="В случае отказа от товара при получении или после передачи товара в доставку, расходы продавца на обратную транспортировку возвращенного товара подлежат компенсации на основании ст. 26.1 Закона о защите прав потребителей"><span data-link="html{formatMoneyV2:(~root.deliveryPoint ? ~root.deliveryPoint^fittingPrice : 0) false true}">0&nbsp;тг.</span> за каждую единицу товара</span></span>
+                                    </div>
+                                 </div>
+                                 <div class="basket-delivery j-b-basket-delivery">
+                                    <h3 class="c-h1">Способ доставки</h3>
+                                    <div class="basket-delivery-methods">
+                                       <div class="tabs" data-link="{include tmpl=&#39;deliveryOptionsTmpl&#39;}">
+                                          <div class="tabs nav" role="tablist" id="tabs">
+                                             <label class="c-radio-withText tab t-self active" id="deliveryWay1-tab" data-toggle="tab" role="tab" aria-controls="deliveryWay1" aria-selected="true" href="#deliveryWay1">
+                                                <input type="radio" class="item-radio" name="delivery" >
+                                                <span class="item-radio-decor"></span>
+                                                <span class="item-radio-text">
+                                                   <script type="jsv#81^"></script>Пункт выдачи<script type="jsv/81^"></script>
+                                                   <span class="date">
+                                                      <script type="jsv#83^"></script><script type="jsv#45_"></script>
+                                                      <script type="jsv#82^"></script>11-13 июля<script type="jsv/82^"></script>
+                                                      <script type="jsv/45_"></script><script type="jsv/83^"></script>
+                                                   </span>
+                                                </span>
+                                             </label>
+                                             <label class="c-radio-withText tab t-courier" id="deliveryWay2-tab" data-toggle="tab" role="tab" aria-controls="deliveryWay2" aria-selected="false" href="#deliveryWay2">
+                                                <input type="radio" class="item-radio" name="delivery" data-link="{:~root.deliveryWay:}{on &#39;change&#39; ~setModified &#39;address&#39;}disabled{:impossibleSelectMsg}" value="courier" data-jsv="#96^/96^"><span class="item-radio-decor"></span>
+                                                <span class="item-radio-text" data-link="title{:impossibleSelectMsg}class{merge: impossibleSelectMsg toggle=&#39;j-need-tooltip&#39;}" data-pos="bottom" data-theme="i-tip-unable-deliver">
+                                                   <script type="jsv#84^"></script>Доставка курьером<script type="jsv/84^"></script>
+                                                   <span class="date">
+                                                      <script type="jsv#85^"></script><script type="jsv/85^"></script>
+                                                   </span>
+                                                </span>
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="contents" data-link="{include tmpl=&#39;deliveryContentTmpl&#39;}">
+                                          <div class="contents tab-content">
+                                             <script type="jsv#49_"></script><script type="jsv#50_"></script>
+                                             <div class="tab-pane c-self active fade show" id="deliveryWay1" role="tabpanel" aria-labelledby="deliveryWay1-tab">
+                                                <div class="wrap-content isSelectedAddress" data-link="class{merge: !~root.deliveryPoint toggle=&#39;no-login&#39;}class{merge: ~root.deliveryPoint toggle=&#39;isSelectedAddress&#39;}">
+                                                   <script type="jsv#51_"></script>
+                                                   <div class="selected-address">
+                                                      <script type="jsv#104^"></script><script type="jsv#52_"></script>
+                                                      <div class="content">
+                                                         <div class="address">
+                                                            г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), улица Илияса Есенберлина, д. 18
+                                                         </div>
+                                                         <div class="office-hours">
+                                                            Часы работы: 
+                                                            <span>
+                                                               <script type="jsv#102^"></script>Ежедневно 10:00-21:00<script type="jsv/102^"></script>
+                                                            </span>
+                                                         </div>
+                                                         <div class="cost">
+                                                            Стоимость доставки: <script type="jsv#103^"></script><script type="jsv#53_"></script>бесплатно<script type="jsv/53_"></script><script type="jsv/103^"></script>
+                                                         </div>
+                                                      </div>
+                                                      <a href="#single-map" class="c-btn-base btn-select-other-pickup" data-link="{on &#39;click&#39; ~editAddress}" data-jsv="#140^/140^">Выбрать другой</a>
+                                                      <div id="single-map" class="i-popup-lk user-address-v1 jqmID7 self" id="userAddress" style="display:none">
+                                                         <div class="address-container" style="display: block;">
+                                                            <div class="titlebar" style="display: block;">
+                                                               <h1 class="title">Добавление пункта выдачи</h1>
+                                                            </div>
+                                                            <div id="userAddressContent">
+                        <form action="#/poo/add" id="userAddressForm" method="post" novalidate="novalidate">
+                        <div class="user-address-edit addPointShipment">
+                        <div class="popup-body">
+                        <div class="popup-header">
+                        <div class="dropdown">
+                        <select autocomplete="off" data-placeholder="Введите свой город" id="cityList" name="cityList" style="display:none">
+                        <option value=""></option>
+                        <option value="2078992">Абай</option>
+                        <option value="2079079">Акколь</option>
+                        <option value="2079540">Аксай</option>
+                        <option value="2079103">Аксу</option>
+                        <option value="2080987">Аксукент</option>
+                        <option value="2109145">Актау</option>
+                        <option value="2080771">Актау</option>
+                        <option value="2078794">Актобе</option>
+                        <option value="2078779">Алматы</option>
+                        <option value="2079374">Алтай</option>
+                        <option value="2079215">Аральск</option>
+                        <option value="2079232">Аркалык</option>
+                        <option value="2130970">Астана</option>
+                        <option value="2078847">Жезказган</option>
+                        <option value="2081325">Кентау</option>
+                        <option value="2078883">Кокшетау</option>
+                        <option value="2105055">Костанай</option>
+                        <option value="2080530">Костанай</option>
+                        <option value="2080027">Кульсары</option>
+                        <option value="2078888">Курчатов</option>
+                        <option value="2078891">Кызылорда</option>
+                        <option value="2081310">Ленгер</option>
+                        <option value="2376466">ленинский</option>
+                        <option value="2080598">Лисаковск</option>
+                        <option value="2079501">Макинск</option>
+                        <option value="2080112">Отеген батыр</option>
+                        <option value="2080885">Павлодар</option>
+                        <option value="2376427">Петропавловск</option>
+                        <option value="2106968">Приозёрск</option>
+                        <option value="2078916">Риддер</option>
+                        <option value="2081091">Семей</option>
+                        <option value="2081098">Степногорск</option>
+                        <option value="2249948">Тайынша</option>
+                        <option value="2250579">Талгар</option>
+                        <option value="2081207">Талдыкорган</option>
+                        <option value="2368766">Талдыкорган</option>
+                        </select>
+                        <div class="chosen-container chosen-container-single " style="width: 282px;" title="" id="cityList_chosen" >
+                        <a class="chosen-single" tabindex="-1">
+                        <span>Астана</span>
+                        <div><b></b></div>
+                        </a>
+                        <div class="chosen-drop">
+                        <div class="chosen-search"><input type="text" autocomplete="off"></div>
+                        <ul class="chosen-results"></ul>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="popup-body-sidebar">
+                        <div class="address-notselected-text">
+                        <p>Введите свой город. Из списка или на карте выберите пункт выдачи, в который будет осуществляться доставка вашего заказа.</p>
+                        </div>
+                        <div class="address-list show">
+                        <div class="pickpoint-count">Всего пунктов: <b class="j-poo-count">19</b></div>
+                        <div class="search-by-address"><input type="text" class="c-input-base-v1 j-tb-search-address tooltipstered" placeholder="Поиск по адресу"></div>
+                        <div class="j-scrollbar i-tinyscrollbar">
+                        <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                        <div class="viewport">
+                        <ul id="pooList" class="overview" style="top: 0px;">
+                        </ul>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="err"><span class="field-validation-valid" data-valmsg-for="Item.AddressId" data-valmsg-replace="true"></span></div>
+                        </div>
+                        <div class="delivery-control">
+                        <div class="delivery-price hide">
+                        <b>Внимание! Доставка в Ваш город платная</b><br>
+                        </div>
+                        <div class="button-panel">
+                        <button id="userPooSubmit" class="btn-darkgray" type="submit" style="opacity: 1;">Выбрать</button>
+                        <button type="button" class="cancel btn-border-slidergray">Отменить</button>
+                        </div>
+                        </div>
+                        </form>
+                        </div>
+                        </div>
+                        <div id="addressMap" class="j-map map"></div>
+                        </div>
+                        </div>
+                        <div class="data-delivery">
+                        <div class="delivery-list" data-link="class{merge: !~root.deliveryPoint toggle=&#39;hide&#39;}">
+                        <script type="jsv#118^"></script><script type="jsv#54_"></script><script type="jsv#55_"></script>
+                        <div class="delivery-item odd" data-link="class{merge: (#index &amp; 1) == 0 toggle=&#39;odd&#39;}">
+                        <script type="jsv#56_"></script>
+                        <script type="jsv#114^"></script><script type="jsv#57_"></script>
+                        <div class="item-title c-link-in-sm j-need-tooltip" data-tooltip-content=".j-b-tip-goods-in-delivery">
+                        Доставка
+                        </div>
+                        <div class="tooltipster-theme">
+                        <div class="j-b-tip-goods-in-delivery">
+                        <div class="title">
+                        Доставка
+                        </div>
+                        <div class="list">
+                        <div class="list-item">
+                        <span class="good">
+                        Аппарат для ультразвуковой чистки лица, SS&amp;Y Group
+                        </span>
+                        <span class="price">
+                        15 020&nbsp;тг.
+                        </span>
+                        </div>
+                        <div class="list-item">
+                        <span class="good">
+                        Джинсы - MOM, Mango
+                        </span>
+                        <span class="price">
+                        15 990&nbsp;тг.
+                        </span>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="approximate-date">
+                        <span class="nowrap">
+                        11-13 июля
+                        <span class="c-tip-question tip j-need-tooltip" data-tooltip-content=".j-b-tip-msg-self">?</span>
+                        <div class="tooltipster-theme">
+                        <div class="j-b-tip-msg-self ">
+                        <p class="bold">После поступления товара Вам придет сообщение в&nbsp;раздел «Уведомления» и&nbsp;по&nbsp;email</p>
+                        </div>
+                        </div>
+                        </span>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="workload">
+                        <script type="jsv#68_"></script>
+                        <div class="workload-title">Загруженность пункта выдачи</div>
+                        <script type="jsv#121^"></script><script type="jsv#69_"></script>
+                        <script type="jsv#120^"></script><script type="jsv#70_"></script>
+                        <div class="days">
+                        <script type="jsv#71_"></script><script type="jsv#72_"></script>
+                        <label class="day" data-link="class{merge: ~selectedDay == #data toggle=&#39;active&#39;}">
+                        <input type="radio" class="hide j-r-workload" name="workload_12119" value="Пн" data-link="{:~selectedDay:}{on &#39;change&#39; ~selectDayOfWeek}" data-jsv="#145^/145^"><span>Пн</span>
+                        </label>
+                        <script type="jsv/72_"></script><script type="jsv#73_"></script>
+                        <label class="day" data-link="class{merge: ~selectedDay == #data toggle=&#39;active&#39;}">
+                        <input type="radio" class="hide j-r-workload" name="workload_12119" value="Вт" data-link="{:~selectedDay:}{on &#39;change&#39; ~selectDayOfWeek}" data-jsv="#148^/148^"><span>Вт</span>
+                        </label>
+                        <script type="jsv/73_"></script><script type="jsv#74_"></script>
+                        <label class="day" data-link="class{merge: ~selectedDay == #data toggle=&#39;active&#39;}">
+                        <input type="radio" class="hide j-r-workload" name="workload_12119" value="Ср" data-link="{:~selectedDay:}{on &#39;change&#39; ~selectDayOfWeek}" data-jsv="#151^/151^"><span>Ср</span>
+                        </label>
+                        <script type="jsv/74_"></script><script type="jsv#75_"></script>
+                        <label class="day" data-link="class{merge: ~selectedDay == #data toggle=&#39;active&#39;}">
+                        <input type="radio" class="hide j-r-workload" name="workload_12119" value="Чт" data-link="{:~selectedDay:}{on &#39;change&#39; ~selectDayOfWeek}" data-jsv="#154^/154^"><span>Чт</span>
+                        </label>
+                        <script type="jsv/75_"></script><script type="jsv#76_"></script>
+                        <label class="day" data-link="class{merge: ~selectedDay == #data toggle=&#39;active&#39;}">
+                        <input type="radio" class="hide j-r-workload" name="workload_12119" value="Пт" data-link="{:~selectedDay:}{on &#39;change&#39; ~selectDayOfWeek}" data-jsv="#157^/157^"><span>Пт</span>
+                        </label>
+                        <script type="jsv/76_"></script><script type="jsv#77_"></script>
+                        <label class="day active" data-link="class{merge: ~selectedDay == #data toggle=&#39;active&#39;}">
+                        <input type="radio" class="hide j-r-workload" name="workload_12119" value="Сб" data-link="{:~selectedDay:}{on &#39;change&#39; ~selectDayOfWeek}" data-jsv="#160^/160^"><span>Сб</span>
+                        </label>
+                        <script type="jsv/77_"></script><script type="jsv#78_"></script>
+                        <label class="day" data-link="class{merge: ~selectedDay == #data toggle=&#39;active&#39;}">
+                        <input type="radio" class="hide j-r-workload" name="workload_12119" value="Вс" data-link="{:~selectedDay:}{on &#39;change&#39; ~selectDayOfWeek}" data-jsv="#163^/163^"><span>Вс</span>
+                        </label>
+                        <script type="jsv/78_"></script><script type="jsv/71_"></script>
+                        </div>
+                        <div class="lines j-b-workload-lines">
+                        <script type="jsv#79_"></script><script type="jsv#80_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/80_"></script><script type="jsv#81_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/81_"></script><script type="jsv#82_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/82_"></script><script type="jsv#83_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/83_"></script><script type="jsv#84_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/84_"></script><script type="jsv#85_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/85_"></script><script type="jsv#86_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/86_"></script><script type="jsv#87_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/87_"></script><script type="jsv#88_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/88_"></script><script type="jsv#89_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/89_"></script><script type="jsv#90_"></script>
+                        <span class="line line_1" style="width: 9.09091%;" data-anim-width="9.090909090909092"></span>
+                        <script type="jsv/90_"></script><script type="jsv/79_"></script>
+                        </div>
+                        <div class="times">
+                        <script type="jsv#91_"></script><script type="jsv#92_"></script>
+                        <span>10:00</span>
+                        <script type="jsv/92_"></script><script type="jsv#93_"></script>
+                        <span>12:00</span>
+                        <script type="jsv/93_"></script><script type="jsv#94_"></script>
+                        <span>14:00</span>
+                        <script type="jsv/94_"></script><script type="jsv#95_"></script>
+                        <span>16:00</span>
+                        <script type="jsv/95_"></script><script type="jsv#96_"></script>
+                        <span>18:00</span>
+                        <script type="jsv/96_"></script><script type="jsv#97_"></script>
+                        <span>20:00</span>
+                        <script type="jsv/97_"></script><script type="jsv/91_"></script>
+                        <span>21:00</span>
+                        </div>
+                        </div>
+                        <div class="history">
+                        <div class="text"><span>Ранее Вы заказывали на данные адреса</span></div>
+                        <div class="list">
+                        <div class="item first last active d-flex justify-content-between" data-link="class{merge: #index == 0 toggle=&#39;first&#39;}class{merge: #index+1 == #get(&#39;array&#39;).data.length toggle=&#39;last&#39;}class{merge: ~selectedAddressId == addressId toggle=&#39;active&#39;}">
+                        <a href="#single-map" class="show-map"  data-value="12119" data-link="{on &#39;click&#39; ~showMap}" data-jsv="#167^/167^"></a>
+                        <label class="c-radio-invisible-withText">
+                        <input type="radio" class="item-radio" value="12119" name="address_self" data-link="{:~selectedAddressId:}{on &#39;change&#39; ~setModified &#39;address&#39;}" data-jsv="#169^/169^">
+                        <span class="data address" data-link="class{merge: closedMsg toggle=&#39;unable&#39;}">г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), улица Илияса Есенберлина, д. 18</span>
+                        <span class="choose deliver-here">
+                        Выбран
+                        </span>
+                        </label>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        <script type="jsv/50_"></script><script type="jsv#105_"></script>
+                        <div class="tab-pane c-courier fade" id="deliveryWay2" role="tabpanel" aria-labelledby="deliveryWay2-tab">
+                        <div class="wrap-content isSelectedAddress" data-link="class{merge: !~root.deliveryPoint toggle=&#39;no-login&#39;}class{merge: ~root.deliveryPoint toggle=&#39;isSelectedAddress&#39;}">
+                        <script type="jsv#106_"></script>
+                        <script type="jsv#130^"></script><script type="jsv/130^"></script>
+                        <div class="selected-address">
+                        <div class="content">
+                        <script type="jsv#132^"></script><script type="jsv#107_"></script>
+                        <div class="address">г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), улица Илияса Есенберлина, д. 18</div>
+                        <div class="cost">
+                        Стоимость доставки: <script type="jsv#131^"></script><script type="jsv#108_"></script>бесплатно<script type="jsv/108_"></script><script type="jsv/131^"></script>
+                        </div>
+                        <script type="jsv/107_"></script><script type="jsv/132^"></script>
+                        </div>
+                        <div class="c-btn-base btn-select-address" data-link="{on &#39;click&#39; ~editAddress}" data-jsv="#174^/174^">
+                        <script type="jsv#133^"></script><script type="jsv#109_"></script>Выбрать другой<script type="jsv/109_"></script><script type="jsv/133^"></script>
+                        </div>
+                        </div>
+                        <div class="data-delivery">
+                        <label class="c-checkbox-withText get-in-one-day" data-link="visible{:~root.shippingsCanBeUnion}" style="display: none;"><input type="checkbox" class="item-checkbox" data-link="{:~root.deliveryInOneDay:}"><span class="item-checkbox-decor"></span><span class="item-checkbox-text">Получить заказ в один день</span></label>
+                        <div class="delivery-list" data-link="class{merge: !~root.deliveryPoint toggle=&#39;hide&#39;}">
+                        <script type="jsv#134^"></script><script type="jsv/134^"></script>
+                        </div>
+                        <script type="jsv#135^"></script><script type="jsv/135^"></script>
+                        <script type="jsv#136^"></script><script type="jsv/136^"></script>
+                        </div>
+                        <script type="jsv/106_"></script>
+                        </div>
+                        </div>
+                        <script type="jsv/105_"></script><script type="jsv/49_"></script>
+                        </div>
+                        <script type="jsv/48_"></script>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="basket-pay j-b-basket-payment" data-link="{include tmpl=&#39;paymentGroupsTmpl&#39;}">
+                        <script type="jsv#111_"></script>
+                        <div class="basket-pay-title">
+                        <h3 class="c-h1">Способ оплаты</h3>
+                        <script type="jsv#179^"></script><script type="jsv/179^"></script>
+                        </div>
+                        <div class="tabs-lg">
+                        <script type="jsv#181^"></script><script type="jsv#112_"></script>
+                        <label class="tabs-item active"  data-pos="bottom-right" data-offset="0;-11" data-theme="i-payment-methods-text" data-link="class{merge:paymentType &amp;&amp; paymentType^isOnlineGroup toggle=&#39;active&#39;}title{:!paymentOnlineGroup^available ? paymentOnlineGroup^errorTip : &#39;&#39;}class{merge:!paymentOnlineGroup^available toggle=&#39;disabled j-need-tooltip&#39;}" title="">
+                        <input type="radio" checked class="item-radio" name="paymentGroup" data-link="{:paymentType &amp;&amp; paymentType^id:}value{: (paymentType &amp;&amp; paymentType^isOnlineGroup &amp;&amp; paymentType^id) || paymentOnlineGroup^id}disabled{:!paymentOnlineGroup^available}checked{:paymentType &amp;&amp; paymentType^isOnlineGroup}{on &#39;change&#39; ~setModified}" value="59" data-jsv="#200^/200^">
+                        <span class="item-radio-decor"></span>
+                        <span class="tabs-title">
+                        Оплата онлайн<script type="jsv#180^"></script><script type="jsv/180^"></script>
+                        </span>
+                        </label>
+                        <script type="jsv/112_"></script><script type="jsv/181^"></script>
+                        <script type="jsv#182^"></script><script type="jsv/182^"></script>
+                        <script type="jsv#183^"></script><script type="jsv/183^"></script>
+                        </div>
+                        <div class="tabs-content" data-link="class{merge:!paymentType || !paymentType^isOnlineGroup toggle=&#39;hide&#39;}">
+                        <script type="jsv#184^"></script><script type="jsv/184^"></script>
+                        <script type="jsv#185^"></script><script type="jsv#113_"></script>
+                        <p class="c-text-base">Для получения заказа необходимо назвать код, который отобразится в разделе «Покупки» после оформления заказа</p>
+                        <script type="jsv/113_"></script><script type="jsv/185^"></script>
+                        <script type="jsv#186^"></script><script type="jsv/186^"></script>
+                        <script type="jsv#187^"></script><script type="jsv/187^"></script>
+                        </div>
+                        <script type="jsv#188^"></script><script type="jsv/188^"></script>
+                        <script type="jsv#189^"></script><script type="jsv/189^"></script>
+                        <div class="pay-content">
+                        <script type="jsv#191^"></script><script type="jsv#114_"></script>
+                        <script type="jsv#190^"></script><script type="jsv#115_"></script>
+                        <p class="c-text-base bold">К оплате принимаются банковские карты:</p>
+                        <ul class="list-img">
+                        <li class="list-img-item c-card-visa"></li>
+                        <li class="list-img-item c-card-master"></li>
+                        </ul>
+                        <script type="jsv/115_"></script><script type="jsv/190^"></script>
+                        <script type="jsv/114_"></script><script type="jsv/191^"></script>
+                        </div>
+                        <script type="jsv#192^"></script><script type="jsv/192^"></script>
+                        <script type="jsv/111_"></script>
+                        </div>
+                        <div class="user-data">
+                        <h3 class="c-h1 title">Ваши данные</h3>
+                        <div class="is-login">
+                        <div class="form-user-data">
+                        <div class="item">
+                        <div class="label">Имя <span class="star">*</span></div>
+                        <div class="wrap-input">
+                        <input autocomplete="off" class="c-input-base" data-val="true" data-val-length="Слишком много символов" data-val-length-max="50" data-val-regex="Некорректное имя" data-val-regex-pattern="^[а-яА-ЯёЁўЎіІ`\s\-]+$" disabled="disabled" id="orderDetails_NewFirstName" maxlength="50" name="orderDetails.NewFirstName" placeholder="Маржан" type="text" value="">                
+                        </div>
+                        <div class="mess-input">
+                        </div>
+                        </div>
+                        <div class="item">
+                        <div class="label">Фамилия <span class="star">*</span></div>
+                        <div class="wrap-input">
+                        <input autocomplete="off" class="c-input-base" data-val="true" data-val-length="Слишком много символов" data-val-length-max="50" data-val-regex="Некорректная фамилия" data-val-regex-pattern="^[а-яА-ЯёЁўЎіІ`\s\-]+$" disabled="disabled" id="orderDetails_NewLastName" maxlength="50" name="orderDetails.NewLastName" placeholder="Ерманова" type="text" value="">                
+                        </div>
+                        <div class="mess-input">
+                        </div>
+                        </div>
+                        <div class="item phone">
+                        <div class="label">Контактный телефон  <span class="star">*</span></div>
+                        <div class="b-send-code">
+                        <div class="wrap-input">
+                        <input type="text" name="_nPhoneFormatted" class="c-input-base required" data-link="{on &#39;blur&#39; ~changePhone &#39;userPhoneMobile&#39;}" autocomplete="off" placeholder="+7 (707) 568-08-06" data-input-mask="+7 (###) ###-##-##" disabled="disabled" data-jsv="#203^/203^">
+                        </div>
+                        </div>
+                        <div class="phone-message"><span class="j-b-phone-contact-countdown"></span></div>
+                        </div>
+                        <div class="item email">
+                        <div class="label">Электронная почта</div>
+                        <div class="wrap-input">
+                        <input autocomplete="off" class="c-input-base" data-val="true" data-val-length="Некорректный email. Максимальная длина 50 символов." data-val-length-max="50" data-val-regex="Неверный формат email адреса" data-val-regex-pattern="^[a-zA-Z0-9_-]+(?:\.[a-zA-Z0-9_-]+)*@(?:([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,7})$" disabled="disabled" id="orderDetails_NewEmail" maxlength="50" name="orderDetails.NewEmail" placeholder="marzhan_dreamz@mail.ru" type="text" value="">                
+                        </div>
+                        <div class="mess-input">
+                        </div>
+                        </div>
+                        </div>
+                        <a href="https://lk.wildberries.kz/details" class="c-link-out link-edit-data">Редактировать данные</a>
+                        </div>
+                        <div class="b-other-recipient">
+                        <label class="c-checkbox-withText checkbox-other-recipient"><input type="checkbox" class="item-checkbox" data-link="otherRecipient" autocomplete="off"><input type="hidden" name="orderDetails.OtherRecipient" data-link="otherRecipient" autocomplete="off" value="false"><span class="item-checkbox-decor"></span><span class="item-checkbox-text">Другой получатель</span></label>
+                        <div class="add-recipient hide" data-link="class{merge: !otherRecipient toggle=&#39;hide&#39;}">
+                        <div class="b-other-recipient-text">Получение оплаченного заказа возможно только после предъявления паспорта или водительских прав. Пожалуйста, укажите реальные данные получателя.</div>
+                        <input type="hidden" value="0" name="orderDetails.Recipient.Id" data-link="disabled{:!otherRecipient}" >
+                        <div class="form-other-recipient">
+                        <div class="item">
+                        <div class="label">Имя <span class="star">*</span></div>
+                        <div class="wrap-input">
+                        <input class="c-input-base" data-link="{:recipient.firstName:}disabled{:!otherRecipient}" data-val="true" data-val-length="Слишком много символов" data-val-length-max="50" data-val-regex="Некорректное имя" data-val-regex-pattern="^[а-яА-ЯёЁўЎіІ`\s\-]+$" data-val-required="Требуется поле Имя." id="orderDetails_Recipient_FirstName" maxlength="50" name="orderDetails.Recipient.FirstName" type="text" value="" >
+                        </div>
+                        <div class="mess-input"><span class="field-validation-valid" data-valmsg-for="orderDetails.Recipient.FirstName" data-valmsg-replace="true"></span></div>
+                        </div>
+                        <div class="item">
+                        <div class="label">Отчество</div>
+                        <div class="wrap-input">
+                        <input class="c-input-base" data-link="{:recipient.middleName:}disabled{:!otherRecipient}" data-val="true" data-val-length="Слишком много символов" data-val-length-max="50" data-val-regex="Некорректное отчество" data-val-regex-pattern="^[а-яА-ЯёЁўЎіІ`\s\-]+$" id="orderDetails_Recipient_MiddleName" maxlength="50" name="orderDetails.Recipient.MiddleName" type="text" value="" >
+                        </div>
+                        <div class="mess-input"><span class="field-validation-valid" data-valmsg-for="orderDetails.Recipient.MiddleName" data-valmsg-replace="true"></span></div>
+                        </div>
+                        <div class="item">
+                        <div class="label">Фамилия <span class="star">*</span></div>
+                        <div class="wrap-input">
+                        <input class="c-input-base" data-link="{:recipient.lastName:}disabled{:!otherRecipient}" data-val="true" data-val-length="Слишком много символов" data-val-length-max="50" data-val-regex="Некорректная фамилия" data-val-regex-pattern="^[а-яА-ЯёЁўЎіІ`\s\-]+$" data-val-required="Требуется поле Фамилия." id="orderDetails_Recipient_LastName" maxlength="50" name="orderDetails.Recipient.LastName" type="text" value="">
+                        </div>
+                        <div class="mess-input"><span class="field-validation-valid" data-valmsg-for="orderDetails.Recipient.LastName" data-valmsg-replace="true"></span></div>
+                        </div>
+                        <div class="item phone">
+                        <div class="label">Контактный телефон <span class="star">*</span></div>
+                        <div class="wrap-input">
+                        <input data-link="{:recipient.fullPhoneMobile:}disabled{:!otherRecipient}" data-val="true" data-val-regex="Некорректный телефон" data-val-regex-pattern="^[1-9]\d{10,13}$" data-val-required="Введите номер телефона!" id="orderDetails_Recipient_FullPhoneMobile" name="orderDetails.Recipient.FullPhoneMobile" type="hidden" value="" >
+                        <input type="text" class="c-input-base required" name="_fake.Recipient.FullPhoneMobile" data-link="{:recipient.formattedPhoneMobile:}disabled{:!otherRecipient}{on &#39;blur&#39; ~changePhone &#39;recipient.fullPhoneMobile&#39;}" data-input-mask="+7 (###) ###-##-##" disabled="disabled" data-jsv="#218^/218^">
+                        </div>
+                        <div class="mess-input"><span class="field-validation-valid" data-valmsg-for="orderDetails.Recipient.FullPhoneMobile" data-valmsg-replace="true"></span></div>
+                        <label class="allow-sms c-checkbox-withText">
+                        <input checked="checked" class="item-checkbox" id="orderDetails_NotifyRecicpientBySms" name="orderDetails.NotifyRecicpientBySms" type="checkbox" value="true">
+                        <span class="item-checkbox-decor"></span><span class="item-checkbox-text">Информировать получателя по СМС об изменении статуса заказа</span>
+                        </label>
+                        </div>
+                        </div>
+                        <div class="history" data-link="{include tmpl=&#39;otherRecipientListTmpl&#39;}">
+                        <script type="jsv#133_"></script>
+                        <script type="jsv#219^"></script><script type="jsv/219^"></script>
+                        <script type="jsv/133_"></script>
+                        </div>
+                        <input type="hidden" name="orderDetails.Recipient.RecipientCharityInfo" data-link="{:recipient.recipientCharityInfo}disabled{:!otherRecipient}" class="j-h-recipient-charity-info" value="" disabled="disabled">
+                        </div>
+                        </div>
+                        </div>
+                        <div id="fixed_bottom" data-link="{include tmpl=&#39;basketFixedFooter&#39;}" style="display: none;">
+                        <script type="jsv#137_"></script>
+                        <div class="content">
+                        <div class="content-data">
+                        <div class="methods">
+                        <div class="delivery">
+                        Способ доставки:
+                        <span class="c-link-in3-sm" data-scroll=".j-b-basket-delivery">
+                        <script type="jsv#224^"></script><script type="jsv#138_"></script><script type="jsv#223^"></script>Пункт выдачи<script type="jsv/223^"></script><script type="jsv/138_"></script><script type="jsv/224^"></script>
+                        </span>
+                        </div>
+                        <div class="payment">Способ оплаты:<span class="c-link-in3-sm" data-scroll=".j-b-basket-payment" data-link="text{:paymentType ? paymentType^groupName : &#39;&#39;}">Онлайн</span></div>
+                        </div>
+                        <div class="count">
+                        <span class="">
+                        <script type="jsv#225^"></script>2<script type="jsv/225^"></script>
+                        </span>
+                        <script type="jsv#226^"></script>товара<script type="jsv/226^"></script> итого <span data-link="{formatMoneyAnim totalPriceWithCouponPersDiscAndDeliveryPrice}" data-jsv="#228^/228^">31 010&nbsp;тг.</span>
+                        </div>
+                        </div>
+                        <div class="c-btn-main btn-to-checkout" data-scroll=".j-b-basket-footer">К оформлению заказа…</div>
+                        </div>
+                        <script type="jsv/137_"></script>
+                        </div>
+                        </div>
+                        <div class="lk-basket-right">
+                        <div id="basket-footer" class="j-b-basket-footer" data-link="{include #data tmpl=&#39;basketFooter&#39;}">
+                        <script type="jsv#140_"></script>
+                        <div class="do-order">
+                        <div class="b-top">
+                        <div class="total line">
+                        <span>Итого</span>
+                        <span class="b-right" data-link="{formatMoneyAnim totalPriceWithCouponPersDiscAndDeliveryPrice}" data-jsv="#260^/260^">31 010&nbsp;тг.</span>
+                        </div>
+                        <script type="jsv#230^"></script><script type="jsv/230^"></script>
+                        <div class="count line">
+                        <span>
+                        Товары, <script type="jsv#231^"></script>2<script type="jsv/231^"></script> шт.
+                        </span>
+                        <span class="b-right" data-link="{formatMoneyAnim totalPrice}" data-jsv="#261^/261^">45 810&nbsp;тг.</span>
+                        </div>
+                        <script type="jsv#232^"></script><script type="jsv#141_"></script>
+                        <div class="discount line">
+                        <span>Скидка</span>
+                        <span class="b-right">− <span data-link="{formatMoneyAnim totalDiscount}" data-jsv="#262^/262^">14 800&nbsp;тг.</span></span>
+                        </div>
+                        <script type="jsv/141_"></script><script type="jsv/232^"></script>
+                        <script type="jsv#234^"></script><script type="jsv#142_"></script>
+                        <div class="delivery line">
+                        <span>Доставка</span>
+                        <span class="b-right">
+                        <script type="jsv#233^"></script><script type="jsv#143_"></script>Бесплатно<script type="jsv/143_"></script><script type="jsv/233^"></script>
+                        </span>
+                        </div>
+                        <script type="jsv/142_"></script><script type="jsv/234^"></script>
+                        <script type="jsv#235^"></script><script type="jsv/235^"></script>
+                        </div>
+                        <div class="b-delivery">
+                        <div class="delivery">
+                        <span class="c-text-base bold">Доставка: </span>
+                        <span class="c-link-in3" data-scroll=".j-b-basket-delivery">
+                        <script type="jsv#237^"></script><script type="jsv#144_"></script>
+                        <script type="jsv#236^"></script>Пункт выдачи<script type="jsv/236^"></script>
+                        <script type="jsv/144_"></script><script type="jsv/237^"></script>
+                        </span>
+                        </div>
+                        <script type="jsv#248^"></script><script type="jsv#145_"></script>
+                        <script type="jsv#239^"></script><script type="jsv#146_"></script>
+                        <div class="time">
+                        <script type="jsv#238^"></script>Ежедневно 10:00-21:00<script type="jsv/238^"></script>
+                        </div>
+                        <script type="jsv/146_"></script><script type="jsv/239^"></script>
+                        <div class="address">
+                        <script type="jsv#240^"></script>г. Нур-Султан (Астана) (город республиканского значения Нур-Султан), улица Илияса Есенберлина, д. 18<script type="jsv/240^"></script>
+                        </div>
+                        <div class="delivery-date" data-link="class{merge: !deliveryIntervalTxt toggle=&#39;hide&#39;}">
+                        <span class="c-text-base bold">Дата: </span>
+                        <span class="c-link-in3 j-need-tooltip" data-scroll=".j-b-basket-delivery" data-tooltip-position="bottom" data-content-cloning="" data-tooltip-theme="i-tooltip-delivery-list" data-content="j-b-tip-shipping-interval">
+                        <script type="jsv#241^"></script>11-13 июля<script type="jsv/241^"></script>
+                        </span>
+                        <div class="hide j-b-tip-shipping-interval">
+                        <script type="jsv#242^"></script><script type="jsv#147_"></script><script type="jsv#148_"></script>
+                        <div class="title">
+                        <script type="jsv#149_"></script>Доставка<script type="jsv/149_"></script>
+                        </div>
+                        <div class="value">11-13 июля</div>
+                        <script type="jsv/148_"></script><script type="jsv/147_"></script><script type="jsv/242^"></script>
+                        </div>
+                        </div>
+                        <script type="jsv#243^"></script><script type="jsv/243^"></script>
+                        <input type="hidden" name="orderDetails.DeliveryPointId" class="ignore" data-link="{:deliveryPoint &amp;&amp; deliveryPoint^addressId}" value="12119">
+                        <input type="hidden" name="orderDetails.DeliveryWay" class="ignore" data-link="{:deliveryPoint &amp;&amp; deliveryPoint^deliveryType}" value="self">
+                        <input type="hidden" name="orderDetails.DeliveryPrice" class="ignore" data-link="{:deliveryPoint &amp;&amp; deliveryPoint^deliveryPrice}" value="">
+                        <script type="jsv#244^"></script><script type="jsv/244^"></script>
+                        <script type="jsv#247^"></script><script type="jsv#150_"></script><script type="jsv#151_"></script>
+                        <script type="jsv#246^"></script><script type="jsv#152_"></script>
+                        <input type="hidden" class="ignore" name="orderDetails.DeliveryDts.Index" data-link="{:#getIndex()}" value="0">
+                        <input type="hidden" data-link="{:~formatDate(shippingInterval.deliveryDateShort, &#39;dd.MM.yyyy&#39;)}name{: &#39;orderDetails.DeliveryDts[&#39; + #getIndex() + &#39;].Date&#39;}" value="11.07.2020" name="orderDetails.DeliveryDts[0].Date">
+                        <input type="hidden" data-link="{:shippingInterval.intervalId}name{: &#39;orderDetails.DeliveryDts[&#39; + #getIndex() + &#39;].IntervalId&#39;}" value="1" name="orderDetails.DeliveryDts[0].IntervalId">
+                        <script type="jsv#245^"></script><script type="jsv#153_"></script><script type="jsv#154_"></script>
+                        <input type="hidden" data-link="{:#index}name{: &#39;orderDetails.DeliveryDts[&#39; + #parent.getIndex() + &#39;].StoreIds.Index&#39;}" value="0" name="orderDetails.DeliveryDts[0].StoreIds.Index">
+                        <input type="hidden" data-link="{:#data}name{: &#39;orderDetails.DeliveryDts[&#39; + #parent.getIndex() + &#39;].StoreIds[&#39; + #index + &#39;]&#39;}" value="507" name="orderDetails.DeliveryDts[0].StoreIds[0]">
+                        <script type="jsv/154_"></script><script type="jsv/153_"></script><script type="jsv/245^"></script>
+                        <script type="jsv/152_"></script><script type="jsv/246^"></script>
+                        <script type="jsv/151_"></script><script type="jsv/150_"></script><script type="jsv/247^"></script>
+                        <script type="jsv/145_"></script><script type="jsv/248^"></script>
+                        </div>
+                        <script type="jsv#249^"></script><script type="jsv/249^"></script>
+                        <script type="jsv#254^"></script><script type="jsv#155_"></script>
+                        <div class="b-payment">
+                        <script type="jsv#253^"></script><script type="jsv#156_"></script>
+                        <input type="hidden" data-link="{:(paymentType^sovest &amp;&amp; totalPriceToPay &gt; 0 &amp;&amp; paymentType^innerSelectedId) || paymentType^id}" name="orderDetails.PaymentType.Id" value="59">
+                        <input type="hidden" data-link="{:paymentType^bankCardId}" name="orderDetails.MaskedCardId" value="">
+                        <span class="c-text-base bold">Оплата: </span><span class="c-link-in3" data-scroll=".j-b-basket-payment" data-link="text{:paymentType^groupName}">Онлайн</span>
+                        <script type="jsv#250^"></script><script type="jsv/250^"></script>
+                        <script type="jsv#251^"></script><script type="jsv/251^"></script>
+                        <script type="jsv#252^"></script><script type="jsv/252^"></script>
+                        <script type="jsv/156_"></script><script type="jsv/253^"></script>
+                        </div>
+                        <script type="jsv/155_"></script><script type="jsv/254^"></script>
+                        <script type="jsv#255^"></script><script type="jsv/255^"></script>
+                        <div class="b-btn">
+                        <div class="error-message">
+                        <script type="jsv#256^"></script><script type="jsv/256^"></script>
+                        </div>
+                        <button data-link="" class="c-btn-main-lg btn-do-order j-btn-confirm-order" name="ConfirmOrderByRegisteredUser">
+                        <script type="jsv#257^"></script><script type="jsv#157_"></script>Оплатить заказ<script type="jsv/157_"></script><script type="jsv/257^"></script>
+                        </button>
+                        </div>
+                        <div class="oferta-access">Согласен с условиями <a href="https://www.wildberries.kz/services/publichnaya-oferta" class="" target="_blank">Публичной оферты</a></div>
+                        <input type="hidden" value="true" name="orderDetails.AgreePublicOffert">
+                        <input type="hidden" name="orderDetails.TotalPrice" data-link="{:totalPriceWithCouponAndPersDisc}" value="31010">
+                        <input type="hidden" name="orderDetails.TotalBonusUp" data-link="{:totalBonuses}" value="0">
+                        <input type="hidden" name="CouponNumber" data-link="{:appliedCouponInfo.couponNumber}" value="">
+                        <script type="jsv#258^"></script><script type="jsv#158_"></script><script type="jsv#159_"></script>
+                        <input type="hidden" data-link="name{:&#39;orderDetails.UserBasketItems.Index&#39;}value{:#getIndex()}" name="orderDetails.UserBasketItems.Index" value="0">
+                        <input type="hidden" data-link="name{:&#39;orderDetails.UserBasketItems[&#39; + #getIndex() + &#39;].CharacteristicId&#39;}value{:#data}" name="orderDetails.UserBasketItems[0].CharacteristicId" value="28561802">
+                        <script type="jsv/159_"></script><script type="jsv#160_"></script>
+                        <input type="hidden" data-link="name{:&#39;orderDetails.UserBasketItems.Index&#39;}value{:#getIndex()}" name="orderDetails.UserBasketItems.Index" value="1">
+                        <input type="hidden" data-link="name{:&#39;orderDetails.UserBasketItems[&#39; + #getIndex() + &#39;].CharacteristicId&#39;}value{:#data}" name="orderDetails.UserBasketItems[1].CharacteristicId" value="32540642">
+                        <script type="jsv/160_"></script><script type="jsv/158_"></script><script type="jsv/258^"></script>
+                        <script type="jsv#259^"></script><script type="jsv#161_"></script><script type="jsv/161_"></script><script type="jsv/259^"></script>
+                        </div>
+                        <script type="jsv/140_"></script>
+                        </div>
+                        </div>
+                        </div>
+                        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8IxGlO-kPWxFhbAhoCZrcAQXzSlyzOU9wONR9vRzD0llsNOlz1ef9Sab2HzTFxW1wiyrY0ti8qwmSnMqwfi_uW0GApBMd-a5qgMnOM7UqMyjAYQFSD_jttgUv13M4GgX4_-JnkhanPkn5xG-kWCQMjiZca7YHZiSl9c6PNNBKpN7Qm3Q62JPrBAewSfIef3bfA"><input name="orderDetails.NotifyRecicpientBySms" type="hidden" value="false">
+                        </form>
+                        <div class="i-popup-lk user-address-v1" id="userAddress">
+                           <div class="address-container">
+                              <div class="titlebar">
+                                 <h1 class="title"></h1>
+                              </div>
+                              <div id="userAddressContent"></div>
+                           </div>
+                           <div id="addressMap" class="hide j-map map"></div>
+                           <div id="pickpointMap" class="hide j-map-pickpoint postamat-map"></div>
+                           <div class="added-addres-loader"></div>
+                        </div>
+                     </div>
+                     <div class="loader kruchina" data-link="visible{:modify}" style="display: none;"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="footer" class="footer j-ss-end-visible footer-kz">
+         <div class="wrapper-v1">
+            <div class="line row">
+               <div class="item-footer buyers col-6 col-md-2 m-0 m-md-3">
+                  <span>Покупателям</span>
+                  <ul>
+                     <li><a rel="nofollow" href="#">Как сделать заказ</a></li>
+                     <li><a rel="nofollow" href="#">Способы оплаты</a></li>
+                     <li><a rel="nofollow" href="#">Доставка</a></li>
+                     <li><a rel="nofollow" href="#">Возврат товара</a></li>
+                     <li><a rel="nofollow" href="#">Возврат денежных средств</a></li>
+                     <li><a rel="nofollow" href="#">Правила продажи</a></li>
+                     <li><a rel="nofollow" href="#">Публичная оферта</a></li>
+                  </ul>
+               </div>
+               <div class="item-footer partners col-6 col-md-2 m-0 m-md-3">
+                  <span>Партнерам</span>
+                  <ul>
+                     <li><a rel="nofollow" target="_blank" href="#">Партнерская программа</a></li>
+                     <li><a rel="nofollow" target="_blank" href="#">Преимущества</a></li>
+                  </ul>
+               </div>
+               <div class="item-footer company col-6 col-md-2 m-0 m-md-3">
+                  <span>Компания</span>
+                  <ul>
+                     <li><a rel="nofollow" href="#">О нас</a></li>
+                     <li><a rel="nofollow" href="#">Реквизиты</a></li>
+                     <li><a rel="nofollow" href="#">Отзывы</a></li>
+                     <li><a rel="nofollow" href="#">Контакты</a></li>
+                     <li><a rel="nofollow" href="#">Программа лояльности</a></li>
+                  </ul>
+               </div>
+               <div class="item-footer soc-net col-6 col-md-2 m-0 m-md-3">
+                  <span>Мы в соцсетях</span>
+                  <ul>
+                     <li><a rel="nofollow" target="_blank" href="http://instagram.com/">Instagram</a></li>
+                     <li><a rel="nofollow" target="_blank" href="http://www.facebook.com/">Facebook</a></li>
+                     <li><a rel="nofollow" target="_blank" href="#">Tik Tok</a></li>
+                  </ul>
+               </div>
+               <div class="item-footer apps col-12 col-md-2 m-0 m-md-3">
+                  <span>Мобильные устройства</span>
+                  <ul>
+                     <li><a rel="nofollow" target="_blank" href="https://play.google.com/" class="google-play"></a></li>
+                     <li><a rel="nofollow" target="_blank" href="https://apps.apple.com/" class="app-store"></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="line2">
+               <div class="content">
+                  2020 © Minigo.kz — интернет-магазин. Все права защищены.
+                  Доставка по всему Казахстану.        
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      <script src="./js/counter.js"></script>
+      <script src="./plugins/tooltipster/js/tooltipster.bundle.js"></script>
+      <script type="text/javascript" src="./plugins/fancybox/jquery.fancybox.js"></script>
+      <script type="text/javascript">
+         /// some script
+         
+         // jquery ready start
+         $(document).ready(function() {
+         
+         	$("[data-trigger]").on("click", function(e){
+                 e.preventDefault();
+                 e.stopPropagation();
+                 var offcanvas_id =  $(this).attr('data-trigger');
+                 $(offcanvas_id).toggleClass("show");
+                 $('body').toggleClass("offcanvas-active");
+                 $(".screen-overlay").toggleClass("show");
+             }); 
+         
+            	// Close menu when pressing ESC
+             $(document).on('keydown', function(event) {
+                 if(event.keyCode === 27) {
+                    $(".mobile-offcanvas").removeClass("show");
+                    $("body").removeClass("overlay-active");
+                 }
+             });
+         
+             $(".btn-close, .screen-overlay").click(function(e){
+             	$(".screen-overlay").removeClass("show");
+                 $(".mobile-offcanvas").removeClass("show");
+                 $("body").removeClass("offcanvas-active");
+         
+         
+             }); 
+         
+         
+         }); // jquery end
+      </script>
+      <style>
+         .post {
+         display: inline-block;
+         width: 50px;
+         margin-right: 10px;
+         }
+         .related_tooltip,
+         .tooltip_templates {
+         display: none !important;
+         }
+         .tooltips {
+         width: 100% !important;
+         }
+      </style>
+      <script type="text/javascript">
+         $(document).ready(function(){       
+            $('.c-link-in-sm').tooltipster({
+                //contentCloning: true,
+                arrow: false,
+                functionPosition: function(instance, helper, position){
+                    position.coord.top += 10;
+                    position.coord.left = $('.c-link-in-sm').offset().left;
+                    return position;
+                },
+                theme: ['tooltipster-default', 'i-goods-in-delivery'],
+         });
+         $('.c-tip-question').tooltipster({
+                //contentCloning: true,
+                arrow: false,
+                theme: ['tooltipster-default', 'i-tip-msg-self'],
+                trigger: 'click'
+         });
+           (function($) {
+              $.fn.inputFilter = function(inputFilter) {
+                return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+                  if (inputFilter(this.value)) {
+                    this.oldValue = this.value;
+                    this.oldSelectionStart = this.selectionStart;
+                    this.oldSelectionEnd = this.selectionEnd;
+                  } else if (this.hasOwnProperty("oldValue")) {
+                    this.value = this.oldValue;
+                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                  } else {
+                    this.value = "";
+                  }
+                });
+              };
+            }(jQuery));
+           $('.c-radio-withText.tab').on('click', function (e) {
+                var $target = $(".loader.kruchina");
+                $target.css("display","block");
+                setTimeout(function() {
+                    $target.css('display','none');
+                }, 200);
+            });
+           $('.minus').click(function () {
+              $numeric = $(this).parent().find('.numeric');
+              $value = +$numeric.val() - 1;
+              $numeric.val($value);
+              $numeric.trigger("change");
+              getPrice($numeric, 'minus');
+            });
+            
+            $('.plus').click(function () {
+              $numeric = $(this).parent().find('.numeric');
+              $value = +$numeric.val() + 1;
+              $numeric.val($value);
+              $numeric.trigger("change");
+              getPrice($numeric, 'plus');
+            });
+            
+            function getPrice($numeric, $type){
+                console.log($numeric+": "+ $type);
+              $new_price_tag = $numeric.parents('.count').siblings('.price').find('.price-new');
+              $old_price_tag = $numeric.parents('.count').siblings('.price').find('.price-old');
+              $value = +$numeric.val();
+              if($type=='minus'){
+                  $prev_quantity = $value + 1;
+              }
+              else if($type=='plus'){
+                  $prev_quantity = $value - 1;
+              }
+              else{
+                  $prev_quantity = $type;
+              }
+              if($numeric.parents('.count').siblings('.price').find('.price-new-hidden').length === 0){
+                $price_new = parseInt($new_price_tag.text().replace(/[^0-9.]/g, ""))/$prev_quantity;
+                $price_old = parseInt($old_price_tag.text().replace(/[^0-9.]/g, ""))/$prev_quantity;
+                $numeric.parents('.count').siblings('.price').append("<div class='d-none price-new-hidden'>"+$price_new+"</div>");
+                $numeric.parents('.count').siblings('.price').append("<div class='d-none price-old-hidden'>"+$price_old+"</div>");
+              }
+              $total_new_price = +$numeric.parents('.count').siblings('.price').find('.price-new-hidden').text()*$value;
+              $total_old_price = +$numeric.parents('.count').siblings('.price').find('.price-old-hidden').text()*$value;
+              
+              var checkExist = setInterval(function() {
+                if ($new_price_tag.hasClass("final")) {
+                   clearInterval(checkExist);
+                   $new_price_tag.countTo({
+                    from: $price_new,
+                    to: $total_new_price,
+                    speed: 50,
+                    refreshInterval: 1,
+                    onUpdate: function(value) {
+                        $(this).append(" тг");
+                        $(this).removeClass(" final");
+                    },
+                    onComplete: function(value) {
+                        $(this).addClass(" final");
+                    }
+                    });
+                    $old_price_tag.countTo({
+                    from: $price_old,
+                    to: $total_old_price,
+                    speed: 50,
+                    refreshInterval: 1,
+                    onUpdate: function(value) {
+                        $(this).append(" тг");
+                        $(this).removeClass(" final");
+                    },
+                    onComplete: function(value) {
+                        $(this).addClass(" final");
+                    }
+                    });
+                }
+              }, 50);
+              getPriceOnRight($numeric, $total_new_price, $total_old_price);
+            }
+            function getPriceOnRight($numeric, $total_new_price, $total_old_price){
+              $target_new_price = $('.price-new');
+              $target_old_price = $('.price-old');
+              $total_new_sum = 0;
+              $total_old_sum = 0;
+              $target_new_price.each(function(){
+                if($(this).is($numeric.parents('.count').siblings('.price').find('.price-new'))){
+                    $total_new_sum = $total_new_sum + $total_new_price;
+                }
+                else
+                    $total_new_sum = $total_new_sum + parseInt($(this).text().replace(/[^0-9.]/g, ""));
+              });
+              $target_old_price.each(function(){
+                if($(this).is($numeric.parents('.count').siblings('.price').find('.price-old')))
+                    $total_old_sum = $total_old_sum + $total_old_price;
+                else
+                    $total_old_sum = $total_old_sum + parseInt($(this).text().replace(/[^0-9.]/g, ""));
+              });
+              $total_new_price_tag = $('.do-order .total .b-right');
+              $total_old_price_tag = $('.do-order .count .b-right');
+              $total_discount_tag = $('.do-order .discount .b-right');
+              $total_new_price_tag.addClass('final');
+              $total_discount = $total_new_sum - $total_old_sum;
+              $price_new = parseInt($total_new_price_tag.text().replace(/[^0-9.]/g, ""));
+              $price_old = parseInt($total_old_price_tag.text().replace(/[^0-9.]/g, ""));
+              $price_discount = parseInt($total_discount_tag.text().replace(/[^0-9.]/g, ""));
+              var checkExist = setInterval(function() {
+                if ($total_new_price_tag.hasClass("final")) {
+                   clearInterval(checkExist);
+                   $total_new_price_tag.countTo({
+                    from: $price_new,
+                    to: $total_new_sum,
+                    speed: 50,
+                    refreshInterval: 1,
+                    onUpdate: function(value) {
+                        $(this).append(" тг");
+                        $(this).removeClass(" final");
+                    },
+                    onComplete: function(value) {
+                        $(this).addClass(" final");
+                    }
+                    });
+                    $total_old_price_tag.countTo({
+                    from: $price_old,
+                    to: $total_old_sum,
+                    speed: 50,
+                    refreshInterval: 1,
+                    onUpdate: function(value) {
+                        $(this).append(" тг");
+                        $(this).removeClass(" final");
+                    },
+                    onComplete: function(value) {
+                        $(this).addClass(" final");
+                    }
+                    });
+                    $total_discount_tag.countTo({
+                    from: $price_discount,
+                    to: $total_discount,
+                    speed: 50,
+                    refreshInterval: 1,
+                    onUpdate: function(value) {
+                        $(this).append(" тг");
+                        $(this).removeClass(" final");
+                    },
+                    onComplete: function(value) {
+                        $(this).addClass(" final");
+                    }
+                    });
+                }
+              }, 50);
+            }
+            $(".numeric").inputFilter(function(value) {
+                return /^\d*$/.test(value);
+              });
+            function countQuantity(){
+                $total = 0;
+                $(".numeric").each(function(){
+                    $total = $total + +$(this).val();
+                });
+                $(".quantity").html($total);
+            }
+            $('.numeric').on('change', function(){
+            	if($(this).val()<=1){
+            	    $(this).val(1);
+            	    $(this).parent().find('.minus').addClass(" disabled");
+            	    $(this).parent().find('.minus').prop('disabled', true); 
+            	}
+            	else {
+            	    $(this).parent().find('.minus').removeClass(" disabled");
+            	    $(this).parent().find('.minus').prop('disabled', false); 
+            	}
+            	countQuantity();
+            });
+            $('.numeric').on('keydown', e => {
+                console.log('prev '+$(e.target).val().length + ', ' + e.keyCode);
+                $(e.target).data('previousValue', $(e.target).val());
+                $prev = $(e.target).val();
+                //getPrice($(e.target), $(e.target).val());
+                 $(e.target).on('keyup', e => {
+                console.log('current '+$(e.target).val().length + ', ' + e.keyCode);
+                getPrice($(e.target), $prev);
+              })
+              });
+            
+            $('.btn-choose').click(function(){
+               $(this).toggleClass('d-none');
+               $('.b-choose').toggleClass('d-none');
+               $('.c-checkbox-base').toggleClass('d-none');
+            });
+            $('.b-choose-goods').find('.c-checkbox-withText').find('input').change(function(){
+                $status = this.checked;
+                $('.c-checkbox-base').find('input').each(function(){
+                    this.checked = $status;
+                })
+            });
+            $(".deselect").click(function(){
+               $('#basket-list').find('input[type="checkbox"]').each(function(){
+                   this.checked = false;
+               });
+               $('.btn-choose').toggleClass('d-none');
+               $('.b-choose').toggleClass('d-none');
+               $('.c-checkbox-base').toggleClass('d-none');
+            });
+            $('.do-order').find('.c-link-in3').click(function(event){
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'data-scroll')).offset().top
+                }, 500); 
+            });
+            $('.b-other-recipient').find('.checkbox-other-recipient').find('input[type="checkbox"]').change(function(){
+                $('.add-recipient ').toggleClass('hide');
+            });
+            $('.days').find('.day').click(function(){
+                $('.days').find('.day').removeClass('active');
+                $(this).addClass('active');
+            });
+                $('.btn-select-other-pickup').fancybox({
+                    onInit: function(instance, current){
+                      map.destroy();// Деструктор карты
+                      map = null;
+                      mapInit();  
+                    },
+                    beforeLoad: function(instance, current){
+                        collection = new ymaps.GeoObjectCollection(null);
+                         map.geoObjects.add(collection);
+                         // метка
+                         for(var i = 0, l = items.length; i < l; i++){
+                          createMenu (items[i], collection, $("#pooList"))
+                         }
+                    },
+                    afterShow: function(instance, current){
+                        var $scrollbar = $(".j-scrollbar.i-tinyscrollbar");
+                        $('.address-container').css('display', 'block');
+                        $scrollbar.tinyscrollbar();
+                        for(var i = 0, l = items.length; i < l; i++){
+                            alert(collection[i]);
+                        collection[i].on('click', function () {
+                             menuItem = $("#pooList").find('li.active');
+                             $scrollbar.update(menuItem.offset().top);
+                          });
+                        }
+                    }
+                }); //запускаем фансибокс
+                $('.show-map').fancybox({
+                    onInit: function(instance, current){
+                      map.destroy();// Деструктор карты
+                    map = null;
+                    mapInit();  
+                    },
+                    beforeShow: function(instance, current){
+                     $('#addressMap').css('width', '100%');
+                     map.geoObjects.remove(collection);
+                     $id = $('[name="Item.AddressId"]').val();
+                     var placemark = new ymaps.Placemark(items[$id]['center'], { 
+                     balloonContent: '<div class="form-baloon"><p class="map-sect">Адрес: <span>'
+                     + items[$id]['address']
+                     +'</span></p><p class="map-sect">Режим работы: <span>'
+                     + items[$id]['info']
+                     +'</span></p><div class="button-panel"><button type="submit" class="j-btn-select-poo added_point-pickup">Выбрать</button><input type="hidden" value="'+$id+'" name="Item.AddressId"></div><div  class="j-b-imgview"><a href="//images.wbstatic.net/PickupOffice/Img17378_Photo0.jpg" data-fancybox="'
+                     +$id+'"><img  src="//images.wbstatic.net/PickupOffice/Img17378_previewPhoto0.jpg"></a><a href="//images.wbstatic.net/PickupOffice/Img17378_Photo1.jpg" data-fancybox="'
+                     +$id+'"><img  src="//images.wbstatic.net/PickupOffice/Img17378_previewPhoto1.jpg"></a><a href="//images.wbstatic.net/PickupOffice/Img17378_Photo2.jpg" data-fancybox="'
+                     +$id+'"><img  src="//images.wbstatic.net/PickupOffice/Img17378_previewPhoto2.jpg"></a></div></div>'
+                     },
+                     {iconColor: '#ed2690'});
+                     map.geoObjects.add(placemark);
+                    },
+                    afterShow: function(instance, current){
+                     $('.address-container').css('display', 'none');
+                     current.$content.find('.fancybox-close-small').css("display", "none");
+                    },
+                }); //запускаем фансибокс
+            $.fn.followTo = function (element) {
+                var $this = this,
+                    $window = $(window);
+                var start = element.offset().top;
+                var end = element.offset().top + element.outerHeight(true)-$this.outerHeight(true);
+            
+                $window.scroll(function (e) {
+                    if ($window.scrollTop() < start){
+                        $this.removeClass('doFixed');
+                    }
+                    else if ($window.scrollTop() >= start && $window.scrollTop() < end) {
+                        $this.addClass('doFixed');
+                        $this.removeClass('doFixedBottom');
+                    } else if($window.scrollTop() >= end){
+                        $this.removeClass('doFixed');
+                        $this.addClass('doFixedBottom');
+                    }
+                });
+            };
+            
+            $('.lk-basket-right').followTo($('.trunkOld'));
+            $('#userPooSubmit').click(function(){
+                $address = items[$('[name="Item.AddressId"]').val()]['address'];
+                $('.address').html($address);
+                parent.jQuery.fancybox.getInstance().close();
+                $('.show-map').attr('data-value', )
+            });
+            $('.chosen-single').click(function(){
+               $('.chosen-container.chosen-container-single').toggleClass("chosen-with-drop chosen-container-active"); 
+               if($('.chosen-container.chosen-container-single').hasClass("chosen-with-drop")){
+                   $ul = $('.chosen-results');
+                   $("#cityList > option").each(function() {
+                        if($(this).val() != ''){
+                            $class = '';
+                            if($(this).val() == $('#cityList').val())
+                                $class=' result-selected';
+                            $li = '<li class="active-result'+ $class +'" data-option-array-index="'+$(this).val()+'">'+ $(this).text() +'</li>';
+                            $ul.append($li);
+                        }
+                    });
+                    $('.active-result').hover(function(){
+                       $(this).toggleClass('highlighted'); 
+                    });
+                    $('.active-result').click(function(){
+                        $('.chosen-single').find('span').html($(this).text());
+                        $('.chosen-container.chosen-container-single').removeClass("chosen-with-drop chosen-container-active"); 
+                        $('.active-result').removeClass('active');
+                       $(this).addClass('active'); 
+                       $ul.html('');
+                       $('#cityList').val($(this).attr('data-option-array-index')).trigger('change');
+                    });
+               }
+            });
+            $('[data-fancybox]').fancybox({
+               buttons : [ 
+                 'close'
+               ]
+             });
+         });
+      </script>
+   </body>
+</html>

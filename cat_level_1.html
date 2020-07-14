@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ru" translate="no">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=7; IE=Edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!--[if ie]><![endif]--> 
+      <title>
+         Minigo.kz – Интернет-магазин аксессуаров и косметики
+      </title>
+      <meta name="description" content="Аксессуары и сумки, косметика и электроника. Информация о доставке и оплате.">
+      <meta name="keywords" content="">
+      <link rel="stylesheet" type="text/css" href="./css/mainCatalog.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link href="./css/main-page_v1.min.css" rel="stylesheet" type="text/css">
+      <link rel="icon" href="https://www.wildberries.kz/favicon.ico" type="image/vnd.microsoft.icon">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
+      <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+      <style id="mz-css" type="text/css"></style>
+      <link type="text/css" rel="stylesheet" href="./css/jquery.tooltipster.min.css">
+      <link type="text/css" rel="stylesheet" href="./css/fonts/sf_ui_display/stylesheet.css">
+      <link rel="stylesheet" type="text/css" href="./css/lazy-load-slick.css">
+      <link rel="stylesheet" type="text/css" href="./css/fonts/font-awesome/css/font-awesome.min.css">
+      <style type="text/css">
+
+body.offcanvas-active{
+	overflow:hidden;
+}
+
+.navbar{
+    padding: .5rem 0rem;
+}
+
+.banner-item img{
+    border-radius: 16px;
+}
+
+.offcanvas-header{ display:none; }
+
+.screen-overlay {
+  width:0%;
+  height: 100%;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity:0;
+  visibility:hidden;
+  background-color: rgba(34, 34, 34, 0.6);
+  transition:opacity .2s linear, visibility .1s, width 1s ease-in;
+}
+.screen-overlay.show {
+    transition:opacity .5s ease, width 0s;
+    opacity:1;
+    width:100%;
+    visibility:visible;
+}
+	
+@media all and (max-width:992px) { 
+	
+	.offcanvas-header{ display:block; }
+
+	.mobile-offcanvas{
+		visibility: hidden;
+		transform:translateX(-100%);
+	    border-radius:0; 
+		display:block;
+	    position: fixed;
+	    top: 0; left:0;
+	    height: 100%;
+	    z-index: 1200;
+	    width:80%;
+	    overflow-y: scroll;
+	    overflow-x: hidden;
+	    transition: visibility .2s ease-in-out, transform .2s ease-in-out;
+	    padding: .5rem 1rem;
+	    background-color: #fff;
+	}
+
+	.mobile-offcanvas.show{
+		visibility: visible;
+    	transform: translateX(0);
+	}
+	.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link,
+	.navbar-dark .navbar-nav .nav-link{
+	    color: #000;
+	}
+	.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{
+	    color: var(--primary-color);
+	}
+	#toggle_navbar_main{
+	    background-image: url("./img/menu-icon.png");
+	    background-color: transparent;
+        border: none;
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+	}
+	#toggle_navbar_main:focus{
+	    border: 2px solid #fff !important;
+        outline:none;
+        border-radius: 5px;
+	}
+	.btn-close{
+	    background-image: url("./img/close.png");
+	    background-color: transparent;
+        border: none;
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        background-repeat:no-repeat;
+        background-position: right;
+	}
+	.header-v1 .header-content{
+	    margin: 30px 0 10px !important;
+	}
+}
+@media all and (min-width: 992px){
+    .navbar-expand-lg .navbar-nav{
+	    justify-content: space-between;
+	    width: 100%;
+	}
+	/*
+	.navbar-expand-lg.navbar{
+	    padding: 30px 0rem 0 0;
+	}*/
+	.navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0rem;
+        padding-left: 0rem; 
+        font-weight: bold;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        color: #fff;
+    }
+}
+</style>
+   </head>
+   <body >
+      <div class="header-v1  j-header  header-with-burger">
+         <div class="header-bg j-parallax-back-layer">
+            <div class="header-wrapper lang-ru">
+               <ul class="header-top">
+                  <li class="faq item j-header-tooltip-control">
+                     <a class="faq-btn" href="#">Алматы</a>
+                     <div class="faq-list j-header-tooltip-content" tabindex="-1">
+                        <ul>
+                           <li><a href="#" target="_blank">Нур-Султан</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="item item-delivery"><a href="#">Условия доставки</a></li>
+               </ul>
+               <div class="header-content">
+                  <a class="header-logo" href="#">
+                  <img src="./img/minigo_logo.png" alt="Minigo">
+                  </a>
+                  <div class="wildSrch enable-img">
+                     <input id="tbSrch" type="text" class="sq c-text-md-v1" maxlength="300" data-catalog-ufu-url="" data-nm-id="" autocomplete="off" placeholder="Поиск">
+                     <span id="btnSrchClear" class="resSrch c-cross-14"></span>
+                     <span id="btnSrch" class="find c-loupe-18"></span>
+                     <div class="icon-photo j-search-img-container">
+                        <div class="inner-photo j-search-img-btn">
+                           <span class="c-photo-18-v1"></span>
+                           <div class="pseudo-tooltip">
+                              Поиск по фото
+                           </div>
+                        </div>
+                        <form class="i-tooltip-img-upload j-search-img-upload-form" id="imgSearch" action="#" method="post" enctype="multipart/form-data">
+                           <div class="inner-fileUploader c-btn-main-v1 j-fileUploader-btn">
+                              Выберите файл
+                              <label class="fileUploader-label">
+                              <input id="fileUploader" type="file" accept="image/*" name="photo">
+                              </label>
+                           </div>
+                           <div class="inner-text c-text-sm-v1">
+                              <div class="inner-content j-message">
+                                 <p><span>Максимальный размер:</span> 8 МБ.</p>
+                                 <p><span>Поддерживаемые форматы:</span> JPG, JPEG, PNG, BMP,&nbsp;GIF.</p>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                     <div id="AutocompleteContainter_9a107" style="position: absolute; z-index: 9999; top: 111.5px; left: 358px;">
+                        <div class="autocomplete-w1 i-autocomplete-w1">
+                           <div class="autocomplete i-autocomplete" id="Autocomplete_9a107" style="display: none; width: auto; max-height: 650px;"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="header-user-menu j-b-header-menu">
+                     <div id="basketContent" class="header-basket">
+                        <script type="jsv#1_"></script>
+                        <div id="head-pick-point-address" class="head-address user-menu-item j-b-header-menu-item tooltipstered">
+                           <a href="#" class="user-menu-icon">Адреса</a>
+                        </div>
+                        <script type="jsv#2_"></script>
+                        <div class="user-menu-item"><a href="#" class="offline open user-menu-login j-main-login">Войти<span class="user-menu-icon"></span></a></div>
+                        <script type="jsv/2_"></script>
+                        <div class="user-menu-item cart-informer" style="position: relative;">
+                           <a href="#" class="my-basket">
+                              Корзина
+                              <span class="user-menu-icon">
+                                 <script type="jsv#1^"></script><script type="jsv/1^"></script>
+                              </span>
+                           </a>
+                           <div class="cart-content-wrapper"></div>
+                        </div>
+                        <script type="jsv/1_"></script>
+                     </div>
+                  </div>
+                </div>
+               <!-- ========================= SECTION CONTENT ========================= -->
+
+                <div class="main-menu">
+                
+                <button id="toggle_navbar_main" data-trigger="#navbar_main" class="d-lg-none" type="button"> </button>
+                
+                <nav id="navbar_main" class="mobile-offcanvas navbar navbar-expand-lg navbar-dark">
+                <div class="offcanvas-header">  
+                	<button class="btn btn-close float-right"></button>
+                	<h5 class="py-2 text-white">Main navbar</h5>
+                </div>
+                <ul class="navbar-nav">
+                	<li class="nav-item active"> <a class="nav-link" href="#"> Новинки </a> </li>
+                	<li class="nav-item"><a class="nav-link" href="#"> SALE % </a></li>
+                	<li class="nav-item"><a class="nav-link" href="#"> Аксессуары и сумки </a></li>
+                	<li class="nav-item dropdown">
+                		<a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Косметика  </a>
+                	    <ul class="dropdown-menu">
+                		  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+                		  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+                	    </ul>
+                	</li>
+                	<li class="nav-item"><a class="nav-link" href="#"> Электроника </a></li>
+                	<li class="nav-item"><a class="nav-link" href="#"> Life Style </a></li>
+                	<li class="nav-item"><a class="nav-link" href="#"> Все для макияжа </a></li>
+                	<li class="nav-item"><a class="nav-link" href="#"> Парфюмерия </a></li>
+                	<li class="nav-item"><a class="nav-link" href="#"> Уход за кожей & Очищение </a></li>
+                	<li class="nav-item"><a class="nav-link" href="#"> Канцелярия & Подарки </a></li>
+                </ul>
+                
+                </nav>
+                
+                </div><!-- container //  -->
+            </div>
+        </div>
+    </div>
+    <div id="body-layout" class="main-content j-parallax-main-layer ">
+            <div class="left-bg">
+               <div class="trunkOld">
+                  <div class="i-breadcrumbs">
+                    <ul class="bread-crumbs">
+                        <li class="breadcrumbs-item main" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                            <a href="/" itemprop="url">
+                                <span itemprop="title">Главная</span>
+                            </a>
+                        </li>
+                            <li class="breadcrumbs-item secondary" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                
+                            <span itemprop="title">Хиты продаж</span>
+                
+                            </li>
+                    </ul>
+                  </div>
+                  <div class="j-main-parts j-products-container" id="part1" >
+                     <div class="j-goods-wrapper row-2 row j-goods-wrapper-hits">
+                        <h3 class="c-h1 title j-recommended-goods-title col-12">Хиты продаж</h3>
+                        <div class="col-md-3 col-12">
+                            <div class="i-menu-catalog">
+                                <ul class="maincatalog-list-1" >
+                                    <li>Категории</li>
+                                </ul>
+                                <ul class="maincatalog-list-1 collapsed" data-toggle="collapse" href="#maincatalogList2" role="button" aria-expanded="false" aria-controls="maincatalogList2">
+                                    <li class="name" >Хиты продаж <i class="fa"></i></li>
+                                </ul>
+                                <ul class="maincatalog-list-2 collapse dont-collapse-sm mb-5 mb-md-0 " id="maincatalogList2">
+                                        <li><a href="/catalog/zhenshchinam/odezhda">Одежда</a></li>
+                                        <li><a href="/catalog/zhenshchinam/bolshie-razmery">Большие размеры</a></li>
+                                        <li><a href="/catalog/budushchie-mamy">Будущие мамы</a></li>
+                                        <li><a href="/catalog/zhenshchinam/dlya-vysokih">Для высоких</a></li>
+                                        <li><a href="/catalog/zhenshchinam/dlya-nevysokih">Для невысоких</a></li>
+                                        <li><a href="/catalog/obuv/zhenskaya">Обувь</a></li>
+                                        <li><a href="/catalog/zhenshchinam/bele">Белье</a></li>
+                                        <li><a href="/catalog/zhenshchinam/odezhda/odezhda-dlya-doma">Одежда для дома</a></li>
+                                        <li><a href="/catalog/zhenshchinam/ofis">Офис</a></li>
+                                        <li><a href="/catalog/zhenshchinam/plyazhnaya-moda">Пляжная мода</a></li>
+                                        <li><a href="/catalog/svadba">Свадьба</a></li>
+                                        <li><a href="/catalog/zhenshchinam/spetsodezhda">Спецодежда</a></li>
+                                </ul>
+                                
+                            </div>
+                        
+                                <div class="quicknav-v1 j-quicknav" style="display: none; position: fixed; bottom: 55px;"></div>
+                            </div>
+                        <div class="col-md-9 col-12">
+                        <div class="main-page">
+                         <div class="i-main-banners-slider-v1 banners-slider j-carousel-banners-wrapper banners-list big-banner">
+                            <div class="banner-item"><img data-lazy="img/banner.jpg"></div>
+                            <div class="banner-item"><img data-lazy="img/big_summer_sale_14_06_2.jpg"></div>
+                         </div>
+                        </div>
+                        <div class="i-banners-catalog-v1 j-banners">
+                            <div class="banners-small row">
+                                <div class="banners-item j-banner-wrapper col-md-4 col-12 mb-5">
+                                    <div class="banners-zones-container ">
+                                        <div class="banners-zones">
+                                            <a
+                                                href="#"
+                                                class="j-banner-shown-stat j-banner-click-stat j-banner"
+                                                title="Офисный гардероб"
+                                                target="_self"
+                                            >
+                                                <img
+                                                    class="j-lazy-img"
+                                                    id="banner_bf28cacb-6e1d-4d93-ad50-f34304c320b9"
+                                                    name="banner_bf28cacb-6e1d-4d93-ad50-f34304c320b9"
+                                                    src="./img/360x268_banner_office_woman.jpg"
+                                                    alt="Офисный гардероб"
+                                                    style="display: inline;"
+                                                />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="banners-item j-banner-wrapper col-md-4 col-12 mb-5">
+                                    <div class="banners-zones-container">
+                                        <div class="banners-zones">
+                                            <a
+                                                href="#"
+                                                class="j-banner-shown-stat j-banner-click-stat j-banner"
+                                                title="Тренды обуви"
+                                                target="_self"
+                                            >
+                                                <img
+                                                    class="j-lazy-img"
+                                                    id="banner_09ccfa4a-3b63-4499-a4d8-83d226a03316"
+                                                    name="banner_09ccfa4a-3b63-4499-a4d8-83d226a03316"
+                                                    src="./img/380x280_shoes_wom.jpg"
+                                                    alt="Тренды обуви"
+                                                    data-original="https://images.wbstatic.net/bners1/380x280_shoes_wom.jpg"
+                                                    style="display: inline;"
+                                                />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="banners-item j-banner-wrapper col-md-4 col-12 mb-5">
+                                    <div class="banners-zones-container">
+                                        <div class="banners-zones">
+                                            <a
+                                                rel="nofollow"
+                                                href="#"
+                                                class="j-banner-shown-stat j-banner-click-stat j-banner"
+                                                title="Roxy, Billabong "
+                                                target="_self"
+                                            >
+                                                <img
+                                                    class="j-lazy-img"
+                                                    id="banner_23143893-2eb9-46b6-b033-1ba4552e5972"
+                                                    name="banner_23143893-2eb9-46b6-b033-1ba4552e5972"
+                                                    src="./img/small_roxy_24062020.png"
+                                                    alt="Roxy, Billabong "
+                                                    style="display: inline;"
+                                                />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="j-ajax-carousel-wrapper mt-5">
+                           <div class="i-slider-gallery j-slider-gallery">
+                                <h3 class="c-h1 title">Одежда</h3>
+                                <div class="list j-slider j-products-container lightSlider lsGrab lSSlide">
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;">
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/11299559.jpg" alt="Джинсы - REGINA" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">19&nbsp;990&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">Mango</span> / <span class="good-name">Джинсы - REGINA</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;" >
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/12076249.jpg" alt="Футболка - PSILUSTR" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">3&nbsp;990&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">Mango</span> / <span class="good-name">Футболка - PSILUSTR</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;" >
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/11645808.jpg" alt="Жакет - VICKY" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">19&nbsp;990&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">Mango</span> / <span class="good-name">Жакет - VICKY</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;" >
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/12261582.jpg" alt="Шорты" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">7&nbsp;340&nbsp;тг.</div>
+                        
+                        							<div class="price-last">9&nbsp;180&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">Zolla</span> / <span class="good-name">Шорты</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;" >
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/10147914.jpg" alt="Блуза / Блузка" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">5&nbsp;550&nbsp;тг.</div>
+                        
+                        							<div class="price-last">10&nbsp;730&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">A-A Awesome Apparel by Ksenia Avakyan</span> / <span class="good-name">Блуза / Блузка</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;" >
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/11821644.jpg" alt="Брюки - BERLINA" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">19&nbsp;990&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">Mango</span> / <span class="good-name">Брюки - BERLINA</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;" >
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/11511612.jpg" alt="Пиджак - PALACHIN" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">19&nbsp;990&nbsp;тг.</div>
+                        
+                        							<div class="price-last">29&nbsp;840&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">Mango</span> / <span class="good-name">Пиджак - PALACHIN</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;" >
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/8686271.jpg" alt="Комбинезон" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">25&nbsp;860&nbsp;тг.</div>
+                        
+                        							<div class="price-last">61&nbsp;590&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">UDGY</span> / <span class="good-name">Комбинезон</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;" >
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/11175720.jpg" alt="Бермуды - LYNDA" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">19&nbsp;990&nbsp;тг.</div>
+                        
+                        							<div class="price-last">24&nbsp;990&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">Mango</span> / <span class="good-name">Бермуды - LYNDA</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;">
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/11231859.jpg" alt="Джинсы - MOM80" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">19&nbsp;990&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">Mango</span> / <span class="good-name">Джинсы - MOM80</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        
+                        			<div class="item j-product-item lslide" style="margin-right: 30px;" >
+                        				<a href="#" class="j-open-full-product-card">
+                        					<div class="item-img">
+                        						<img src="./img/11376986.jpg" alt="Юбка - MONICA" />
+                        
+                        						<div class="label-only-adults">Товары для взрослых</div>
+                        					</div>
+                        					<div class="item-info">
+                        						<div class="price-block">
+                        							<div class="price-now">12&nbsp;990&nbsp;тг.</div>
+                        						</div>
+                        						<div class="good"><span class="good-brand">Mango</span> / <span class="good-name">Юбка - MONICA</span></div>
+                        					</div>
+                        				</a>
+                        			</div>
+                        		</div>
+                                
+                            </div>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div id="footer" class="footer j-ss-end-visible footer-kz">
+         <div class="wrapper-v1">
+            <div class="line row">
+               <div class="item-footer buyers col-6 col-md-2 m-0 m-md-3">
+                  <span>Покупателям</span>
+                  <ul>
+                     <li><a rel="nofollow" href="#">Как сделать заказ</a></li>
+                     <li><a rel="nofollow" href="#">Способы оплаты</a></li>
+                     <li><a rel="nofollow" href="#">Доставка</a></li>
+                     <li><a rel="nofollow" href="#">Возврат товара</a></li>
+                     <li><a rel="nofollow" href="#">Возврат денежных средств</a></li>
+                     <li><a rel="nofollow" href="#">Правила продажи</a></li>
+                     <li><a rel="nofollow" href="#">Публичная оферта</a></li>
+                  </ul>
+               </div>
+               <div class="item-footer partners col-6 col-md-2 m-0 m-md-3">
+                  <span>Партнерам</span>
+                  <ul>
+                     <li><a rel="nofollow" target="_blank" href="#">Партнерская программа</a></li>
+                     <li><a rel="nofollow" target="_blank" href="#">Преимущества</a></li>
+                  </ul>
+               </div>
+               <div class="item-footer company col-6 col-md-2 m-0 m-md-3">
+                  <span>Компания</span>
+                  <ul>
+                     <li><a rel="nofollow" href="#">О нас</a></li>
+                     <li><a rel="nofollow" href="#">Реквизиты</a></li>
+                     <li><a rel="nofollow" href="#">Отзывы</a></li>
+                     <li><a rel="nofollow" href="#">Контакты</a></li>
+                     <li><a rel="nofollow" href="#">Программа лояльности</a></li>
+                  </ul>
+               </div>
+               <div class="item-footer soc-net col-6 col-md-2 m-0 m-md-3">
+                  <span>Мы в соцсетях</span>
+                  <ul>
+                     <li><a rel="nofollow" target="_blank" href="http://instagram.com/">Instagram</a></li>
+                     <li><a rel="nofollow" target="_blank" href="http://www.facebook.com/">Facebook</a></li>
+                     <li><a rel="nofollow" target="_blank" href="#">Tik Tok</a></li>
+                  </ul>
+               </div>
+               <div class="item-footer apps col-12 col-md-2 m-0 m-md-3">
+                  <span>Мобильные устройства</span>
+                  <ul>
+                     <li><a rel="nofollow" target="_blank" href="https://play.google.com/" class="google-play"></a></li>
+                     <li><a rel="nofollow" target="_blank" href="https://apps.apple.com/" class="app-store"></a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="line2">
+               <div class="content">
+                  2020 © Minigo.kz — интернет-магазин. Все права защищены.
+                  Доставка по всему Казахстану.        
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>     
+    <script type="text/javascript" src="js/slick/slick.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    
+   
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script type="text/javascript">
+/// some script
+
+// jquery ready start
+$(document).ready(function() {
+	// jQuery code
+
+
+	$("[data-trigger]").on("click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var offcanvas_id =  $(this).attr('data-trigger');
+        $(offcanvas_id).toggleClass("show");
+        $('body').toggleClass("offcanvas-active");
+        $(".screen-overlay").toggleClass("show");
+    }); 
+
+   	// Close menu when pressing ESC
+    $(document).on('keydown', function(event) {
+        if(event.keyCode === 27) {
+           $(".mobile-offcanvas").removeClass("show");
+           $("body").removeClass("overlay-active");
+        }
+    });
+
+    $(".btn-close, .screen-overlay").click(function(e){
+    	$(".screen-overlay").removeClass("show");
+        $(".mobile-offcanvas").removeClass("show");
+        $("body").removeClass("offcanvas-active");
+
+
+    }); 
+
+
+}); // jquery end
+</script>
+
+      <script type="text/javascript">
+         $(document).ready(function(){
+           $('.banners-slider').slick({
+               lazyLoad: 'ondemand',
+               dots: true,
+               speed: 500,
+               fade: true,
+               cssEase: 'linear',
+           });
+           var $slider = $(".j-slider");
+           $slider.slick({
+               infinite: false,
+               speed: 300,
+                variableWidth: true,
+              outerEdgeLimit: true,
+              slidesToScroll: 1,
+           });
+         });
+      </script>
+</html>
