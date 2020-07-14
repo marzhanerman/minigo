@@ -11,128 +11,119 @@
       <meta name="description" content="Аксессуары и сумки, косметика и электроника. Информация о доставке и оплате.">
       <meta name="keywords" content="">
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>     
-    <script type="text/javascript" src="js/slick/slick.min.js"></script>
+      <script type="text/javascript" src="js/slick/slick.min.js"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <link href="./css/main-page_v1.min.css" rel="stylesheet" type="text/css">
-      <link rel="icon" href="https://www.wildberries.kz/favicon.ico" type="image/vnd.microsoft.icon">
+      <link rel="icon" href="./img/favicon.ico" type="image/vnd.microsoft.icon">
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
       <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
       <link type="text/css" href="./css/fonts/sf_ui_display/stylesheet.css">
       <link rel="stylesheet" type="text/css" href="./css/lazy-load-slick.css">
       <link rel="stylesheet" type="text/css" href="./css/contacts.css">
       <style type="text/css">
-
-body.offcanvas-active{
-	overflow:hidden;
-}
-
-.navbar{
-    padding: .5rem 0rem;
-}
-
-.banner-item img{
-    border-radius: 16px;
-}
-
-.offcanvas-header{ display:none; }
-
-.screen-overlay {
-  width:0%;
-  height: 100%;
-  z-index: 30;
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity:0;
-  visibility:hidden;
-  background-color: rgba(34, 34, 34, 0.6);
-  transition:opacity .2s linear, visibility .1s, width 1s ease-in;
-}
-.screen-overlay.show {
-    transition:opacity .5s ease, width 0s;
-    opacity:1;
-    width:100%;
-    visibility:visible;
-}
-	
-@media all and (max-width:992px) { 
-	
-	.offcanvas-header{ display:block; }
-
-	.mobile-offcanvas{
-		visibility: hidden;
-		transform:translateX(-100%);
-	    border-radius:0; 
-		display:block;
-	    position: fixed;
-	    top: 0; left:0;
-	    height: 100%;
-	    z-index: 1200;
-	    width:80%;
-	    overflow-y: scroll;
-	    overflow-x: hidden;
-	    transition: visibility .2s ease-in-out, transform .2s ease-in-out;
-	    padding: .5rem 1rem;
-	    background-color: #fff;
-	}
-
-	.mobile-offcanvas.show{
-		visibility: visible;
-    	transform: translateX(0);
-	}
-	.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link,
-	.navbar-dark .navbar-nav .nav-link{
-	    color: #000;
-	}
-	.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{
-	    color: var(--primary-color);
-	}
-	#toggle_navbar_main{
-	    background-image: url("./img/menu-icon.png");
-	    background-color: transparent;
-        border: none;
-        width: 40px;
-        height: 40px;
-        background-size: contain;
-	}
-	#toggle_navbar_main:focus{
-	    border: 2px solid #fff !important;
-        outline:none;
-        border-radius: 5px;
-	}
-	.btn-close{
-	    background-image: url("./img/close.png");
-	    background-color: transparent;
-        border: none;
-        width: 30px;
-        height: 30px;
-        background-size: contain;
-        background-repeat:no-repeat;
-        background-position: right;
-	}
-	.header-v1 .header-content{
-	    margin: 30px 0 10px !important;
-	}
-}
-@media all and (min-width: 992px){
-    .navbar-expand-lg .navbar-nav{
-	    justify-content: space-between;
-	    width: 100%;
-	}
-	/*
-	.navbar-expand-lg.navbar{
-	    padding: 30px 0rem 0 0;
-	}*/
-	.navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: 0rem;
-        padding-left: 0rem; 
-        font-weight: bold;
-    }
-    .navbar-dark .navbar-nav .nav-link {
-        color: #fff;
-    }
-}
-</style>
+         body.offcanvas-active{
+         overflow:hidden;
+         }
+         .navbar{
+         padding: .5rem 0rem;
+         }
+         .banner-item img{
+         border-radius: 16px;
+         }
+         .offcanvas-header{ display:none; }
+         .screen-overlay {
+         width:0%;
+         height: 100%;
+         z-index: 30;
+         position: fixed;
+         top: 0;
+         left: 0;
+         opacity:0;
+         visibility:hidden;
+         background-color: rgba(34, 34, 34, 0.6);
+         transition:opacity .2s linear, visibility .1s, width 1s ease-in;
+         }
+         .screen-overlay.show {
+         transition:opacity .5s ease, width 0s;
+         opacity:1;
+         width:100%;
+         visibility:visible;
+         }
+         @media all and (max-width:992px) { 
+         .offcanvas-header{ display:block; }
+         .mobile-offcanvas{
+         visibility: hidden;
+         transform:translateX(-100%);
+         border-radius:0; 
+         display:block;
+         position: fixed;
+         top: 0; left:0;
+         height: 100%;
+         z-index: 1200;
+         width:80%;
+         overflow-y: scroll;
+         overflow-x: hidden;
+         transition: visibility .2s ease-in-out, transform .2s ease-in-out;
+         padding: .5rem 1rem;
+         background-color: #fff;
+         }
+         .mobile-offcanvas.show{
+         visibility: visible;
+         transform: translateX(0);
+         }
+         .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link,
+         .navbar-dark .navbar-nav .nav-link{
+         color: #000;
+         }
+         .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{
+         color: var(--primary-color);
+         }
+         #toggle_navbar_main{
+         background-image: url("./img/menu-icon.png");
+         background-color: transparent;
+         border: none;
+         width: 40px;
+         height: 40px;
+         background-size: contain;
+         }
+         #toggle_navbar_main:focus{
+         border: 2px solid #fff !important;
+         outline:none;
+         border-radius: 5px;
+         }
+         .btn-close{
+         background-image: url("./img/close.png");
+         background-color: transparent;
+         border: none;
+         width: 30px;
+         height: 30px;
+         background-size: contain;
+         background-repeat:no-repeat;
+         background-position: right;
+         }
+         .header-v1 .header-content{
+         margin: 30px 0 10px !important;
+         }
+         }
+         @media all and (min-width: 992px){
+         .navbar-expand-lg .navbar-nav{
+         justify-content: space-between;
+         width: 100%;
+         }
+         /*
+         .navbar-expand-lg.navbar{
+         padding: 30px 0rem 0 0;
+         }*/
+         .navbar-expand-lg .navbar-nav .nav-link {
+         padding-right: 0rem;
+         padding-left: 0rem; 
+         font-weight: bold;
+         }
+         .navbar-dark .navbar-nav .nav-link {
+         color: #fff;
+         }
+         }
+      </style>
    </head>
    <body >
       <div class="header-v1  j-header  header-with-burger">
@@ -206,105 +197,101 @@ body.offcanvas-active{
                         <script type="jsv/1_"></script>
                      </div>
                   </div>
-                </div>
+               </div>
                <!-- ========================= SECTION CONTENT ========================= -->
-
-                <div class="main-menu">
-                
-                <button id="toggle_navbar_main" data-trigger="#navbar_main" class="d-lg-none" type="button"> </button>
-                
-                <nav id="navbar_main" class="mobile-offcanvas navbar navbar-expand-lg navbar-dark">
-                <div class="offcanvas-header">  
-                	<button class="btn btn-close float-right"></button>
-                	<h5 class="py-2 text-white">Main navbar</h5>
-                </div>
-                <ul class="navbar-nav">
-                	<li class="nav-item active"> <a class="nav-link" href="#"> Новинки </a> </li>
-                	<li class="nav-item"><a class="nav-link" href="#"> SALE % </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Аксессуары и сумки </a></li>
-                	<li class="nav-item dropdown">
-                		<a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Косметика  </a>
-                	    <ul class="dropdown-menu">
-                		  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
-                		  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
-                	    </ul>
-                	</li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Электроника </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Life Style </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Все для макияжа </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Парфюмерия </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Уход за кожей & Очищение </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Канцелярия & Подарки </a></li>
-                </ul>
-                
-                </nav>
-                
-                </div><!-- container //  -->
+               <div class="main-menu">
+                  <button id="toggle_navbar_main" data-trigger="#navbar_main" class="d-lg-none" type="button"> </button>
+                  <nav id="navbar_main" class="mobile-offcanvas navbar navbar-expand-lg navbar-dark">
+                     <div class="offcanvas-header">
+                        <button class="btn btn-close float-right"></button>
+                        <h5 class="py-2 text-white">Main navbar</h5>
+                     </div>
+                     <ul class="navbar-nav">
+                        <li class="nav-item active"> <a class="nav-link" href="#"> Новинки </a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#"> SALE % </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Аксессуары и сумки </a></li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Косметика  </a>
+                           <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+                              <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+                           </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Электроника </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Life Style </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Все для макияжа </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Парфюмерия </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Уход за кожей & Очищение </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Канцелярия & Подарки </a></li>
+                     </ul>
+                  </nav>
+               </div>
+               <!-- container //  -->
             </div>
-        </div>
-    </div>
-    <div id="body-layout" class="main-content j-parallax-main-layer ">
-            <div class="left-bg">
-               <div class="trunkOld">
-                    <div id="info_tbl" class="info-table service-basic">
-                             <div id="info_content" valign="top" class="info_main_content">
-                                <div class="page-wrap page-contacts">
-                                   <h1 class="c-h1">Контакты</h1>
-                                   <div class="contacts-list row">
-                                       <div class="col-md-6 col-12">
-                                          <div class="contacts-list-item contacts-list-item-lg contacts-list-social ">
-                                             <h2 class="c-h1 title">Мессенджеры</h2>
-                                             <p class="c-h3 text">Наши сотрудники ответят<br>
-                                                на все Ваши вопросы
-                                             </p>
-                                             <span class="icon">&nbsp;</span>
-                                             <div class="social"><a class="social-item social-mg" href="https://m.me/wbbot" target="_blank">&nbsp;</a> <a class="social-item social-vb" href="viber://pa?chatURI=wildberries" target="_blank">&nbsp;</a> <a class="social-item social-vk" href="https://vk.me/wbbot" target="_blank">&nbsp;</a> <a class="social-item social-tg" href="https://t.me/wbshop_bot" target="_blank">&nbsp;</a></div>
-                                             <a class="popular-questions" href="https://www.wildberries.kz/services/voprosy-i-otvety">Частые вопросы</a>
-                                          </div>
-                                        </div>
-                                        <div class="col-md-3 col-6">
-                                          <div class="contacts-list-item j-com-create-wrapper">
-                                             <h2 class="c-h2 title">Обращения</h2>
-                                             <p class="c-text-base gray">Если у Вас возник вопрос – напишите нам</p>
-                                             <span class="c-link-out link j-create-com">Обратная связь</span>
-                                          </div>
-                                        </div>
-                                        <div class="col-md-3 col-6">
-                                          <div class="contacts-list-item">
-                                             <h2 class="c-h2 title">Официальные запросы</h2>
-                                             <p class="c-text-base gray">Для отправки или получения деловой документации</p>
-                                             <a class="c-link-out link" href="mailto:sales@wildberries.kz">sales@wildberries.kz</a>
-                                          </div>
-                                        </div>
-                                        <div class="col-md-3 col-6">
-                                          <div class="contacts-list-item bottom-row">
-                                             <h2 class="c-h2 title">Партнерам</h2>
-                                             <p class="c-text-base gray">Узнайте подробные условия для сотрудничества</p>
-                                             <a class="c-link-out link" href="https://www.wildberries.kz/services/partneram">Подробнее</a>
-                                          </div>
-                                        </div>
-                                        <div class="col-md-3 col-6">
-                                          <div class="contacts-list-item bottom-row">
-                                             <h2 class="c-h2 title">Пресс-служба</h2>
-                                             <p class="c-text-base gray">Для запросов СМИ и&nbsp;на&nbsp;участие в&nbsp;мероприятиях</p>
-                                             <a class="c-link-out link" href="mailto:pr@wildberries.ru">pr@wildberries.ru</a>
-                                          </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                          <div class="contacts-list-item bottom-row contacts-list-item-lg contacts-list-address">
-                                             <h2 class="c-h2 title">Адреса</h2>
-                                             <p class="c-text-base gray address-item">Адрес для корреспонденции и возврата товара <span class="address-item-value">ТОО «Вайлдберриз», 050035, город Алматы, улица Жандосова, дом 150&nbsp;А, нежилое помещение 105</span></p>
-                                             <p class="c-text-base gray address-item">Юридический адреc <span class="address-item-value">ТОО «Вайлдберриз», 050035, город Алматы, улица Жандосова, дом 150&nbsp;А, нежилое помещение 105</span></p>
-                                          </div>
-                                        </div>
-                                   </div>
-                                </div>
-                             </div>
-                    </div>
-                </div>
+         </div>
+      </div>
+      <div id="body-layout" class="main-content j-parallax-main-layer ">
+         <div class="left-bg">
+            <div class="trunkOld">
+               <div id="info_tbl" class="info-table service-basic">
+                  <div id="info_content" valign="top" class="info_main_content">
+                     <div class="page-wrap page-contacts">
+                        <h1 class="c-h1">Контакты</h1>
+                        <div class="contacts-list row">
+                           <div class="col-md-6 col-12">
+                              <div class="contacts-list-item contacts-list-item-lg contacts-list-social ">
+                                 <h2 class="c-h1 title">Мессенджеры</h2>
+                                 <p class="c-h3 text">Наши сотрудники ответят<br>
+                                    на все Ваши вопросы
+                                 </p>
+                                 <span class="icon">&nbsp;</span>
+                                 <div class="social"><a class="social-item social-mg" href="https://m.me/wbbot" target="_blank">&nbsp;</a> <a class="social-item social-vb" href="viber://pa?chatURI=wildberries" target="_blank">&nbsp;</a> <a class="social-item social-vk" href="https://vk.me/wbbot" target="_blank">&nbsp;</a> <a class="social-item social-tg" href="https://t.me/wbshop_bot" target="_blank">&nbsp;</a></div>
+                                 <a class="popular-questions" href="#/services/voprosy-i-otvety">Частые вопросы</a>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-6">
+                              <div class="contacts-list-item j-com-create-wrapper">
+                                 <h2 class="c-h2 title">Обращения</h2>
+                                 <p class="c-text-base gray">Если у Вас возник вопрос – напишите нам</p>
+                                 <span class="c-link-out link j-create-com">Обратная связь</span>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-6">
+                              <div class="contacts-list-item">
+                                 <h2 class="c-h2 title">Официальные запросы</h2>
+                                 <p class="c-text-base gray">Для отправки или получения деловой документации</p>
+                                 <a class="c-link-out link" href="mailto:sales@wildberries.kz">sales@wildberries.kz</a>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-6">
+                              <div class="contacts-list-item bottom-row">
+                                 <h2 class="c-h2 title">Партнерам</h2>
+                                 <p class="c-text-base gray">Узнайте подробные условия для сотрудничества</p>
+                                 <a class="c-link-out link" href="#/services/partneram">Подробнее</a>
+                              </div>
+                           </div>
+                           <div class="col-md-3 col-6">
+                              <div class="contacts-list-item bottom-row">
+                                 <h2 class="c-h2 title">Пресс-служба</h2>
+                                 <p class="c-text-base gray">Для запросов СМИ и&nbsp;на&nbsp;участие в&nbsp;мероприятиях</p>
+                                 <a class="c-link-out link" href="mailto:pr@wildberries.ru">pr@wildberries.ru</a>
+                              </div>
+                           </div>
+                           <div class="col-md-6 col-12">
+                              <div class="contacts-list-item bottom-row contacts-list-item-lg contacts-list-address">
+                                 <h2 class="c-h2 title">Адреса</h2>
+                                 <p class="c-text-base gray address-item">Адрес для корреспонденции и возврата товара <span class="address-item-value">ТОО «Вайлдберриз», 050035, город Алматы, улица Жандосова, дом 150&nbsp;А, нежилое помещение 105</span></p>
+                                 <p class="c-text-base gray address-item">Юридический адреc <span class="address-item-value">ТОО «Вайлдберриз», 050035, город Алматы, улица Жандосова, дом 150&nbsp;А, нежилое помещение 105</span></p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-        <div id="footer" class="footer j-ss-end-visible footer-kz">
+         </div>
+      </div>
+      <div id="footer" class="footer j-ss-end-visible footer-kz">
          <div class="wrapper-v1">
             <div class="line row">
                <div class="item-footer buyers col-6 col-md-2 m-0 m-md-3">
@@ -361,58 +348,54 @@ body.offcanvas-active{
          </div>
       </div>
    </body>
-   
-      <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    
-   
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script type="text/javascript">
-/// some script
-
-// jquery ready start
-$(document).ready(function() {
-	// jQuery code
-
-
-	$("[data-trigger]").on("click", function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        var offcanvas_id =  $(this).attr('data-trigger');
-        $(offcanvas_id).toggleClass("show");
-        $('body').toggleClass("offcanvas-active");
-        $(".screen-overlay").toggleClass("show");
-    }); 
-
-   	// Close menu when pressing ESC
-    $(document).on('keydown', function(event) {
-        if(event.keyCode === 27) {
-           $(".mobile-offcanvas").removeClass("show");
-           $("body").removeClass("overlay-active");
-        }
-    });
-
-    $(".btn-close, .screen-overlay").click(function(e){
-    	$(".screen-overlay").removeClass("show");
-        $(".mobile-offcanvas").removeClass("show");
-        $("body").removeClass("offcanvas-active");
-
-
-    }); 
-
-
-}); // jquery end
-</script>
-
-      <script type="text/javascript">
-         $(document).ready(function(){
-           $('.banners-slider').slick({
-               lazyLoad: 'ondemand',
-               dots: true,
-               speed: 500,
-               fade: true,
-               cssEase: 'linear',
-           });
-         });
-      </script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   <script type="text/javascript">
+      /// some script
+      
+      // jquery ready start
+      $(document).ready(function() {
+      	// jQuery code
+      
+      
+      	$("[data-trigger]").on("click", function(e){
+              e.preventDefault();
+              e.stopPropagation();
+              var offcanvas_id =  $(this).attr('data-trigger');
+              $(offcanvas_id).toggleClass("show");
+              $('body').toggleClass("offcanvas-active");
+              $(".screen-overlay").toggleClass("show");
+          }); 
+      
+         	// Close menu when pressing ESC
+          $(document).on('keydown', function(event) {
+              if(event.keyCode === 27) {
+                 $(".mobile-offcanvas").removeClass("show");
+                 $("body").removeClass("overlay-active");
+              }
+          });
+      
+          $(".btn-close, .screen-overlay").click(function(e){
+          	$(".screen-overlay").removeClass("show");
+              $(".mobile-offcanvas").removeClass("show");
+              $("body").removeClass("offcanvas-active");
+      
+      
+          }); 
+      
+      
+      }); // jquery end
+   </script>
+   <script type="text/javascript">
+      $(document).ready(function(){
+        $('.banners-slider').slick({
+            lazyLoad: 'ondemand',
+            dots: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+        });
+      });
+   </script>
 </html>

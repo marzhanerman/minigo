@@ -11,10 +11,10 @@
       <meta name="description" content="Аксессуары и сумки, косметика и электроника. Информация о доставке и оплате.">
       <meta name="keywords" content="">
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>     
-    <script type="text/javascript" src="js/slick/slick.min.js"></script>
+      <script type="text/javascript" src="js/slick/slick.min.js"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <link href="./css/main-page_v1.min.css" rel="stylesheet" type="text/css">
-      <link rel="icon" href="https://www.wildberries.kz/favicon.ico" type="image/vnd.microsoft.icon">
+      <link rel="icon" href="./img/favicon.ico" type="image/vnd.microsoft.icon">
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
       <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
       <style id="mz-css" type="text/css"></style>
@@ -22,118 +22,109 @@
       <link type="text/css" href="./css/fonts/sf_ui_display/stylesheet.css">
       <link rel="stylesheet" type="text/css" href="./css/lazy-load-slick.css">
       <style type="text/css">
-
-body.offcanvas-active{
-	overflow:hidden;
-}
-
-.navbar{
-    padding: .5rem 0rem;
-}
-
-.banner-item img{
-    border-radius: 16px;
-}
-
-.offcanvas-header{ display:none; }
-
-.screen-overlay {
-  width:0%;
-  height: 100%;
-  z-index: 30;
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity:0;
-  visibility:hidden;
-  background-color: rgba(34, 34, 34, 0.6);
-  transition:opacity .2s linear, visibility .1s, width 1s ease-in;
-}
-.screen-overlay.show {
-    transition:opacity .5s ease, width 0s;
-    opacity:1;
-    width:100%;
-    visibility:visible;
-}
-	
-@media all and (max-width:992px) { 
-	
-	.offcanvas-header{ display:block; }
-
-	.mobile-offcanvas{
-		visibility: hidden;
-		transform:translateX(-100%);
-	    border-radius:0; 
-		display:block;
-	    position: fixed;
-	    top: 0; left:0;
-	    height: 100%;
-	    z-index: 1200;
-	    width:80%;
-	    overflow-y: scroll;
-	    overflow-x: hidden;
-	    transition: visibility .2s ease-in-out, transform .2s ease-in-out;
-	    padding: .5rem 1rem;
-	    background-color: #fff;
-	}
-
-	.mobile-offcanvas.show{
-		visibility: visible;
-    	transform: translateX(0);
-	}
-	.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link,
-	.navbar-dark .navbar-nav .nav-link{
-	    color: #000;
-	}
-	.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{
-	    color: var(--primary-color);
-	}
-	#toggle_navbar_main{
-	    background-image: url("./img/menu-icon.png");
-	    background-color: transparent;
-        border: none;
-        width: 40px;
-        height: 40px;
-        background-size: contain;
-	}
-	#toggle_navbar_main:focus{
-	    border: 2px solid #fff !important;
-        outline:none;
-        border-radius: 5px;
-	}
-	.btn-close{
-	    background-image: url("./img/close.png");
-	    background-color: transparent;
-        border: none;
-        width: 30px;
-        height: 30px;
-        background-size: contain;
-        background-repeat:no-repeat;
-        background-position: right;
-	}
-	.header-v1 .header-content{
-	    margin: 30px 0 10px !important;
-	}
-}
-@media all and (min-width: 992px){
-    .navbar-expand-lg .navbar-nav{
-	    justify-content: space-between;
-	    width: 100%;
-	}
-	/*
-	.navbar-expand-lg.navbar{
-	    padding: 30px 0rem 0 0;
-	}*/
-	.navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: 0rem;
-        padding-left: 0rem; 
-        font-weight: bold;
-    }
-    .navbar-dark .navbar-nav .nav-link {
-        color: #fff;
-    }
-}
-</style>
+         body.offcanvas-active{
+         overflow:hidden;
+         }
+         .navbar{
+         padding: .5rem 0rem;
+         }
+         .banner-item img{
+         border-radius: 16px;
+         }
+         .offcanvas-header{ display:none; }
+         .screen-overlay {
+         width:0%;
+         height: 100%;
+         z-index: 30;
+         position: fixed;
+         top: 0;
+         left: 0;
+         opacity:0;
+         visibility:hidden;
+         background-color: rgba(34, 34, 34, 0.6);
+         transition:opacity .2s linear, visibility .1s, width 1s ease-in;
+         }
+         .screen-overlay.show {
+         transition:opacity .5s ease, width 0s;
+         opacity:1;
+         width:100%;
+         visibility:visible;
+         }
+         @media all and (max-width:992px) { 
+         .offcanvas-header{ display:block; }
+         .mobile-offcanvas{
+         visibility: hidden;
+         transform:translateX(-100%);
+         border-radius:0; 
+         display:block;
+         position: fixed;
+         top: 0; left:0;
+         height: 100%;
+         z-index: 1200;
+         width:80%;
+         overflow-y: scroll;
+         overflow-x: hidden;
+         transition: visibility .2s ease-in-out, transform .2s ease-in-out;
+         padding: .5rem 1rem;
+         background-color: #fff;
+         }
+         .mobile-offcanvas.show{
+         visibility: visible;
+         transform: translateX(0);
+         }
+         .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link,
+         .navbar-dark .navbar-nav .nav-link{
+         color: #000;
+         }
+         .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{
+         color: var(--primary-color);
+         }
+         #toggle_navbar_main{
+         background-image: url("./img/menu-icon.png");
+         background-color: transparent;
+         border: none;
+         width: 40px;
+         height: 40px;
+         background-size: contain;
+         }
+         #toggle_navbar_main:focus{
+         border: 2px solid #fff !important;
+         outline:none;
+         border-radius: 5px;
+         }
+         .btn-close{
+         background-image: url("./img/close.png");
+         background-color: transparent;
+         border: none;
+         width: 30px;
+         height: 30px;
+         background-size: contain;
+         background-repeat:no-repeat;
+         background-position: right;
+         }
+         .header-v1 .header-content{
+         margin: 30px 0 10px !important;
+         }
+         }
+         @media all and (min-width: 992px){
+         .navbar-expand-lg .navbar-nav{
+         justify-content: space-between;
+         width: 100%;
+         }
+         /*
+         .navbar-expand-lg.navbar{
+         padding: 30px 0rem 0 0;
+         }*/
+         .navbar-expand-lg .navbar-nav .nav-link {
+         padding-right: 0rem;
+         padding-left: 0rem; 
+         font-weight: bold;
+         }
+         .navbar-dark .navbar-nav .nav-link {
+         color: #fff;
+         }
+         }
+      </style>
    </head>
    <body >
       <div class="header-v1  j-header  header-with-burger">
@@ -207,56 +198,52 @@ body.offcanvas-active{
                         <script type="jsv/1_"></script>
                      </div>
                   </div>
-                </div>
+               </div>
                <!-- ========================= SECTION CONTENT ========================= -->
-
-                <div class="main-menu">
-                
-                <button id="toggle_navbar_main" data-trigger="#navbar_main" class="d-lg-none" type="button"> </button>
-                
-                <nav id="navbar_main" class="mobile-offcanvas navbar navbar-expand-lg navbar-dark">
-                <div class="offcanvas-header">  
-                	<button class="btn btn-close float-right"></button>
-                	<h5 class="py-2 text-white">Main navbar</h5>
-                </div>
-                <ul class="navbar-nav">
-                	<li class="nav-item active"> <a class="nav-link" href="#"> Новинки </a> </li>
-                	<li class="nav-item"><a class="nav-link" href="#"> SALE % </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Аксессуары и сумки </a></li>
-                	<li class="nav-item dropdown">
-                		<a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Косметика  </a>
-                	    <ul class="dropdown-menu">
-                		  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
-                		  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
-                	    </ul>
-                	</li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Электроника </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Life Style </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Все для макияжа </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Парфюмерия </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Уход за кожей & Очищение </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Канцелярия & Подарки </a></li>
-                </ul>
-                
-                </nav>
-                
-                </div><!-- container //  -->
-            </div>
-        </div>
-    </div>
-    <div id="body-layout" class="main-content j-parallax-main-layer ">
-            <div class="left-bg">
-               <div class="trunkOld">
-                  <div class="main-page">
-                     <div class="i-main-banners-slider-v1 banners-slider j-carousel-banners-wrapper banners-list big-banner">
-                        <div class="banner-item"><img data-lazy="img/banner.jpg"></div>
-                        <div class="banner-item"><img data-lazy="img/big_summer_sale_14_06_2.jpg"></div>
+               <div class="main-menu">
+                  <button id="toggle_navbar_main" data-trigger="#navbar_main" class="d-lg-none" type="button"> </button>
+                  <nav id="navbar_main" class="mobile-offcanvas navbar navbar-expand-lg navbar-dark">
+                     <div class="offcanvas-header">
+                        <button class="btn btn-close float-right"></button>
+                        <h5 class="py-2 text-white">Main navbar</h5>
                      </div>
+                     <ul class="navbar-nav">
+                        <li class="nav-item active"> <a class="nav-link" href="#"> Новинки </a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#"> SALE % </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Аксессуары и сумки </a></li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Косметика  </a>
+                           <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+                              <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+                           </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Электроника </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Life Style </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Все для макияжа </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Парфюмерия </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Уход за кожей & Очищение </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Канцелярия & Подарки </a></li>
+                     </ul>
+                  </nav>
+               </div>
+               <!-- container //  -->
+            </div>
+         </div>
+      </div>
+      <div id="body-layout" class="main-content j-parallax-main-layer ">
+         <div class="left-bg">
+            <div class="trunkOld">
+               <div class="main-page">
+                  <div class="i-main-banners-slider-v1 banners-slider j-carousel-banners-wrapper banners-list big-banner">
+                     <div class="banner-item"><img data-lazy="img/banner.jpg"></div>
+                     <div class="banner-item"><img data-lazy="img/big_summer_sale_14_06_2.jpg"></div>
                   </div>
-                  <div class="j-main-parts j-products-container" id="part1" >
-                     <div class="j-goods-wrapper row-2  j-goods-wrapper-hits">
-                        <h3 class="c-h1 title j-recommended-goods-title">Хиты продаж</h3>
-                        <div class="row products-container j-products-container-block">
+               </div>
+               <div class="j-main-parts j-products-container" id="part1" >
+                  <div class="j-goods-wrapper row-2  j-goods-wrapper-hits">
+                     <h3 class="c-h1 title j-recommended-goods-title">Хиты продаж</h3>
+                     <div class="row products-container j-products-container-block">
                         <div class="col-12">
                            <div class="item j-product-item">
                               <a href="#" class="j-open-full-product-card">
@@ -484,293 +471,293 @@ body.offcanvas-active{
                            </div>
                         </div>
                      </div>
-                     </div>
-                     <div class="j-wb-stories-wrapper">
-                     </div>
-                     <div class="">
-                        <div class="banners-count-inner banners-count-2 row">
-                           <div class="banners-item banner-elastic j-banner-wrapper col-md-6 mb-md-0 col-12 mb-3">
-                              <div class="banners-zones-container ">
-                                 <div class="banners-zones">
-                                    <a rel="nofollow" href="#" class="j-banner-shown-stat j-banner-click-stat j-banner" title="ПОДАРКИ ДЛЯ ВСЕХ" target="_self">
-                                    <img class="j-lazy-img" id="banner_625e934b-7427-4470-9458-dd9231f0ab55" name="banner_625e934b-7427-4470-9458-dd9231f0ab55" src="img/mini_banner_1.png" alt="ПОДАРКИ ДЛЯ ВСЕХ"  style="display: block;">
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="banners-item banner-elastic j-banner-wrapper col-md-6 col-12">
-                              <div class="banners-zones-container ">
-                                 <div class="banners-zones">
-                                    <a rel="nofollow" href="#" class="j-banner-shown-stat j-banner-click-stat j-banner" title="ВЕНТИЛЯТОРЫ" target="_self">
-                                    <img class="j-lazy-img" id="banner_9abde97f-b45c-4fb9-ac6f-6a4ce4ef122f" name="banner_9abde97f-b45c-4fb9-ac6f-6a4ce4ef122f" src="img/mini_banner_2.png" alt="ВЕНТИЛЯТОРЫ" style="display: block;">
-                                    </a>
-                                 </div>
+                  </div>
+                  <div class="j-wb-stories-wrapper">
+                  </div>
+                  <div class="">
+                     <div class="banners-count-inner banners-count-2 row">
+                        <div class="banners-item banner-elastic j-banner-wrapper col-md-6 mb-md-0 col-12 mb-3">
+                           <div class="banners-zones-container ">
+                              <div class="banners-zones">
+                                 <a rel="nofollow" href="#" class="j-banner-shown-stat j-banner-click-stat j-banner" title="ПОДАРКИ ДЛЯ ВСЕХ" target="_self">
+                                 <img class="j-lazy-img" id="banner_625e934b-7427-4470-9458-dd9231f0ab55" name="banner_625e934b-7427-4470-9458-dd9231f0ab55" src="img/mini_banner_1.png" alt="ПОДАРКИ ДЛЯ ВСЕХ"  style="display: block;">
+                                 </a>
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="j-goods-wrapper row-2  j-goods-wrapper-hits">
-                        <h3 class="c-h1 title j-recommended-goods-title"></h3>
-                        <div class="products-container j-products-container-block">
-                           <div class="item j-product-item">
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_15.png" alt="Массажер для тела" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">3&nbsp;900&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Массажер для тела</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item">
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_16.png" alt="Парфюм Blooming Bouquet" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">3&nbsp;690&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Парфюм Blooming Bouquet</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item">
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_17.png" alt="Подушка Ocean Series" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">22&nbsp;090&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Подушка Ocean Series</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item" >
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_18.png" alt="Плюшевый единорог" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">4&nbsp;500&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Плюшевый единорог</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item">
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_19.png" alt="Набор вешалок (5 шт.)" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">990&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Набор вешалок (5 шт.)</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item" >
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_20.png" alt="Массажная расческа для волос" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">1&nbsp;690&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Массажная расческа для волос</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item">
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_21.png" alt="Сумка для ланча" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">2&nbsp;800&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Сумка для ланча</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="">
-                        <div class="banners-count-inner banners-count-2 row">
-                           <div class="banners-item banner-elastic j-banner-wrapper col-md-6 mb-md-0 col-12 mb-3">
-                              <div class="banners-zones-container ">
-                                 <div class="banners-zones">
-                                    <a rel="nofollow" href="#" class="j-banner-shown-stat j-banner-click-stat j-banner" title="ПОДУШКИ" target="_self">
-                                    <img class="j-lazy-img" id="banner_194653bd-2662-4e4d-a7bf-2111e85ebd72" name="banner_194653bd-2662-4e4d-a7bf-2111e85ebd72" src="img/mini_banner_3.png" alt="ПОДУШКИ" style="display: block;">
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="banners-item banner-elastic j-banner-wrapper col-md-6 col-12">
-                              <div class="banners-zones-container ">
-                                 <div class="banners-zones">
-                                    <a rel="nofollow" href="#" class="j-banner-shown-stat j-banner-click-stat j-banner" title="БУТЫЛОЧКИ" target="_self"  >
-                                    <img class="j-lazy-img" id="banner_9bf38254-02ac-4bb0-85f8-7874f47a6e26" name="banner_9bf38254-02ac-4bb0-85f8-7874f47a6e26" src="img/mini_banner_4.png" alt="БУТЫЛОЧКИ" style="display: block;">
-                                    </a>
-                                 </div>
+                        <div class="banners-item banner-elastic j-banner-wrapper col-md-6 col-12">
+                           <div class="banners-zones-container ">
+                              <div class="banners-zones">
+                                 <a rel="nofollow" href="#" class="j-banner-shown-stat j-banner-click-stat j-banner" title="ВЕНТИЛЯТОРЫ" target="_self">
+                                 <img class="j-lazy-img" id="banner_9abde97f-b45c-4fb9-ac6f-6a4ce4ef122f" name="banner_9abde97f-b45c-4fb9-ac6f-6a4ce4ef122f" src="img/mini_banner_2.png" alt="ВЕНТИЛЯТОРЫ" style="display: block;">
+                                 </a>
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="j-goods-wrapper row-1  j-goods-wrapper-hits">
-                        <h3 class="c-h1 title j-recommended-goods-title"></h3>
-                        <div class="products-container j-products-container-block">
-                           <div class="item j-product-item" >
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_22.png" alt="Сумка для ланча Adventure Time" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">1&nbsp;690&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Сумка для ланча Adventure Time</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item">
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_23.png" alt="Керамическая кружка" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">2&nbsp;800&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Керамическая кружка</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item">
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_24.png" alt="Коврик для пола Капитан Америка" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">3&nbsp;900&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Коврик для пола Капитан Америка</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item">
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_25.png" alt="Кушон Ivory" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">4&nbsp;500&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Кушон Ivory</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item">
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_26.png" alt="Органайзер Железный Человек" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">3&nbsp;900&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Органайзер Железный Человек</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item" >
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_27.png" alt="Рюкзак желтый Adventure time" style="display: inline;">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">4&nbsp;500&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Рюкзак желтый Adventure time</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                           <div class="item j-product-item">
-                              <a href="#" class="j-open-full-product-card">
-                                 <div class="item-img ">
-                                    <img class="j-lazy-img" src="img/bestseller_28.png" alt="Cанитайзер для рук Ocean">
-                                    <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
-                                 </div>
-                                 <div class="item-info">
-                                    <div class="price-block j-price-block">
-                                       <div class="price-now">550&nbsp;тг.</div>
-                                    </div>
-                                    <div class="good">
-                                       <span class="good-brand">Cанитайзер для рук Ocean</span>
-                                    </div>
-                                 </div>
-                              </a>
-                           </div>
-                        </div>
-                        <button class="c-btn-show-more j-show-more-goods" type="button">Показать еще</button>    
                      </div>
                   </div>
-                </div>
+                  <div class="j-goods-wrapper row-2  j-goods-wrapper-hits">
+                     <h3 class="c-h1 title j-recommended-goods-title"></h3>
+                     <div class="products-container j-products-container-block">
+                        <div class="item j-product-item">
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_15.png" alt="Массажер для тела" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">3&nbsp;900&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Массажер для тела</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item">
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_16.png" alt="Парфюм Blooming Bouquet" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">3&nbsp;690&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Парфюм Blooming Bouquet</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item">
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_17.png" alt="Подушка Ocean Series" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">22&nbsp;090&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Подушка Ocean Series</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item" >
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_18.png" alt="Плюшевый единорог" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">4&nbsp;500&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Плюшевый единорог</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item">
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_19.png" alt="Набор вешалок (5 шт.)" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">990&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Набор вешалок (5 шт.)</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item" >
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_20.png" alt="Массажная расческа для волос" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">1&nbsp;690&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Массажная расческа для волос</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item">
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_21.png" alt="Сумка для ланча" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">2&nbsp;800&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Сумка для ланча</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="">
+                     <div class="banners-count-inner banners-count-2 row">
+                        <div class="banners-item banner-elastic j-banner-wrapper col-md-6 mb-md-0 col-12 mb-3">
+                           <div class="banners-zones-container ">
+                              <div class="banners-zones">
+                                 <a rel="nofollow" href="#" class="j-banner-shown-stat j-banner-click-stat j-banner" title="ПОДУШКИ" target="_self">
+                                 <img class="j-lazy-img" id="banner_194653bd-2662-4e4d-a7bf-2111e85ebd72" name="banner_194653bd-2662-4e4d-a7bf-2111e85ebd72" src="img/mini_banner_3.png" alt="ПОДУШКИ" style="display: block;">
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="banners-item banner-elastic j-banner-wrapper col-md-6 col-12">
+                           <div class="banners-zones-container ">
+                              <div class="banners-zones">
+                                 <a rel="nofollow" href="#" class="j-banner-shown-stat j-banner-click-stat j-banner" title="БУТЫЛОЧКИ" target="_self"  >
+                                 <img class="j-lazy-img" id="banner_9bf38254-02ac-4bb0-85f8-7874f47a6e26" name="banner_9bf38254-02ac-4bb0-85f8-7874f47a6e26" src="img/mini_banner_4.png" alt="БУТЫЛОЧКИ" style="display: block;">
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="j-goods-wrapper row-1  j-goods-wrapper-hits">
+                     <h3 class="c-h1 title j-recommended-goods-title"></h3>
+                     <div class="products-container j-products-container-block">
+                        <div class="item j-product-item" >
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_22.png" alt="Сумка для ланча Adventure Time" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">1&nbsp;690&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Сумка для ланча Adventure Time</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item">
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_23.png" alt="Керамическая кружка" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">2&nbsp;800&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Керамическая кружка</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item">
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_24.png" alt="Коврик для пола Капитан Америка" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">3&nbsp;900&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Коврик для пола Капитан Америка</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item">
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_25.png" alt="Кушон Ivory" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">4&nbsp;500&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Кушон Ivory</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item">
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_26.png" alt="Органайзер Железный Человек" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">3&nbsp;900&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Органайзер Железный Человек</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item" >
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_27.png" alt="Рюкзак желтый Adventure time" style="display: inline;">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">4&nbsp;500&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Рюкзак желтый Adventure time</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                        <div class="item j-product-item">
+                           <a href="#" class="j-open-full-product-card">
+                              <div class="item-img ">
+                                 <img class="j-lazy-img" src="img/bestseller_28.png" alt="Cанитайзер для рук Ocean">
+                                 <button class="preview-item j-open-product-popup">Быстрый просмотр</button>
+                              </div>
+                              <div class="item-info">
+                                 <div class="price-block j-price-block">
+                                    <div class="price-now">550&nbsp;тг.</div>
+                                 </div>
+                                 <div class="good">
+                                    <span class="good-brand">Cанитайзер для рук Ocean</span>
+                                 </div>
+                              </div>
+                           </a>
+                        </div>
+                     </div>
+                     <button class="c-btn-show-more j-show-more-goods" type="button">Показать еще</button>    
+                  </div>
+               </div>
             </div>
-        </div>
-        <div id="footer" class="footer j-ss-end-visible footer-kz">
+         </div>
+      </div>
+      <div id="footer" class="footer j-ss-end-visible footer-kz">
          <div class="wrapper-v1">
             <div class="line row">
                <div class="item-footer buyers col-6 col-md-2 m-0 m-md-3">
@@ -827,58 +814,54 @@ body.offcanvas-active{
          </div>
       </div>
    </body>
-   
-      <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    
-   
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script type="text/javascript">
-/// some script
-
-// jquery ready start
-$(document).ready(function() {
-	// jQuery code
-
-
-	$("[data-trigger]").on("click", function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        var offcanvas_id =  $(this).attr('data-trigger');
-        $(offcanvas_id).toggleClass("show");
-        $('body').toggleClass("offcanvas-active");
-        $(".screen-overlay").toggleClass("show");
-    }); 
-
-   	// Close menu when pressing ESC
-    $(document).on('keydown', function(event) {
-        if(event.keyCode === 27) {
-           $(".mobile-offcanvas").removeClass("show");
-           $("body").removeClass("overlay-active");
-        }
-    });
-
-    $(".btn-close, .screen-overlay").click(function(e){
-    	$(".screen-overlay").removeClass("show");
-        $(".mobile-offcanvas").removeClass("show");
-        $("body").removeClass("offcanvas-active");
-
-
-    }); 
-
-
-}); // jquery end
-</script>
-
-      <script type="text/javascript">
-         $(document).ready(function(){
-           $('.banners-slider').slick({
-               lazyLoad: 'ondemand',
-               dots: true,
-               speed: 500,
-               fade: true,
-               cssEase: 'linear',
-           });
-         });
-      </script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   <script type="text/javascript">
+      /// some script
+      
+      // jquery ready start
+      $(document).ready(function() {
+      	// jQuery code
+      
+      
+      	$("[data-trigger]").on("click", function(e){
+              e.preventDefault();
+              e.stopPropagation();
+              var offcanvas_id =  $(this).attr('data-trigger');
+              $(offcanvas_id).toggleClass("show");
+              $('body').toggleClass("offcanvas-active");
+              $(".screen-overlay").toggleClass("show");
+          }); 
+      
+         	// Close menu when pressing ESC
+          $(document).on('keydown', function(event) {
+              if(event.keyCode === 27) {
+                 $(".mobile-offcanvas").removeClass("show");
+                 $("body").removeClass("overlay-active");
+              }
+          });
+      
+          $(".btn-close, .screen-overlay").click(function(e){
+          	$(".screen-overlay").removeClass("show");
+              $(".mobile-offcanvas").removeClass("show");
+              $("body").removeClass("offcanvas-active");
+      
+      
+          }); 
+      
+      
+      }); // jquery end
+   </script>
+   <script type="text/javascript">
+      $(document).ready(function(){
+        $('.banners-slider').slick({
+            lazyLoad: 'ondemand',
+            dots: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+        });
+      });
+   </script>
 </html>

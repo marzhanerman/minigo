@@ -11,12 +11,12 @@
       <meta name="description" content="Аксессуары и сумки, косметика и электроника. Информация о доставке и оплате.">
       <meta name="keywords" content="">
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>     
-    <script type="text/javascript" src="js/slick/slick.min.js"></script>
+      <script type="text/javascript" src="js/slick/slick.min.js"></script>
       <script type="text/javascript" src="js/jquery.inputmask.js" charset="utf-8"></script>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <link href="./css/signIn.min.css" rel="stylesheet" type="text/css">
       <link href="./css/main-page_v1.min.css" rel="stylesheet" type="text/css">
-      <link rel="icon" href="https://www.wildberries.kz/favicon.ico" type="image/vnd.microsoft.icon">
+      <link rel="icon" href="./img/favicon.ico" type="image/vnd.microsoft.icon">
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
       <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
       <style id="mz-css" type="text/css"></style>
@@ -24,118 +24,109 @@
       <link type="text/css" href="./css/fonts/sf_ui_display/stylesheet.css">
       <link rel="stylesheet" type="text/css" href="./css/lazy-load-slick.css">
       <style type="text/css">
-
-body.offcanvas-active{
-	overflow:hidden;
-}
-
-.navbar{
-    padding: .5rem 0rem;
-}
-
-.banner-item img{
-    border-radius: 16px;
-}
-
-.offcanvas-header{ display:none; }
-
-.screen-overlay {
-  width:0%;
-  height: 100%;
-  z-index: 30;
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity:0;
-  visibility:hidden;
-  background-color: rgba(34, 34, 34, 0.6);
-  transition:opacity .2s linear, visibility .1s, width 1s ease-in;
-}
-.screen-overlay.show {
-    transition:opacity .5s ease, width 0s;
-    opacity:1;
-    width:100%;
-    visibility:visible;
-}
-	
-@media all and (max-width:992px) { 
-	
-	.offcanvas-header{ display:block; }
-
-	.mobile-offcanvas{
-		visibility: hidden;
-		transform:translateX(-100%);
-	    border-radius:0; 
-		display:block;
-	    position: fixed;
-	    top: 0; left:0;
-	    height: 100%;
-	    z-index: 1200;
-	    width:80%;
-	    overflow-y: scroll;
-	    overflow-x: hidden;
-	    transition: visibility .2s ease-in-out, transform .2s ease-in-out;
-	    padding: .5rem 1rem;
-	    background-color: #fff;
-	}
-
-	.mobile-offcanvas.show{
-		visibility: visible;
-    	transform: translateX(0);
-	}
-	.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link,
-	.navbar-dark .navbar-nav .nav-link{
-	    color: #000;
-	}
-	.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{
-	    color: var(--primary-color);
-	}
-	#toggle_navbar_main{
-	    background-image: url("./img/menu-icon.png");
-	    background-color: transparent;
-        border: none;
-        width: 40px;
-        height: 40px;
-        background-size: contain;
-	}
-	#toggle_navbar_main:focus{
-	    border: 2px solid #fff !important;
-        outline:none;
-        border-radius: 5px;
-	}
-	.btn-close{
-	    background-image: url("./img/close.png");
-	    background-color: transparent;
-        border: none;
-        width: 30px;
-        height: 30px;
-        background-size: contain;
-        background-repeat:no-repeat;
-        background-position: right;
-	}
-	.header-v1 .header-content{
-	    margin: 30px 0 10px !important;
-	}
-}
-@media all and (min-width: 992px){
-    .navbar-expand-lg .navbar-nav{
-	    justify-content: space-between;
-	    width: 100%;
-	}
-	/*
-	.navbar-expand-lg.navbar{
-	    padding: 30px 0rem 0 0;
-	}*/
-	.navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: 0rem;
-        padding-left: 0rem; 
-        font-weight: bold;
-    }
-    .navbar-dark .navbar-nav .nav-link {
-        color: #fff;
-    }
-}
-</style>
+         body.offcanvas-active{
+         overflow:hidden;
+         }
+         .navbar{
+         padding: .5rem 0rem;
+         }
+         .banner-item img{
+         border-radius: 16px;
+         }
+         .offcanvas-header{ display:none; }
+         .screen-overlay {
+         width:0%;
+         height: 100%;
+         z-index: 30;
+         position: fixed;
+         top: 0;
+         left: 0;
+         opacity:0;
+         visibility:hidden;
+         background-color: rgba(34, 34, 34, 0.6);
+         transition:opacity .2s linear, visibility .1s, width 1s ease-in;
+         }
+         .screen-overlay.show {
+         transition:opacity .5s ease, width 0s;
+         opacity:1;
+         width:100%;
+         visibility:visible;
+         }
+         @media all and (max-width:992px) { 
+         .offcanvas-header{ display:block; }
+         .mobile-offcanvas{
+         visibility: hidden;
+         transform:translateX(-100%);
+         border-radius:0; 
+         display:block;
+         position: fixed;
+         top: 0; left:0;
+         height: 100%;
+         z-index: 1200;
+         width:80%;
+         overflow-y: scroll;
+         overflow-x: hidden;
+         transition: visibility .2s ease-in-out, transform .2s ease-in-out;
+         padding: .5rem 1rem;
+         background-color: #fff;
+         }
+         .mobile-offcanvas.show{
+         visibility: visible;
+         transform: translateX(0);
+         }
+         .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link,
+         .navbar-dark .navbar-nav .nav-link{
+         color: #000;
+         }
+         .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover{
+         color: var(--primary-color);
+         }
+         #toggle_navbar_main{
+         background-image: url("./img/menu-icon.png");
+         background-color: transparent;
+         border: none;
+         width: 40px;
+         height: 40px;
+         background-size: contain;
+         }
+         #toggle_navbar_main:focus{
+         border: 2px solid #fff !important;
+         outline:none;
+         border-radius: 5px;
+         }
+         .btn-close{
+         background-image: url("./img/close.png");
+         background-color: transparent;
+         border: none;
+         width: 30px;
+         height: 30px;
+         background-size: contain;
+         background-repeat:no-repeat;
+         background-position: right;
+         }
+         .header-v1 .header-content{
+         margin: 30px 0 10px !important;
+         }
+         }
+         @media all and (min-width: 992px){
+         .navbar-expand-lg .navbar-nav{
+         justify-content: space-between;
+         width: 100%;
+         }
+         /*
+         .navbar-expand-lg.navbar{
+         padding: 30px 0rem 0 0;
+         }*/
+         .navbar-expand-lg .navbar-nav .nav-link {
+         padding-right: 0rem;
+         padding-left: 0rem; 
+         font-weight: bold;
+         }
+         .navbar-dark .navbar-nav .nav-link {
+         color: #fff;
+         }
+         }
+      </style>
    </head>
    <body >
       <div class="header-v1  j-header  header-with-burger">
@@ -209,207 +200,203 @@ body.offcanvas-active{
                         <script type="jsv/1_"></script>
                      </div>
                   </div>
-                </div>
+               </div>
                <!-- ========================= SECTION CONTENT ========================= -->
-
-                <div class="main-menu">
-                
-                <button id="toggle_navbar_main" data-trigger="#navbar_main" class="d-lg-none" type="button"> </button>
-                
-                <nav id="navbar_main" class="mobile-offcanvas navbar navbar-expand-lg navbar-dark">
-                <div class="offcanvas-header">  
-                	<button class="btn btn-close float-right"></button>
-                	<h5 class="py-2 text-white">Main navbar</h5>
-                </div>
-                <ul class="navbar-nav">
-                	<li class="nav-item active"> <a class="nav-link" href="#"> Новинки </a> </li>
-                	<li class="nav-item"><a class="nav-link" href="#"> SALE % </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Аксессуары и сумки </a></li>
-                	<li class="nav-item dropdown">
-                		<a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Косметика  </a>
-                	    <ul class="dropdown-menu">
-                		  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
-                		  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
-                	    </ul>
-                	</li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Электроника </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Life Style </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Все для макияжа </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Парфюмерия </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Уход за кожей & Очищение </a></li>
-                	<li class="nav-item"><a class="nav-link" href="#"> Канцелярия & Подарки </a></li>
-                </ul>
-                
-                </nav>
-                
-                </div><!-- container //  -->
+               <div class="main-menu">
+                  <button id="toggle_navbar_main" data-trigger="#navbar_main" class="d-lg-none" type="button"> </button>
+                  <nav id="navbar_main" class="mobile-offcanvas navbar navbar-expand-lg navbar-dark">
+                     <div class="offcanvas-header">
+                        <button class="btn btn-close float-right"></button>
+                        <h5 class="py-2 text-white">Main navbar</h5>
+                     </div>
+                     <ul class="navbar-nav">
+                        <li class="nav-item active"> <a class="nav-link" href="#"> Новинки </a> </li>
+                        <li class="nav-item"><a class="nav-link" href="#"> SALE % </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Аксессуары и сумки </a></li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Косметика  </a>
+                           <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+                              <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+                           </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Электроника </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Life Style </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Все для макияжа </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Парфюмерия </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Уход за кожей & Очищение </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"> Канцелярия & Подарки </a></li>
+                     </ul>
+                  </nav>
+               </div>
+               <!-- container //  -->
             </div>
-        </div>
-    </div>
-    <div id="body-layout" class="main-content j-parallax-main-layer ">
-            <div class="left-bg">
-               <div class="trunkOld row">
-                    <div class="signIn col-lg-4 col-md-6 col-12">
-                       <input name="__RequestVerificationToken" type="hidden" value="CfDJ8BwoOLYI7eVNoETZPzdl6obP7A9haHR2WGDR8kXmDovnrmyNPA4nR8nyydP1e2323KY-m8fY5iPKW-xNiIu8f4Shm4pr4v1O3eEFbFefUMTL3Yrqzs5IGNnRU009DJji3jYTr2GEXa9aIheEmMpJbLI">
-                       <div class="hide j-b-pass-login j-b-login-block">
-                          <div class="login-block">
-                             <h2 class="c-h2-v1 login-block-title">Войти по паролю</h2>
-                             <div class="i-form-block-v1 j-mail j-b-login-wrapper j-b-login-email">
-                                <div class="input-label">Email или телефон</div>
-                                <div class="input-wrap">
-                                   <input class="input-item j-track" data-val="true" data-val-mvcvtkrequiredif="Введите email или телефон." data-val-mvcvtkrequiredif-dependentproperty="UsePhone" data-val-mvcvtkrequiredif-targetvalue="false" id="Item_Login" name="Item.Login" tabindex="1" title="Для входа в личный кабинет с помощью номера телефона введите его в следующем формате: 7ХХХХХХХХХX" type="text" value="">
-                                </div>
-                                <div class="input-message"><span class="field-validation-valid" data-valmsg-for="Item.Login" data-valmsg-replace="true"></span></div>
-                             </div>
-                             <div class="i-form-block-password">
-                                <div class="input-label">Пароль</div>
-                                <div class="input-wrap">
-                                   <input class="input-item j-track" data-val="true" data-val-required="Укажите пароль" id="Item_Password" maxlength="50" name="Item.Password" tabindex="2" type="password">
-                                   <span class="j-btn-toggle btn-toggle type-password"></span>
-                                </div>
-                                <div class="input-message"><span class="field-validation-valid" data-valmsg-for="Item.Password" data-valmsg-replace="true"></span></div>
-                             </div>
-                             <div class="i-form-block-v1 j-phone j-b-login-wrapper j-b-login-phone hide">
-                                <div class="input-label">Email или телефон</div>
-                                <div class="input-wrap">
-                                   <input class="input-item j-track" data-val="true" data-val-mvcvtkrequiredif="Введите email или телефон." data-val-mvcvtkrequiredif-dependentproperty="UsePhone" data-val-mvcvtkrequiredif-targetvalue="true" data-val-regex="Введите номер телефона!" data-val-regex-pattern="^[1-9]\d{10,13}$" id="Item_FullPhoneMobile" name="Item.FullPhoneMobile" title="Для входа в личный кабинет с помощью номера телефона введите его в следующем формате: 7ХХХХХХХХХX" type="text" value="">
-                                </div>
-                                <div class="input-message"><span class="field-validation-valid" data-valmsg-for="Item.FullPhoneMobile" data-valmsg-replace="true"></span></div>
-                             </div>
-                             <div class="i-form-block-captcha j-b-auth-captcha hide">
-                                <div class="input-label">Введите код с картинки <span class="star">*</span></div>
-                                <div class="input-wrap">
-                                   <input autocomplete="off" class="input-item j-track" id="CaptchaCode" name="CaptchaCode" tabindex="5" type="text" value="" style="text-transform: uppercase;">                    
-                                   <captcha>
-                                      <div class="BDC_CaptchaDiv " id="signIn_CaptchaDiv" style="width: 168px !important; height: 44px !important; ">
-                                         <!--
-                                            -->
-                                         <div class="BDC_CaptchaImageDiv" id="signIn_CaptchaImageDiv" style="width: 143px !important; height: 44px !important;">
-                                            <!--
-                                               --><a id="signIn_CaptchaImage_HelpLink" href="https://security.wildberries.kz/#" title="Проверочный код"><img class="BDC_CaptchaImage" id="signIn_CaptchaImage" src="./login_files/BotDetectCaptcha.ashx" alt="Проверочный код" style=""></a><!--
-                                               -->
-                                         </div>
-                                         <!--
-                                            -->
-                                         <div class="BDC_CaptchaIconsDiv" id="signIn_CaptchaIconsDiv" style="width: 19px !important;">
-                                            <!--
-                                               --><a class="BDC_ReloadLink" id="signIn_ReloadLink" href="https://security.wildberries.kz/#" title="Обновить проверочный код" style="display: inline-block !important;"><img class="BDC_ReloadIcon" id="signIn_ReloadIcon" src="./login_files/blank.gif" alt="Обновить проверочный код"></a><!--
-                                               -->
-                                         </div>
-                                         <input type="hidden" name="BDC_VCID_signIn" id="BDC_VCID_signIn" value="c81454994cf34519b1c39249ef41e346">
-                                         <input type="hidden" name="BDC_BackWorkaround_signIn" id="BDC_BackWorkaround_signIn" value="0">
-                                         <input type="hidden" name="BDC_Hs_signIn" id="BDC_Hs_signIn" value="1c29678830849d33caed7f0ac73941e9ce45e204">
-                                         <input type="hidden" name="BDC_SP_signIn" id="BDC_SP_signIn" value="1043552906">
-                                      </div>
-                                   </captcha>
-                                </div>
-                             </div>
-                             <div class="i-form-block-v1">
-                                <div class="input-wrap input-submit">
-                                   <input type="checkbox" value="true" name="Item.UsePhone" id="Item_UsePhone" class="hide">
-                                   <button class="c-btn-main-lg-v1 btn-submit" id="signIn" tabindex="7">Войти</button>
-                                </div>
-                                <div class="input-message">
-                                   <span class="field-validation-error" id="error" style="display: none;"></span>
-                                </div>
-                             </div>
-                             <div class="login-block-link">
-                                <a href="https://security.wildberries.kz/retrivepassword" class="c-link-in2-v1 j-lnk-outer" tabindex="6">Забыли пароль?</a>
-                             </div>
-                             <div class="login-block-bottom">
-                                <div class="login-block-bottom-link">
-                                   <span class="c-link-in3-v1 j-s-show-sms-login ">Войти по коду из СМС</span>
-                                </div>
-                                <div class="login-block-social">
-                                </div>
-                                <div class="login-block-public">Согласен с условиями <a href="https://www.wildberries.kz/services/publichnaya-oferta" target="_blank">Публичной оферты</a></div>
-                             </div>
-                          </div>
-                          <div id="loading" class="loading"></div>
-                          <span class="j-popup-tooltip hide">
-                          Для входа в личный кабинет с помощью номера телефона введите его в следующем формате: 7ХХХХХХХХХX
-                          </span>
-                       </div>
-                       <form class="j-f-easy-login j-b-login-block needs-validation" action="#" novalidate>
-                          <div class="login-block">
-                             <div class="j-b-easy-login-step-1 login-step">
-                                <h2 class="c-h2-v1 login-block-title">Войти или создать профиль</h2>
-                             </div>
-                             <div class="j-b-easy-login-step-2 login-step hide">
-                                <span class="arrow-back j-s-go-to-step-1"><span class="icon"></span></span>
-                                <h2 class="c-h2-v1 login-block-title">Введите код</h2>
-                                <p class="login-block-text">Код выслан на номер <b class="j-b-easy-login-phone-formatted">+7 926 976 75 76</b></p>
-                             </div>
-                             <div class="login-block-content">
-                                <div class="i-form-block-v1 j-b-easy-login-step-1">
-                                   <div class="input-label">Контактный телефон</div>
-                                   <div class="input-wrap">
-                                      <input class="input-item valid" id="phoneMobile"  name="fancyPhoneMobile" tabindex="2" type="tel" pattern="+7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" required>
-                                      <div class="invalid-feedback">Введите номер телефона!</div>
-                                      <input class="j-fullphonemobile input-validation-error" data-val="true" data-val-regex="Введите номер телефона!" data-val-regex-pattern="^[1-9]\d{10,13}$" data-val-required="Введите номер телефона!" id="phoneInput_FullPhoneMobile" name="phoneInput.FullPhoneMobile" type="hidden" value="">
-                                   </div>
-                                </div>
-                                <div class="i-form-block-v1 i-form-block-confirm j-b-easy-login-step-2 hide j-b-confirm-phone">
-                                   <div class="input-wrap">
-                                      <input class="input-item j-tb-confirm-code" data-val="true" data-val-range="Неверный код" data-val-range-max="999999" data-val-range-min="100000" data-val-required="Неверный код" id="phoneInput_ConfirmCode" name="phoneInput.ConfirmCode" tabindex="4" type="text" value="">
-                                   </div>
-                                   <div class="input-message">
-                                      <span class="field-validation-valid" data-valmsg-for="phoneInput.ConfirmCode" data-valmsg-replace="true"></span>
-                                   </div>
-                                </div>
-                                <div class="login-block-countdown">
-                                   <span class="j-s-request-code-countdown"></span>
-                                </div>
-                                <div class="i-form-block-captcha j-b-easy-login-captcha hide">
-                                   <div class="input-label">Введите код с картинки <span class="star">*</span></div>
-                                   <div class="input-wrap">
-                                      <input autocomplete="off" class="input-item j-track" id="smsCaptchaCode" name="smsCaptchaCode" tabindex="5" type="text" value="" style="text-transform: uppercase;">                    
-                                      <captcha>
-                                         <div class="BDC_CaptchaDiv " id="smsCodeRequest_CaptchaDiv" style="width: 168px !important; height: 44px !important; ">
-                                            <!--
-                                               -->
-                                            <div class="BDC_CaptchaImageDiv" id="smsCodeRequest_CaptchaImageDiv" style="width: 143px !important; height: 44px !important;">
-                                               <!--
-                                                  --><a id="smsCodeRequest_CaptchaImage_HelpLink" href="https://security.wildberries.kz/#" title="Проверочный код"><img class="BDC_CaptchaImage" id="smsCodeRequest_CaptchaImage" src="./login_files/BotDetectCaptcha(1).ashx" alt="Проверочный код" style=""></a><!--
-                                                  -->
-                                            </div>
-                                            <!--
-                                               -->
-                                            <div class="BDC_CaptchaIconsDiv" id="smsCodeRequest_CaptchaIconsDiv" style="width: 19px !important;">
-                                               <!--
-                                                  --><a class="BDC_ReloadLink" id="smsCodeRequest_ReloadLink" href="https://security.wildberries.kz/#" title="Обновить проверочный код" style="display: inline-block !important;"><img class="BDC_ReloadIcon" id="smsCodeRequest_ReloadIcon" src="./login_files/blank.gif" alt="Обновить проверочный код"></a><!--
-                                                  -->
-                                            </div>
-                                            <input type="hidden" name="BDC_VCID_smsCodeRequest" id="BDC_VCID_smsCodeRequest" value="e140eaca750e42648db0ec777468c27e">
-                                            <input type="hidden" name="BDC_BackWorkaround_smsCodeRequest" id="BDC_BackWorkaround_smsCodeRequest" value="0">
-                                            <input type="hidden" name="BDC_Hs_smsCodeRequest" id="BDC_Hs_smsCodeRequest" value="b93652ff2fab53397d3810cf8ea911d98e05f6e3">
-                                            <input type="hidden" name="BDC_SP_smsCodeRequest" id="BDC_SP_smsCodeRequest" value="350135666">
-                                         </div>
-                                      </captcha>
-                                   </div>
-                                </div>
-                                <div class="i-form-block-v1">
-                                   <div class="input-wrap input-submit">
-                                      <button class="c-btn-main-lg-v1 btn-submit jq-request-code disabled" type="submit" data-href="/mobile/requestconfirmcode?forAction=EasyLogin" tabindex="3">Получить код</button>
-                                   </div>
-                                </div>
-                                <div class="login-block-message">
-                                   <span class="field-validation-error" data-valmsg-for="phoneInput.FullPhoneMobile" data-valmsg-replace="true"><span for="phoneInput_FullPhoneMobile" class=""></span></span>
-                                   <span class="field-validation-valid" data-valmsg-for="fancyPhoneMobile" data-valmsg-replace="true"></span>
-                                </div>
-                             </div>
-                             <div class="login-block-bottom">
-                                <div class="login-block-bottom-link">
-                                </div>
-                                <div class="login-block-social">
-                                </div>
-                                <div class="login-block-public">Согласен с условиями <a href="https://www.wildberries.kz/services/publichnaya-oferta" target="_blank">Публичной оферты</a></div>
-                             </div>
-                          </div>
-                       </form>
-                    </div>
-                </div>
-        <div id="footer" class="footer j-ss-end-visible footer-kz">
+         </div>
+      </div>
+      <div id="body-layout" class="main-content j-parallax-main-layer ">
+      <div class="left-bg">
+      <div class="trunkOld row">
+         <div class="signIn col-lg-4 col-md-6 col-12">
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8BwoOLYI7eVNoETZPzdl6obP7A9haHR2WGDR8kXmDovnrmyNPA4nR8nyydP1e2323KY-m8fY5iPKW-xNiIu8f4Shm4pr4v1O3eEFbFefUMTL3Yrqzs5IGNnRU009DJji3jYTr2GEXa9aIheEmMpJbLI">
+            <div class="hide j-b-pass-login j-b-login-block">
+               <div class="login-block">
+                  <h2 class="c-h2-v1 login-block-title">Войти по паролю</h2>
+                  <div class="i-form-block-v1 j-mail j-b-login-wrapper j-b-login-email">
+                     <div class="input-label">Email или телефон</div>
+                     <div class="input-wrap">
+                        <input class="input-item j-track" data-val="true" data-val-mvcvtkrequiredif="Введите email или телефон." data-val-mvcvtkrequiredif-dependentproperty="UsePhone" data-val-mvcvtkrequiredif-targetvalue="false" id="Item_Login" name="Item.Login" tabindex="1" title="Для входа в личный кабинет с помощью номера телефона введите его в следующем формате: 7ХХХХХХХХХX" type="text" value="">
+                     </div>
+                     <div class="input-message"><span class="field-validation-valid" data-valmsg-for="Item.Login" data-valmsg-replace="true"></span></div>
+                  </div>
+                  <div class="i-form-block-password">
+                     <div class="input-label">Пароль</div>
+                     <div class="input-wrap">
+                        <input class="input-item j-track" data-val="true" data-val-required="Укажите пароль" id="Item_Password" maxlength="50" name="Item.Password" tabindex="2" type="password">
+                        <span class="j-btn-toggle btn-toggle type-password"></span>
+                     </div>
+                     <div class="input-message"><span class="field-validation-valid" data-valmsg-for="Item.Password" data-valmsg-replace="true"></span></div>
+                  </div>
+                  <div class="i-form-block-v1 j-phone j-b-login-wrapper j-b-login-phone hide">
+                     <div class="input-label">Email или телефон</div>
+                     <div class="input-wrap">
+                        <input class="input-item j-track" data-val="true" data-val-mvcvtkrequiredif="Введите email или телефон." data-val-mvcvtkrequiredif-dependentproperty="UsePhone" data-val-mvcvtkrequiredif-targetvalue="true" data-val-regex="Введите номер телефона!" data-val-regex-pattern="^[1-9]\d{10,13}$" id="Item_FullPhoneMobile" name="Item.FullPhoneMobile" title="Для входа в личный кабинет с помощью номера телефона введите его в следующем формате: 7ХХХХХХХХХX" type="text" value="">
+                     </div>
+                     <div class="input-message"><span class="field-validation-valid" data-valmsg-for="Item.FullPhoneMobile" data-valmsg-replace="true"></span></div>
+                  </div>
+                  <div class="i-form-block-captcha j-b-auth-captcha hide">
+                     <div class="input-label">Введите код с картинки <span class="star">*</span></div>
+                     <div class="input-wrap">
+                        <input autocomplete="off" class="input-item j-track" id="CaptchaCode" name="CaptchaCode" tabindex="5" type="text" value="" style="text-transform: uppercase;">                    
+                        <captcha>
+                           <div class="BDC_CaptchaDiv " id="signIn_CaptchaDiv" style="width: 168px !important; height: 44px !important; ">
+                              <!--
+                                 -->
+                              <div class="BDC_CaptchaImageDiv" id="signIn_CaptchaImageDiv" style="width: 143px !important; height: 44px !important;">
+                                 <!--
+                                    --><a id="signIn_CaptchaImage_HelpLink" href="https://security.wildberries.kz/#" title="Проверочный код"><img class="BDC_CaptchaImage" id="signIn_CaptchaImage" src="./login_files/BotDetectCaptcha.ashx" alt="Проверочный код" style=""></a><!--
+                                    -->
+                              </div>
+                              <!--
+                                 -->
+                              <div class="BDC_CaptchaIconsDiv" id="signIn_CaptchaIconsDiv" style="width: 19px !important;">
+                                 <!--
+                                    --><a class="BDC_ReloadLink" id="signIn_ReloadLink" href="https://security.wildberries.kz/#" title="Обновить проверочный код" style="display: inline-block !important;"><img class="BDC_ReloadIcon" id="signIn_ReloadIcon" src="./login_files/blank.gif" alt="Обновить проверочный код"></a><!--
+                                    -->
+                              </div>
+                              <input type="hidden" name="BDC_VCID_signIn" id="BDC_VCID_signIn" value="c81454994cf34519b1c39249ef41e346">
+                              <input type="hidden" name="BDC_BackWorkaround_signIn" id="BDC_BackWorkaround_signIn" value="0">
+                              <input type="hidden" name="BDC_Hs_signIn" id="BDC_Hs_signIn" value="1c29678830849d33caed7f0ac73941e9ce45e204">
+                              <input type="hidden" name="BDC_SP_signIn" id="BDC_SP_signIn" value="1043552906">
+                           </div>
+                        </captcha>
+                     </div>
+                  </div>
+                  <div class="i-form-block-v1">
+                     <div class="input-wrap input-submit">
+                        <input type="checkbox" value="true" name="Item.UsePhone" id="Item_UsePhone" class="hide">
+                        <button class="c-btn-main-lg-v1 btn-submit" id="signIn" tabindex="7">Войти</button>
+                     </div>
+                     <div class="input-message">
+                        <span class="field-validation-error" id="error" style="display: none;"></span>
+                     </div>
+                  </div>
+                  <div class="login-block-link">
+                     <a href="https://security.wildberries.kz/retrivepassword" class="c-link-in2-v1 j-lnk-outer" tabindex="6">Забыли пароль?</a>
+                  </div>
+                  <div class="login-block-bottom">
+                     <div class="login-block-bottom-link">
+                        <span class="c-link-in3-v1 j-s-show-sms-login ">Войти по коду из СМС</span>
+                     </div>
+                     <div class="login-block-social">
+                     </div>
+                     <div class="login-block-public">Согласен с условиями <a href="#/services/publichnaya-oferta" target="_blank">Публичной оферты</a></div>
+                  </div>
+               </div>
+               <div id="loading" class="loading"></div>
+               <span class="j-popup-tooltip hide">
+               Для входа в личный кабинет с помощью номера телефона введите его в следующем формате: 7ХХХХХХХХХX
+               </span>
+            </div>
+            <form class="j-f-easy-login j-b-login-block needs-validation" action="#" novalidate>
+               <div class="login-block">
+                  <div class="j-b-easy-login-step-1 login-step">
+                     <h2 class="c-h2-v1 login-block-title">Войти или создать профиль</h2>
+                  </div>
+                  <div class="j-b-easy-login-step-2 login-step hide">
+                     <span class="arrow-back j-s-go-to-step-1"><span class="icon"></span></span>
+                     <h2 class="c-h2-v1 login-block-title">Введите код</h2>
+                     <p class="login-block-text">Код выслан на номер <b class="j-b-easy-login-phone-formatted">+7 926 976 75 76</b></p>
+                  </div>
+                  <div class="login-block-content">
+                     <div class="i-form-block-v1 j-b-easy-login-step-1">
+                        <div class="input-label">Контактный телефон</div>
+                        <div class="input-wrap">
+                           <input class="input-item valid" id="phoneMobile"  name="fancyPhoneMobile" tabindex="2" type="tel" pattern="+7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" required>
+                           <div class="invalid-feedback">Введите номер телефона!</div>
+                           <input class="j-fullphonemobile input-validation-error" data-val="true" data-val-regex="Введите номер телефона!" data-val-regex-pattern="^[1-9]\d{10,13}$" data-val-required="Введите номер телефона!" id="phoneInput_FullPhoneMobile" name="phoneInput.FullPhoneMobile" type="hidden" value="">
+                        </div>
+                     </div>
+                     <div class="i-form-block-v1 i-form-block-confirm j-b-easy-login-step-2 hide j-b-confirm-phone">
+                        <div class="input-wrap">
+                           <input class="input-item j-tb-confirm-code" data-val="true" data-val-range="Неверный код" data-val-range-max="999999" data-val-range-min="100000" data-val-required="Неверный код" id="phoneInput_ConfirmCode" name="phoneInput.ConfirmCode" tabindex="4" type="text" value="">
+                        </div>
+                        <div class="input-message">
+                           <span class="field-validation-valid" data-valmsg-for="phoneInput.ConfirmCode" data-valmsg-replace="true"></span>
+                        </div>
+                     </div>
+                     <div class="login-block-countdown">
+                        <span class="j-s-request-code-countdown"></span>
+                     </div>
+                     <div class="i-form-block-captcha j-b-easy-login-captcha hide">
+                        <div class="input-label">Введите код с картинки <span class="star">*</span></div>
+                        <div class="input-wrap">
+                           <input autocomplete="off" class="input-item j-track" id="smsCaptchaCode" name="smsCaptchaCode" tabindex="5" type="text" value="" style="text-transform: uppercase;">                    
+                           <captcha>
+                              <div class="BDC_CaptchaDiv " id="smsCodeRequest_CaptchaDiv" style="width: 168px !important; height: 44px !important; ">
+                                 <!--
+                                    -->
+                                 <div class="BDC_CaptchaImageDiv" id="smsCodeRequest_CaptchaImageDiv" style="width: 143px !important; height: 44px !important;">
+                                    <!--
+                                       --><a id="smsCodeRequest_CaptchaImage_HelpLink" href="https://security.wildberries.kz/#" title="Проверочный код"><img class="BDC_CaptchaImage" id="smsCodeRequest_CaptchaImage" src="./login_files/BotDetectCaptcha(1).ashx" alt="Проверочный код" style=""></a><!--
+                                       -->
+                                 </div>
+                                 <!--
+                                    -->
+                                 <div class="BDC_CaptchaIconsDiv" id="smsCodeRequest_CaptchaIconsDiv" style="width: 19px !important;">
+                                    <!--
+                                       --><a class="BDC_ReloadLink" id="smsCodeRequest_ReloadLink" href="https://security.wildberries.kz/#" title="Обновить проверочный код" style="display: inline-block !important;"><img class="BDC_ReloadIcon" id="smsCodeRequest_ReloadIcon" src="./login_files/blank.gif" alt="Обновить проверочный код"></a><!--
+                                       -->
+                                 </div>
+                                 <input type="hidden" name="BDC_VCID_smsCodeRequest" id="BDC_VCID_smsCodeRequest" value="e140eaca750e42648db0ec777468c27e">
+                                 <input type="hidden" name="BDC_BackWorkaround_smsCodeRequest" id="BDC_BackWorkaround_smsCodeRequest" value="0">
+                                 <input type="hidden" name="BDC_Hs_smsCodeRequest" id="BDC_Hs_smsCodeRequest" value="b93652ff2fab53397d3810cf8ea911d98e05f6e3">
+                                 <input type="hidden" name="BDC_SP_smsCodeRequest" id="BDC_SP_smsCodeRequest" value="350135666">
+                              </div>
+                           </captcha>
+                        </div>
+                     </div>
+                     <div class="i-form-block-v1">
+                        <div class="input-wrap input-submit">
+                           <button class="c-btn-main-lg-v1 btn-submit jq-request-code disabled" type="submit" data-href="/mobile/requestconfirmcode?forAction=EasyLogin" tabindex="3">Получить код</button>
+                        </div>
+                     </div>
+                     <div class="login-block-message">
+                        <span class="field-validation-error" data-valmsg-for="phoneInput.FullPhoneMobile" data-valmsg-replace="true"><span for="phoneInput_FullPhoneMobile" class=""></span></span>
+                        <span class="field-validation-valid" data-valmsg-for="fancyPhoneMobile" data-valmsg-replace="true"></span>
+                     </div>
+                  </div>
+                  <div class="login-block-bottom">
+                     <div class="login-block-bottom-link">
+                     </div>
+                     <div class="login-block-social">
+                     </div>
+                     <div class="login-block-public">Согласен с условиями <a href="#/services/publichnaya-oferta" target="_blank">Публичной оферты</a></div>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+      <div id="footer" class="footer j-ss-end-visible footer-kz">
          <div class="wrapper-v1">
             <div class="line row">
                <div class="item-footer buyers col-6 col-md-2 m-0 m-md-3">
@@ -466,91 +453,87 @@ body.offcanvas-active{
          </div>
       </div>
    </body>
-   
-      <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    
-   
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script type="text/javascript">
-/// some script
-
-// jquery ready start
-$(document).ready(function() {
-	// jQuery code
-    $(":input").inputmask();
-
-    $("#phone").inputmask({"mask": "(999) 999-9999"});
-
-	$("[data-trigger]").on("click", function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        var offcanvas_id =  $(this).attr('data-trigger');
-        $(offcanvas_id).toggleClass("show");
-        $('body').toggleClass("offcanvas-active");
-        $(".screen-overlay").toggleClass("show");
-    }); 
-
-   	// Close menu when pressing ESC
-    $(document).on('keydown', function(event) {
-        if(event.keyCode === 27) {
-           $(".mobile-offcanvas").removeClass("show");
-           $("body").removeClass("overlay-active");
-        }
-    });
-
-    $(".btn-close, .screen-overlay").click(function(e){
-    	$(".screen-overlay").removeClass("show");
-        $(".mobile-offcanvas").removeClass("show");
-        $("body").removeClass("offcanvas-active");
-
-
-    }); 
-
-
-}); // jquery end
-</script>
-
-      <script type="text/javascript">
-         $(document).ready(function(){
-           $('.banners-slider').slick({
-               lazyLoad: 'ondemand',
-               dots: true,
-               speed: 500,
-               fade: true,
-               cssEase: 'linear',
-           });
-         });
-      </script>
-      <script>
-    	$("#phoneMobile").inputmask({"mask": "+7 999 999 99 99", "oncomplete": function(){ 
-    	    $('.c-btn-main-lg-v1').removeClass('disabled');
-    	},
-    	    "onKeyDown": function(){
-    	        var isValid = Inputmask.isValid($(this).val(), { alias: "numeric", inputFormat: "+7 999 999 99 99"});
-    	        if(isValid)
-    	            $('.c-btn-main-lg-v1').removeClass('disabled');
-    	    }
-    	});
-    </script>
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function() {
-          'use strict';
-          window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-              form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-              }, false);
-            });
-          }, false);
-        })();
-        </script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   <script type="text/javascript">
+      /// some script
+      
+      // jquery ready start
+      $(document).ready(function() {
+      	// jQuery code
+          $(":input").inputmask();
+      
+          $("#phone").inputmask({"mask": "(999) 999-9999"});
+      
+      	$("[data-trigger]").on("click", function(e){
+              e.preventDefault();
+              e.stopPropagation();
+              var offcanvas_id =  $(this).attr('data-trigger');
+              $(offcanvas_id).toggleClass("show");
+              $('body').toggleClass("offcanvas-active");
+              $(".screen-overlay").toggleClass("show");
+          }); 
+      
+         	// Close menu when pressing ESC
+          $(document).on('keydown', function(event) {
+              if(event.keyCode === 27) {
+                 $(".mobile-offcanvas").removeClass("show");
+                 $("body").removeClass("overlay-active");
+              }
+          });
+      
+          $(".btn-close, .screen-overlay").click(function(e){
+          	$(".screen-overlay").removeClass("show");
+              $(".mobile-offcanvas").removeClass("show");
+              $("body").removeClass("offcanvas-active");
+      
+      
+          }); 
+      
+      
+      }); // jquery end
+   </script>
+   <script type="text/javascript">
+      $(document).ready(function(){
+        $('.banners-slider').slick({
+            lazyLoad: 'ondemand',
+            dots: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+        });
+      });
+   </script>
+   <script>
+      $("#phoneMobile").inputmask({"mask": "+7 999 999 99 99", "oncomplete": function(){ 
+          $('.c-btn-main-lg-v1').removeClass('disabled');
+      },
+          "onKeyDown": function(){
+              var isValid = Inputmask.isValid($(this).val(), { alias: "numeric", inputFormat: "+7 999 999 99 99"});
+              if(isValid)
+                  $('.c-btn-main-lg-v1').removeClass('disabled');
+          }
+      });
+   </script>
+   <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+   </script>
 </html>
